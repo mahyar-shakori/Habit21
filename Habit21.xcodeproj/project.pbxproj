@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02805560C5ED1AFC5339729F /* Pods_Habit21.framework */; };
+		FF69D45427940B1F00BAB352 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45327940B1F00BAB352 /* Habit.swift */; };
+		FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */; };
+		FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */; };
+		FF81A4BE278ED4DA0051D318 /* RemindeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BD278ED4DA0051D318 /* RemindeTableViewCell.swift */; };
+		FF81A4C0278ED6E80051D318 /* Reminde.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BF278ED6E80051D318 /* Reminde.swift */; };
 		FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */; };
 		FFA00DF22789B63D00F5FCFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */; };
-		FFA00DF42789B63D00F5FCFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DF32789B63D00F5FCFD /* ViewController.swift */; };
 		FFA00DF72789B63D00F5FCFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DF52789B63D00F5FCFD /* Main.storyboard */; };
 		FFA00DF92789B64000F5FCFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DF82789B64000F5FCFD /* Assets.xcassets */; };
 		FFA00DFC2789B64000F5FCFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */; };
+		FFA00E262789DB1F00F5FCFD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E252789DB1F00F5FCFD /* AddViewController.swift */; };
+		FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E292789E14E00F5FCFD /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02805560C5ED1AFC5339729F /* Pods_Habit21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habit21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.debug.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.debug.xcconfig"; sourceTree = "<group>"; };
+		B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.release.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.release.xcconfig"; sourceTree = "<group>"; };
+		FF69D45327940B1F00BAB352 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
+		FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
+		FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
+		FF81A4BD278ED4DA0051D318 /* RemindeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindeTableViewCell.swift; sourceTree = "<group>"; };
+		FF81A4BF278ED6E80051D318 /* Reminde.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminde.swift; sourceTree = "<group>"; };
 		FFA00DEC2789B63D00F5FCFD /* Habit21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FFA00DF32789B63D00F5FCFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FFA00DF62789B63D00F5FCFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFA00DF82789B64000F5FCFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFA00DFB2789B64000F5FCFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFA00DFD2789B64000F5FCFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FFA00E252789DB1F00F5FCFD /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		FFA00E292789E14E00F5FCFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,65 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D3EA3E4BBD62563B3ADFB88 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02805560C5ED1AFC5339729F /* Pods_Habit21.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D952E225E50C54D2F5F5F963 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */,
+				B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FF2D7D852796C909000A74E1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF81A4BF278ED6E80051D318 /* Reminde.swift */,
+				FF69D45327940B1F00BAB352 /* Habit.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF2D7D862796C921000A74E1 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FFA00E292789E14E00F5FCFD /* HomeViewController.swift */,
+				FFA00E252789DB1F00F5FCFD /* AddViewController.swift */,
+				FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FF2D7D872796C936000A74E1 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */,
+				FF81A4BD278ED4DA0051D318 /* RemindeTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FFA00DE32789B63D00F5FCFD = {
 			isa = PBXGroup;
 			children = (
 				FFA00DEE2789B63D00F5FCFD /* Habit21 */,
 				FFA00DED2789B63D00F5FCFD /* Products */,
+				D952E225E50C54D2F5F5F963 /* Pods */,
+				8D3EA3E4BBD62563B3ADFB88 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,9 +120,11 @@
 		FFA00DEE2789B63D00F5FCFD /* Habit21 */ = {
 			isa = PBXGroup;
 			children = (
+				FF2D7D862796C921000A74E1 /* ViewController */,
+				FF2D7D872796C936000A74E1 /* Cell */,
+				FF2D7D852796C909000A74E1 /* Model */,
 				FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */,
 				FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */,
-				FFA00DF32789B63D00F5FCFD /* ViewController.swift */,
 				FFA00DF52789B63D00F5FCFD /* Main.storyboard */,
 				FFA00DF82789B64000F5FCFD /* Assets.xcassets */,
 				FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */,
@@ -74,9 +140,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FFA00E002789B64000F5FCFD /* Build configuration list for PBXNativeTarget "Habit21" */;
 			buildPhases = (
+				BB5EFCE91966A96AB638474D /* [CP] Check Pods Manifest.lock */,
 				FFA00DE82789B63D00F5FCFD /* Sources */,
 				FFA00DE92789B63D00F5FCFD /* Frameworks */,
 				FFA00DEA2789B63D00F5FCFD /* Resources */,
+				C80863D17E82736725156FD2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,14 +201,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BB5EFCE91966A96AB638474D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Habit21-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C80863D17E82736725156FD2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Habit21/Pods-Habit21-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Habit21/Pods-Habit21-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Habit21/Pods-Habit21-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FFA00DE82789B63D00F5FCFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFA00DF42789B63D00F5FCFD /* ViewController.swift in Sources */,
+				FFA00E262789DB1F00F5FCFD /* AddViewController.swift in Sources */,
+				FF81A4C0278ED6E80051D318 /* Reminde.swift in Sources */,
+				FF81A4BE278ED4DA0051D318 /* RemindeTableViewCell.swift in Sources */,
+				FF69D45427940B1F00BAB352 /* Habit.swift in Sources */,
 				FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */,
 				FFA00DF22789B63D00F5FCFD /* SceneDelegate.swift in Sources */,
+				FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */,
+				FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */,
+				FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +400,7 @@
 		};
 		FFA00E012789B64000F5FCFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -312,6 +429,7 @@
 		};
 		FFA00E022789B64000F5FCFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
