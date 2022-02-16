@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftUI
 
 class AnimationViewController: UIViewController {
 
@@ -22,8 +21,8 @@ class AnimationViewController: UIViewController {
         trackShape.fillColor = UIColor.clear.cgColor
         view.layer.addSublayer(trackShape)
         
-        let circlePath2 = UIBezierPath(arcCenter: view.center, radius: 150, startAngle: 0 , endAngle: .pi / 21, clockwise: true)
-        shape.path = circlePath2.cgPath
+        let fillCirclePath = UIBezierPath(arcCenter: view.center, radius: 150, startAngle: 0 , endAngle: (.pi * 2)/2, clockwise: true)
+        shape.path = fillCirclePath.cgPath
         shape.lineWidth = 15
         shape.strokeColor = UIColor.blue.cgColor
         shape.fillColor = UIColor.clear.cgColor
@@ -33,11 +32,11 @@ class AnimationViewController: UIViewController {
         let button = UIButton(frame: CGRect(x: 20, y: view.frame.size.height-70, width: view.frame.size.width-40, height: 50))
         view.addSubview(button)
         button.setTitle("Animate", for: .normal)
-        button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(animateBtnTapped), for: .touchUpInside)
         button.backgroundColor = .systemGreen
     }
     
-    @objc func didTapButton() {
+    @objc func animateBtnTapped() {
         let animation = CABasicAnimation(keyPath: "strokeEnd")
         animation.toValue = 1
         animation.duration = 1

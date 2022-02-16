@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,19 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchSC" translatesAutoresizingMaskIntoConstraints="NO" id="ol6-bN-g1r">
-                                <rect key="frame" x="117" y="358" width="180" height="180"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchSC" translatesAutoresizingMaskIntoConstraints="NO" id="WAz-nx-qRQ">
+                                <rect key="frame" x="95" y="336" width="224" height="224"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="160" id="S60-HS-aFJ"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="o4H-Bb-Mvh"/>
+                                    <constraint firstAttribute="width" secondItem="WAz-nx-qRQ" secondAttribute="height" multiplier="1:1" id="ILe-Hr-cbh"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="ol6-bN-g1r" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jXK-vK-Txg"/>
-                            <constraint firstItem="ol6-bN-g1r" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="m95-zn-peo"/>
+                            <constraint firstItem="WAz-nx-qRQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9DU-ee-MW3"/>
+                            <constraint firstItem="WAz-nx-qRQ" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:4" id="HnB-2S-OXp"/>
+                            <constraint firstItem="WAz-nx-qRQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZJd-SF-noa"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +38,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launchSC" width="180" height="180"/>
+        <image name="LaunchSC" width="2203" height="2203"/>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

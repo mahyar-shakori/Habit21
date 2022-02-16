@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02805560C5ED1AFC5339729F /* Pods_Habit21.framework */; };
+		FF18A47C27BBADDB001CCA4B /* FirstTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */; };
+		FF18A47E27BBB35F001CCA4B /* SecondTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A47D27BBB35F001CCA4B /* SecondTipViewController.swift */; };
+		FF18A48027BBCDDA001CCA4B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A47F27BBCDDA001CCA4B /* PageViewController.swift */; };
+		FF18A48227BBF5DF001CCA4B /* AddNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* AddNameViewController.swift */; };
 		FF69D45427940B1F00BAB352 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45327940B1F00BAB352 /* Habit.swift */; };
 		FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */; };
 		FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */; };
-		FF81A4BE278ED4DA0051D318 /* RemindeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BD278ED4DA0051D318 /* RemindeTableViewCell.swift */; };
-		FF81A4C0278ED6E80051D318 /* Reminde.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BF278ED6E80051D318 /* Reminde.swift */; };
+		FF81A4BE278ED4DA0051D318 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BD278ED4DA0051D318 /* ReminderTableViewCell.swift */; };
+		FF81A4C0278ED6E80051D318 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BF278ED6E80051D318 /* Reminder.swift */; };
 		FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */; };
 		FFA00DF22789B63D00F5FCFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */; };
 		FFA00DF72789B63D00F5FCFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DF52789B63D00F5FCFD /* Main.storyboard */; };
@@ -26,11 +30,15 @@
 		02805560C5ED1AFC5339729F /* Pods_Habit21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habit21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.debug.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.debug.xcconfig"; sourceTree = "<group>"; };
 		B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.release.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.release.xcconfig"; sourceTree = "<group>"; };
+		FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTipViewController.swift; sourceTree = "<group>"; };
+		FF18A47D27BBB35F001CCA4B /* SecondTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTipViewController.swift; sourceTree = "<group>"; };
+		FF18A47F27BBCDDA001CCA4B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		FF18A48127BBF5DF001CCA4B /* AddNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewController.swift; sourceTree = "<group>"; };
 		FF69D45327940B1F00BAB352 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
-		FF81A4BD278ED4DA0051D318 /* RemindeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindeTableViewCell.swift; sourceTree = "<group>"; };
-		FF81A4BF278ED6E80051D318 /* Reminde.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminde.swift; sourceTree = "<group>"; };
+		FF81A4BD278ED4DA0051D318 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		FF81A4BF278ED6E80051D318 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		FFA00DEC2789B63D00F5FCFD /* Habit21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,8 +82,8 @@
 		FF2D7D852796C909000A74E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FF81A4BF278ED6E80051D318 /* Reminde.swift */,
 				FF69D45327940B1F00BAB352 /* Habit.swift */,
+				FF81A4BF278ED6E80051D318 /* Reminder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -83,6 +91,10 @@
 		FF2D7D862796C921000A74E1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				FF18A47F27BBCDDA001CCA4B /* PageViewController.swift */,
+				FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */,
+				FF18A47D27BBB35F001CCA4B /* SecondTipViewController.swift */,
+				FF18A48127BBF5DF001CCA4B /* AddNameViewController.swift */,
 				FFA00E292789E14E00F5FCFD /* HomeViewController.swift */,
 				FFA00E252789DB1F00F5FCFD /* AddViewController.swift */,
 				FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */,
@@ -94,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */,
-				FF81A4BD278ED4DA0051D318 /* RemindeTableViewCell.swift */,
+				FF81A4BD278ED4DA0051D318 /* ReminderTableViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -249,10 +261,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFA00E262789DB1F00F5FCFD /* AddViewController.swift in Sources */,
-				FF81A4C0278ED6E80051D318 /* Reminde.swift in Sources */,
-				FF81A4BE278ED4DA0051D318 /* RemindeTableViewCell.swift in Sources */,
+				FF18A47C27BBADDB001CCA4B /* FirstTipViewController.swift in Sources */,
+				FF18A47E27BBB35F001CCA4B /* SecondTipViewController.swift in Sources */,
+				FF18A48027BBCDDA001CCA4B /* PageViewController.swift in Sources */,
+				FF81A4C0278ED6E80051D318 /* Reminder.swift in Sources */,
+				FF81A4BE278ED4DA0051D318 /* ReminderTableViewCell.swift in Sources */,
 				FF69D45427940B1F00BAB352 /* Habit.swift in Sources */,
 				FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */,
+				FF18A48227BBF5DF001CCA4B /* AddNameViewController.swift in Sources */,
 				FFA00DF22789B63D00F5FCFD /* SceneDelegate.swift in Sources */,
 				FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */,
 				FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */,

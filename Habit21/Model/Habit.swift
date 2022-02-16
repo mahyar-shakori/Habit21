@@ -6,9 +6,12 @@
 //
 
 import RealmSwift
+import Foundation
 
 class Habit : Object {
-    @Persisted var habitt : String = ""
+    @Persisted(primaryKey: true) var _id: String = ""
+    @Persisted var habitTitle : String = ""
+    @Persisted var dateCreate : Date = Date()
     
-    @Persisted var reminds: List<Reminde>
+    @Persisted var reminders: List<Reminder>
 }

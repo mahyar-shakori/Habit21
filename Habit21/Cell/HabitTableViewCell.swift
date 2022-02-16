@@ -12,7 +12,6 @@ class HabitTableViewCell: UITableViewCell {
     @IBOutlet weak var habitLabel: UILabel!
     
     func config(_ habit: Habit) {
-        self.habitLabel.text = "\(habit.habitt)"
-        
+        self.habitLabel.text = "\(habit.habitTitle)"
     }
 }
