@@ -18,21 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if success{
                 print("User gave permissions for local notifications")}
         }
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let navigationController = UINavigationController()
-//        navigationController.isNavigationBarHidden = true
-//
-//        if UserDefaults.standard.bool(forKey: "isLogin") {
-//            let rootViewController = storyboard.instantiateViewController(identifier:"Home") as UIViewController
-//            navigationController.viewControllers = [rootViewController]
-//            self.window?.rootViewController = navigationController
-//        }
-//        else {
-//            let rootViewController = storyboard.instantiateViewController(identifier:"ScrollPage") as UIViewController
-//            navigationController.viewControllers = [rootViewController]
-//            self.window?.rootViewController = navigationController
-//        }
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let navigationController = UINavigationController()
+        navigationController.isNavigationBarHidden = true
+
+        if UserDefaults.standard.bool(forKey: "isLogin") {
+            let rootViewController = storyboard.instantiateViewController(identifier:"Home") as UIViewController
+            navigationController.viewControllers = [rootViewController]
+            self.window?.rootViewController = navigationController
+        }
+        else {
+            let rootViewController = storyboard.instantiateViewController(identifier:"ScrollPage") as UIViewController
+            navigationController.viewControllers = [rootViewController]
+            self.window?.rootViewController = navigationController
+        }
         return true
     }
 }
