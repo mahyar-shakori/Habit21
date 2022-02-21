@@ -13,7 +13,7 @@ protocol AddDelegate {
     func switchChanged(forItem item : Reminder)
 }
 
-class AddViewController: UIViewController, AddDelegate {
+class AddHabitViewController: UIViewController, AddDelegate {
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var addHabitTextField: UITextField!
@@ -38,7 +38,7 @@ class AddViewController: UIViewController, AddDelegate {
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .time
-        datePicker?.addTarget(self, action: #selector(AddViewController.reminderFormattedDate(datePicker:)), for: .valueChanged)
+        datePicker?.addTarget(self, action: #selector(AddHabitViewController.reminderFormattedDate(datePicker:)), for: .valueChanged)
         dateTextField.inputView = datePicker
         datePicker!.preferredDatePickerStyle = UIDatePickerStyle.wheels
     
@@ -48,6 +48,9 @@ class AddViewController: UIViewController, AddDelegate {
         
         realm = try! Realm()
         loadValues()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+            view.addGestureRecognizer(tap)
     }
     
     func switchChanged(forItem item: Reminder) {
@@ -195,9 +198,18 @@ class AddViewController: UIViewController, AddDelegate {
         self.reminderList = Array(try! Realm().objects(Reminder.self))
         self.reminderTableView.reloadData()
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+    }
 }
 
-extension AddViewController: UITextFieldDelegate {
+extension AddHabitViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -208,7 +220,7 @@ extension AddViewController: UITextFieldDelegate {
             if textField == self.addHabitTextField {
                 if updatedText.isEmpty {
                     self.saveButton.isEnabled = false
-                    self.saveButton.tintColor = UIColor.lightGray
+                    self.saveButton.tintColor = UIColor.init(red: 255/255, green: 204/255, blue: 203/255, alpha: 1.0)
                 }
                 else {
                     self.saveButton.isEnabled = true
@@ -220,7 +232,7 @@ extension AddViewController: UITextFieldDelegate {
     }
 }
 
-extension AddViewController: UITableViewDelegate, UITableViewDataSource {
+extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.reminderList.count
@@ -256,7 +268,6 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
                         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: identifiers)
                     }
                 }
-                //
                 
                 actionPerformed(true)
             }))

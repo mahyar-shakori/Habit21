@@ -5,7 +5,6 @@
 //  Created by MahyarShakouri on 1/8/22.
 //
 import UIKit
-import IQKeyboardManager
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,8 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-//        IQKeyboardManager.shared().isEnabled = true
-
         UNUserNotificationCenter.current().delegate = self
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) {success, error in
             if success{
@@ -27,12 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        navigationController.isNavigationBarHidden = true
 //
 //        if UserDefaults.standard.bool(forKey: "isLogin") {
-//            let rootViewController = storyboard.instantiateViewController(identifier:"HomePage") as UIViewController
+//            let rootViewController = storyboard.instantiateViewController(identifier:"Home") as UIViewController
 //            navigationController.viewControllers = [rootViewController]
 //            self.window?.rootViewController = navigationController
 //        }
 //        else {
-//            let rootViewController = storyboard.instantiateViewController(identifier:"PageVc") as UIViewController
+//            let rootViewController = storyboard.instantiateViewController(identifier:"ScrollPage") as UIViewController
 //            navigationController.viewControllers = [rootViewController]
 //            self.window?.rootViewController = navigationController
 //        }

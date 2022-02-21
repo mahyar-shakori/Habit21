@@ -9,39 +9,56 @@ import UIKit
 
 class AnimationViewController: UIViewController {
 
-    let shape = CAShapeLayer()
-    
+    let scrollView = UIScrollView()
+    let pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = 5
+        return pageControl
+    } ()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let circlePath = UIBezierPath(arcCenter: view.center, radius: 150, startAngle: 0 , endAngle: .pi * 2, clockwise: true)
-        let trackShape = CAShapeLayer()
-        trackShape.path = circlePath.cgPath
-        trackShape.lineWidth = 15
-        trackShape.strokeColor = UIColor.lightGray.cgColor
-        trackShape.fillColor = UIColor.clear.cgColor
-        view.layer.addSublayer(trackShape)
-        
-        let fillCirclePath = UIBezierPath(arcCenter: view.center, radius: 150, startAngle: 0 , endAngle: (.pi * 2)/2, clockwise: true)
-        shape.path = fillCirclePath.cgPath
-        shape.lineWidth = 15
-        shape.strokeColor = UIColor.blue.cgColor
-        shape.fillColor = UIColor.clear.cgColor
-        shape.strokeEnd = 0
-        view.layer.addSublayer(shape)
-        
-        let button = UIButton(frame: CGRect(x: 20, y: view.frame.size.height-70, width: view.frame.size.width-40, height: 50))
-        view.addSubview(button)
-        button.setTitle("Animate", for: .normal)
-        button.addTarget(self, action: #selector(animateBtnTapped), for: .touchUpInside)
-        button.backgroundColor = .systemGreen
+        scrollView.delegate = self
+        view.addSubview(scrollView)
+        view.addSubview(pageControl)
     }
-    
-    @objc func animateBtnTapped() {
-        let animation = CABasicAnimation(keyPath: "strokeEnd")
-        animation.toValue = 1
-        animation.duration = 1
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = .forwards
-        shape.add(animation, forKey: "animation")
+
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pageControl.frame = CGRect(x: 10, y: view.frame.size.height-100, width: view.frame.size.width-20, height: 50)
+        scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.size.width, height: view.frame.size.height+635)
+        if scrollView.subviews.count == 2 {
+            configureScrollView()
+        }
     }
+
+    func newVc(viewController: String) -> UIViewController {
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: viewController)
+    }
+
+    func configureScrollView(){
+        scrollView.contentSize = CGSize(width: view.frame.size.width*5, height: view.frame.size.height)
+        scrollView.isPagingEnabled = true
+        let colors: [UIColor] = [
+            UIColor.red,
+            UIColor.yellow,
+            UIColor.black,
+            UIColor.green,
+            UIColor.purple
+        ]
+        
+        for x in 0..<5{
+            let page = UIView(frame: CGRect(x:CGFloat(x) * view.frame.size.width, y:0, width: view.frame.size.width, height: scrollView.frame.size.height))
+            page.backgroundColor = colors[x]
+            scrollView.addSubview(page)
+
+        }
+    }
+}
+
+extension AnimationViewController: UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(floorf(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)))
+    }
+
 }

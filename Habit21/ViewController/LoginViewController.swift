@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddNameViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var addNameTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
@@ -17,6 +17,13 @@ class AddNameViewController: UIViewController {
         super.viewDidLoad()
         
         self.addNameTextField.delegate = self
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+            view.addGestureRecognizer(tap)
+        
+        continueButton.addCorner(corner: 12.5)
+        addNameTextField.addCorner(corner: 15)
+        addNameTextField.placeholderColor = UIColor.lightGray
     }
 
     @IBAction func continueButtonTapped(_ sender: Any) {
@@ -29,17 +36,21 @@ class AddNameViewController: UIViewController {
         UserDefaults.standard.set(addNameTextField.text! , forKey: "name")
         UserDefaults.standard.set(true, forKey: "isLogin")
         }
-        let storyBoard : UIStoryboard = self.storyboard!
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "HomePage") as! HomeViewController
-        self.navigationController?.show(nextViewController, sender: nil)
-        self.present(nextViewController, animated: true, completion: nil)
-        
-//        let vc = self.storyboard?.instantiateViewController(withIdentifier: "HomePage")
-//        self.navigationController?.show(vc!, sender: nil)
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "Home")
+        self.navigationController?.show(vc!, sender: nil)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
     }
 }
 
-extension AddNameViewController: UITextFieldDelegate {
+extension LoginViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         

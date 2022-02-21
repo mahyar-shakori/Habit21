@@ -6,7 +6,6 @@ target 'Habit21' do
   use_frameworks!
 
   # Pods for Habit21
-pod 'IQKeyboardManager'
 pod 'RealmSwift'
 
 end

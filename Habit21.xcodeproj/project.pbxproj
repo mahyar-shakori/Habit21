@@ -9,21 +9,24 @@
 /* Begin PBXBuildFile section */
 		905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02805560C5ED1AFC5339729F /* Pods_Habit21.framework */; };
 		FF18A47C27BBADDB001CCA4B /* FirstTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */; };
-		FF18A47E27BBB35F001CCA4B /* SecondTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A47D27BBB35F001CCA4B /* SecondTipViewController.swift */; };
-		FF18A48027BBCDDA001CCA4B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A47F27BBCDDA001CCA4B /* PageViewController.swift */; };
-		FF18A48227BBF5DF001CCA4B /* AddNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* AddNameViewController.swift */; };
+		FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */; };
+		FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */; };
 		FF69D45427940B1F00BAB352 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45327940B1F00BAB352 /* Habit.swift */; };
 		FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */; };
 		FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */; };
 		FF81A4BE278ED4DA0051D318 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BD278ED4DA0051D318 /* ReminderTableViewCell.swift */; };
 		FF81A4C0278ED6E80051D318 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BF278ED6E80051D318 /* Reminder.swift */; };
 		FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */; };
-		FFA00DF22789B63D00F5FCFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */; };
 		FFA00DF72789B63D00F5FCFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DF52789B63D00F5FCFD /* Main.storyboard */; };
 		FFA00DF92789B64000F5FCFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DF82789B64000F5FCFD /* Assets.xcassets */; };
 		FFA00DFC2789B64000F5FCFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */; };
-		FFA00E262789DB1F00F5FCFD /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E252789DB1F00F5FCFD /* AddViewController.swift */; };
+		FFA00E262789DB1F00F5FCFD /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */; };
 		FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E292789E14E00F5FCFD /* HomeViewController.swift */; };
+		FFD995F127BD4E7E00038BAF /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */; };
+		FFD995F327BD4F4800038BAF /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD995F227BD4F4800038BAF /* ScrollView.swift */; };
+		FFD995F527BD4F5B00038BAF /* ScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD995F427BD4F5B00038BAF /* ScrollView.xib */; };
+		FFEFBCB327C3997800CBAF1E /* CornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */; };
+		FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,9 +34,8 @@
 		0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.debug.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.debug.xcconfig"; sourceTree = "<group>"; };
 		B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.release.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.release.xcconfig"; sourceTree = "<group>"; };
 		FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTipViewController.swift; sourceTree = "<group>"; };
-		FF18A47D27BBB35F001CCA4B /* SecondTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondTipViewController.swift; sourceTree = "<group>"; };
-		FF18A47F27BBCDDA001CCA4B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
-		FF18A48127BBF5DF001CCA4B /* AddNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNameViewController.swift; sourceTree = "<group>"; };
+		FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		FF69D45327940B1F00BAB352 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
 		FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
@@ -41,13 +43,17 @@
 		FF81A4BF278ED6E80051D318 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		FFA00DEC2789B63D00F5FCFD /* Habit21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FFA00DF62789B63D00F5FCFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FFA00DF82789B64000F5FCFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFA00DFB2789B64000F5FCFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FFA00DFD2789B64000F5FCFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FFA00E252789DB1F00F5FCFD /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		FFA00E292789E14E00F5FCFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
+		FFD995F227BD4F4800038BAF /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
+		FFD995F427BD4F5B00038BAF /* ScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollView.xib; sourceTree = "<group>"; };
+		FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerExtension.swift; sourceTree = "<group>"; };
+		FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,13 +97,12 @@
 		FF2D7D862796C921000A74E1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				FF18A47F27BBCDDA001CCA4B /* PageViewController.swift */,
-				FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */,
-				FF18A47D27BBB35F001CCA4B /* SecondTipViewController.swift */,
-				FF18A48127BBF5DF001CCA4B /* AddNameViewController.swift */,
+				FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */,
+				FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */,
 				FFA00E292789E14E00F5FCFD /* HomeViewController.swift */,
-				FFA00E252789DB1F00F5FCFD /* AddViewController.swift */,
+				FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */,
 				FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */,
+				FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -107,8 +112,18 @@
 			children = (
 				FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */,
 				FF81A4BD278ED4DA0051D318 /* ReminderTableViewCell.swift */,
+				FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		FF48981A27C2197E00A908EA /* Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				FFD995F227BD4F4800038BAF /* ScrollView.swift */,
+				FFD995F427BD4F5B00038BAF /* ScrollView.xib */,
+			);
+			path = Scroll;
 			sourceTree = "<group>";
 		};
 		FFA00DE32789B63D00F5FCFD = {
@@ -135,14 +150,24 @@
 				FF2D7D862796C921000A74E1 /* ViewController */,
 				FF2D7D872796C936000A74E1 /* Cell */,
 				FF2D7D852796C909000A74E1 /* Model */,
+				FF48981A27C2197E00A908EA /* Scroll */,
+				FFEFBCB127C3992900CBAF1E /* utils */,
 				FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */,
-				FFA00DF12789B63D00F5FCFD /* SceneDelegate.swift */,
 				FFA00DF52789B63D00F5FCFD /* Main.storyboard */,
 				FFA00DF82789B64000F5FCFD /* Assets.xcassets */,
 				FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */,
 				FFA00DFD2789B64000F5FCFD /* Info.plist */,
 			);
 			path = Habit21;
+			sourceTree = "<group>";
+		};
+		FFEFBCB127C3992900CBAF1E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */,
+				FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFA00DFC2789B64000F5FCFD /* LaunchScreen.storyboard in Resources */,
+				FFD995F527BD4F5B00038BAF /* ScrollView.xib in Resources */,
 				FFA00DF92789B64000F5FCFD /* Assets.xcassets in Resources */,
 				FFA00DF72789B63D00F5FCFD /* Main.storyboard in Resources */,
 			);
@@ -260,17 +286,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFA00E262789DB1F00F5FCFD /* AddViewController.swift in Sources */,
+				FFA00E262789DB1F00F5FCFD /* AddHabitViewController.swift in Sources */,
+				FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */,
+				FFD995F327BD4F4800038BAF /* ScrollView.swift in Sources */,
 				FF18A47C27BBADDB001CCA4B /* FirstTipViewController.swift in Sources */,
-				FF18A47E27BBB35F001CCA4B /* SecondTipViewController.swift in Sources */,
-				FF18A48027BBCDDA001CCA4B /* PageViewController.swift in Sources */,
+				FFEFBCB327C3997800CBAF1E /* CornerExtension.swift in Sources */,
 				FF81A4C0278ED6E80051D318 /* Reminder.swift in Sources */,
+				FFD995F127BD4E7E00038BAF /* PageControlViewController.swift in Sources */,
 				FF81A4BE278ED4DA0051D318 /* ReminderTableViewCell.swift in Sources */,
 				FF69D45427940B1F00BAB352 /* Habit.swift in Sources */,
 				FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */,
-				FF18A48227BBF5DF001CCA4B /* AddNameViewController.swift in Sources */,
-				FFA00DF22789B63D00F5FCFD /* SceneDelegate.swift in Sources */,
+				FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */,
 				FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */,
+				FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */,
 				FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */,
 				FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */,
 			);

@@ -16,19 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchSC" translatesAutoresizingMaskIntoConstraints="NO" id="WAz-nx-qRQ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logoimage" translatesAutoresizingMaskIntoConstraints="NO" id="X3B-Q3-kIE">
                                 <rect key="frame" x="95" y="336" width="224" height="224"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="WAz-nx-qRQ" secondAttribute="height" multiplier="1:1" id="ILe-Hr-cbh"/>
+                                    <constraint firstAttribute="width" secondItem="X3B-Q3-kIE" secondAttribute="height" multiplier="1:1" id="nLl-dX-Yae"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                         <constraints>
-                            <constraint firstItem="WAz-nx-qRQ" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="9DU-ee-MW3"/>
-                            <constraint firstItem="WAz-nx-qRQ" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:4" id="HnB-2S-OXp"/>
-                            <constraint firstItem="WAz-nx-qRQ" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ZJd-SF-noa"/>
+                            <constraint firstItem="X3B-Q3-kIE" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Gag-BL-zE9"/>
+                            <constraint firstItem="X3B-Q3-kIE" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jB1-OU-E8q"/>
+                            <constraint firstItem="X3B-Q3-kIE" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="1:4" id="sc0-oi-6ZH"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,7 +38,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="LaunchSC" width="2203" height="2203"/>
+        <image name="Logoimage" width="1236" height="1236"/>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

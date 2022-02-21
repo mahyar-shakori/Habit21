@@ -9,7 +9,7 @@ import RealmSwift
 import Foundation
 
 class Habit : Object {
-    @Persisted(primaryKey: true) var _id: String = ""
+//    @Persisted(primaryKey: true) var _id: String = ""
     @Persisted var habitTitle : String = ""
     @Persisted var dateCreate : Date = Date()
     
