@@ -295,8 +295,8 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VBF-Ip-8ic">
-                                <rect key="frame" x="42" y="42" width="57" height="27.666666666666671"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                <rect key="frame" x="42" y="45" width="50" height="24"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -312,7 +312,6 @@
                             <constraint firstItem="GGD-YE-c8G" firstAttribute="top" secondItem="RBK-vG-E1t" secondAttribute="top" constant="40" id="VDt-Xs-FZD"/>
                             <constraint firstItem="RBK-vG-E1t" firstAttribute="trailing" secondItem="8On-Fa-FzW" secondAttribute="trailing" id="WqV-QZ-BtG"/>
                             <constraint firstItem="8On-Fa-FzW" firstAttribute="leading" secondItem="RBK-vG-E1t" secondAttribute="leading" id="ZJ6-bC-nye"/>
-                            <constraint firstItem="VBF-Ip-8ic" firstAttribute="top" secondItem="RBK-vG-E1t" secondAttribute="top" constant="42.100000000000001" id="dTs-PG-AFd"/>
                             <constraint firstItem="AoR-pj-XjG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VBF-Ip-8ic" secondAttribute="trailing" constant="8" symbolic="YES" id="eRS-bF-Di8"/>
                             <constraint firstItem="AoR-pj-XjG" firstAttribute="centerX" secondItem="pPa-WC-obT" secondAttribute="centerX" id="eSO-jx-319"/>
                             <constraint firstItem="GGD-YE-c8G" firstAttribute="centerY" secondItem="AoR-pj-XjG" secondAttribute="centerY" id="mjV-6y-Iid"/>
@@ -322,6 +321,7 @@
                             <constraint firstItem="AoR-pj-XjG" firstAttribute="centerY" secondItem="BwK-A4-EDV" secondAttribute="centerY" id="sdM-wb-3FO"/>
                             <constraint firstItem="YbX-KN-e5O" firstAttribute="leading" secondItem="RBK-vG-E1t" secondAttribute="leading" constant="20" id="t0E-2V-tBb"/>
                             <constraint firstItem="RBK-vG-E1t" firstAttribute="trailing" secondItem="BwK-A4-EDV" secondAttribute="trailing" constant="10" id="vL8-ml-xh3"/>
+                            <constraint firstItem="VBF-Ip-8ic" firstAttribute="top" secondItem="RBK-vG-E1t" secondAttribute="top" constant="45" id="z5G-7Q-BBZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="74M-kc-DXF"/>
@@ -398,7 +398,7 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="HQG-9z-4QS"/>
                                                                 </constraints>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                                 <textInputTraits key="textInputTraits"/>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="color" keyPath="placeholderLabel.textColor">
