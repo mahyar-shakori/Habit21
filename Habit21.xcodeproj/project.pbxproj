@@ -8,12 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02805560C5ED1AFC5339729F /* Pods_Habit21.framework */; };
-		FF18A47C27BBADDB001CCA4B /* FirstTipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */; };
 		FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */; };
+		FF3F7BEA27C511C10084DF7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3F7BE927C511C10084DF7D /* ViewController.swift */; };
 		FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */; };
 		FF69D45427940B1F00BAB352 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45327940B1F00BAB352 /* Habit.swift */; };
 		FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */; };
-		FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */; };
 		FF81A4BE278ED4DA0051D318 /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BD278ED4DA0051D318 /* ReminderTableViewCell.swift */; };
 		FF81A4C0278ED6E80051D318 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF81A4BF278ED6E80051D318 /* Reminder.swift */; };
 		FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */; };
@@ -22,6 +21,7 @@
 		FFA00DFC2789B64000F5FCFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */; };
 		FFA00E262789DB1F00F5FCFD /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */; };
 		FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E292789E14E00F5FCFD /* HomeViewController.swift */; };
+		FFD1A83E27CA38FE0061F88B /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD1A83D27CA38FE0061F88B /* EditHabitViewController.swift */; };
 		FFD995F127BD4E7E00038BAF /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */; };
 		FFD995F327BD4F4800038BAF /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD995F227BD4F4800038BAF /* ScrollView.swift */; };
 		FFD995F527BD4F5B00038BAF /* ScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD995F427BD4F5B00038BAF /* ScrollView.xib */; };
@@ -33,12 +33,11 @@
 		02805560C5ED1AFC5339729F /* Pods_Habit21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habit21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.debug.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.debug.xcconfig"; sourceTree = "<group>"; };
 		B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.release.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.release.xcconfig"; sourceTree = "<group>"; };
-		FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstTipViewController.swift; sourceTree = "<group>"; };
 		FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FF3F7BE927C511C10084DF7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		FF69D45327940B1F00BAB352 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
-		FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationViewController.swift; sourceTree = "<group>"; };
 		FF81A4BD278ED4DA0051D318 /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
 		FF81A4BF278ED6E80051D318 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		FFA00DEC2789B63D00F5FCFD /* Habit21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habit21.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,6 +48,7 @@
 		FFA00DFD2789B64000F5FCFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		FFA00E292789E14E00F5FCFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		FFD1A83D27CA38FE0061F88B /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
 		FFD995F227BD4F4800038BAF /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
 		FFD995F427BD4F5B00038BAF /* ScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollView.xib; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 				FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */,
 				FFA00E292789E14E00F5FCFD /* HomeViewController.swift */,
 				FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */,
-				FF722F68279D746D00C8B5D7 /* AnimationViewController.swift */,
-				FF18A47B27BBADDB001CCA4B /* FirstTipViewController.swift */,
+				FFD1A83D27CA38FE0061F88B /* EditHabitViewController.swift */,
+				FF3F7BE927C511C10084DF7D /* ViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -117,13 +117,13 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		FF48981A27C2197E00A908EA /* Scroll */ = {
+		FF48981A27C2197E00A908EA /* IntrodunceScroll */ = {
 			isa = PBXGroup;
 			children = (
 				FFD995F227BD4F4800038BAF /* ScrollView.swift */,
 				FFD995F427BD4F5B00038BAF /* ScrollView.xib */,
 			);
-			path = Scroll;
+			path = IntrodunceScroll;
 			sourceTree = "<group>";
 		};
 		FFA00DE32789B63D00F5FCFD = {
@@ -150,7 +150,7 @@
 				FF2D7D862796C921000A74E1 /* ViewController */,
 				FF2D7D872796C936000A74E1 /* Cell */,
 				FF2D7D852796C909000A74E1 /* Model */,
-				FF48981A27C2197E00A908EA /* Scroll */,
+				FF48981A27C2197E00A908EA /* IntrodunceScroll */,
 				FFEFBCB127C3992900CBAF1E /* utils */,
 				FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */,
 				FFA00DF52789B63D00F5FCFD /* Main.storyboard */,
@@ -289,17 +289,17 @@
 				FFA00E262789DB1F00F5FCFD /* AddHabitViewController.swift in Sources */,
 				FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */,
 				FFD995F327BD4F4800038BAF /* ScrollView.swift in Sources */,
-				FF18A47C27BBADDB001CCA4B /* FirstTipViewController.swift in Sources */,
 				FFEFBCB327C3997800CBAF1E /* CornerExtension.swift in Sources */,
 				FF81A4C0278ED6E80051D318 /* Reminder.swift in Sources */,
+				FFD1A83E27CA38FE0061F88B /* EditHabitViewController.swift in Sources */,
 				FFD995F127BD4E7E00038BAF /* PageControlViewController.swift in Sources */,
 				FF81A4BE278ED4DA0051D318 /* ReminderTableViewCell.swift in Sources */,
 				FF69D45427940B1F00BAB352 /* Habit.swift in Sources */,
 				FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */,
 				FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */,
-				FF722F69279D746D00C8B5D7 /* AnimationViewController.swift in Sources */,
 				FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */,
 				FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */,
+				FF3F7BEA27C511C10084DF7D /* ViewController.swift in Sources */,
 				FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

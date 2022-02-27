@@ -31,7 +31,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         self.realm = try! Realm()
-        loadValues()
         
         nameLabel.text = "\(UserDefaults.standard.string(forKey: "name") ?? "")"
         
@@ -43,11 +42,11 @@ class HomeViewController: UIViewController {
         
         doneButton.isHidden = true
         
+        loadValues()
         emptyView()
     }
     
     @IBAction func onClickMenu(_ sender: Any) {
-        
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
         transparentView.frame = self.view.frame
@@ -99,7 +98,7 @@ class HomeViewController: UIViewController {
     func emptyView(){
         self.habitTableView.reloadData()
         if self.habitList.count == 0 {
-            habitTableView.backgroundView = noFilterView
+            self.noFilterView.isHidden = false
         } else{
             self.noFilterView.isHidden = true
         }
@@ -109,6 +108,7 @@ class HomeViewController: UIViewController {
 extension HomeViewController: HomeDelegate {
     func reload() {
         loadValues()
+        emptyView()
     }
 }
 
@@ -215,6 +215,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     self.habitList = Array(try! Realm().objects(Habit.self))
                     self.habitTableView.deleteRows(at: [indexPath], with: .fade)
                     actionPerformed(true)
+                    self.emptyView()
                 }))
                 self.present(alert, animated: true)
             }
@@ -222,6 +223,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             let editAction = UIContextualAction(style: .normal, title: "") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
                 actionPerformed(true)
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditHabit")
+                self.navigationController?.show(vc!, sender: nil)
             }
             editAction.image = UIImage(named: "EditIcon")
             editAction.backgroundColor = UIColor(named: "EditColor")

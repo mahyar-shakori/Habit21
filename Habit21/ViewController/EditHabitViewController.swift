@@ -1,19 +1,19 @@
 //
-//  AddViewController.swift
+//  EditViewController.swift
 //  Habit21
 //
-//  Created by MahyarShakouri on 1/8/22.
+//  Created by MahyarShakouri on 2/26/22.
 //
 
 import UIKit
 import RealmSwift
 import UserNotifications
 
-//protocol AddDelegate {
-//    func switchChanged(forItem item : Reminder)
-//}
+protocol AddDelegate {
+    func switchChanged(forItem item : Reminder)
+}
 
-class AddHabitViewController: UIViewController {
+class EditHabitViewController: UIViewController, AddDelegate {
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var addHabitTextField: UITextField!
@@ -243,7 +243,7 @@ class AddHabitViewController: UIViewController {
     }
 }
 
-extension AddHabitViewController: UITextFieldDelegate {
+extension EditHabitViewController: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
@@ -266,7 +266,7 @@ extension AddHabitViewController: UITextFieldDelegate {
     }
 }
 
-extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
+extension EditHabitViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.reminderList.count
@@ -274,7 +274,7 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath) as! ReminderTableViewCell
-//        cell.delegate = self
+        cell.delegate = self
         cell.config(self.reminderList[indexPath.row])
         return cell
     }
@@ -311,3 +311,4 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration(actions: [editAction])
     }
 }
+
