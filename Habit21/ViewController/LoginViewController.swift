@@ -29,7 +29,6 @@ class LoginViewController: UIViewController {
     @IBAction func continueButtonTapped(_ sender: Any) {
         if (addNameTextField.text?.isEmpty == true) {
             self.errorLabel.text = "Come on! You can tell us your name :)"
-            self.continueButton.backgroundColor = UIColor.lightGray
             return
         }else{
         self.errorLabel.text = ""
@@ -64,7 +63,6 @@ extension LoginViewController: UITextFieldDelegate {
                 }
                 else {
                     self.continueButton.backgroundColor = UIColor.init(red: 115/255, green: 152/255, blue: 71/255, alpha: 1.0)
-
                 }
             }
         }

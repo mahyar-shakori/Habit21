@@ -70,7 +70,7 @@
             <connections>
                 <outlet property="descriptionLable" destination="6kj-Vh-5NF" id="Y4g-3Y-wtJ"/>
                 <outlet property="habitImage" destination="7RQ-6l-Gl3" id="kgf-W8-xjX"/>
-                <outlet property="nextPage" destination="8na-hT-zEm" id="utC-xt-yhU"/>
+                <outlet property="nextButton" destination="8na-hT-zEm" id="47H-oi-Osp"/>
                 <outlet property="titleLabel" destination="lyN-b0-4pY" id="fmR-Kx-QsY"/>
             </connections>
             <point key="canvasLocation" x="104" y="48"/>

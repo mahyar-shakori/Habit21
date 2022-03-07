@@ -14,12 +14,14 @@ protocol HomeDelegate{
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var habitTableView: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var noFilterView: UIView!
+    @IBOutlet weak var dropDownButtonTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var habitTableView: UITableView!
     
+    var delegate: AddHabitDelegate?
     var habitList = [Habit]()
     var realm : Realm?
     var transparentView = UIView()
@@ -44,6 +46,20 @@ class HomeViewController: UIViewController {
         
         loadValues()
         emptyView()
+        
+        switch traitCollection.userInterfaceStyle {
+        case .dark: doneButton.tintColor = UIColor.white
+            dropDownButton.setTitle("Menu", for: .normal)
+            dropDownButton.tintColor = UIColor.white
+            self.dropDownButtonTopConstraint.constant = 74
+            break
+        case .light: doneButton.tintColor = UIColor.black
+            dropDownButton.setImage(UIImage(named: "MenuIcon.light"), for: .normal)
+            self.dropDownButtonTopConstraint.constant = 60
+            break
+        default:
+            print("Something else")
+        }
     }
     
     @IBAction func onClickMenu(_ sender: Any) {
@@ -95,6 +111,7 @@ class HomeViewController: UIViewController {
         self.habitList = Array(try! Realm().objects(Habit.self))
         self.habitTableView.reloadData()
     }
+    
     func emptyView(){
         self.habitTableView.reloadData()
         if self.habitList.count == 0 {
@@ -103,6 +120,7 @@ class HomeViewController: UIViewController {
             self.noFilterView.isHidden = true
         }
     }
+
 }
 
 extension HomeViewController: HomeDelegate {
@@ -223,7 +241,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             
             let editAction = UIContextualAction(style: .normal, title: "") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
                 actionPerformed(true)
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditHabit")
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditHabit") as? EditHabitViewController
+                vc?.habit = self.habitList[indexPath.row]
                 self.navigationController?.show(vc!, sender: nil)
             }
             editAction.image = UIImage(named: "EditIcon")

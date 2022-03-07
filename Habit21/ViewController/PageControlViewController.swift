@@ -11,7 +11,6 @@ class PageControlViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    @IBOutlet weak var nextPageButton: UIButton!
  
     var pages : [ScrollView] {
         get {
@@ -20,14 +19,15 @@ class PageControlViewController: UIViewController {
             page1.titleLabel.text = "Introduce Healty Habits"
             page1.descriptionLable.text = "There's nothing you can't do if you get the habits right. Introduce a healty habit in your life with Habit21."
             page1.descriptionLable.attributedText = justifyLabel(str: page1.descriptionLable.text!)
-            page1.nextPage.setTitle("", for: .normal)
+            page1.nextButton.setTitle("", for: .normal)
         
             let page2: ScrollView = Bundle.main.loadNibNamed("ScrollView", owner: self, options: nil)?.first as! ScrollView
             page2.habitImage.image = UIImage(named: "BadHabit")
             page2.titleLabel.text = "Throw Away Bad Habits"
             page2.descriptionLable.text = "You can change a bad habit by replacing it with a good habit. This app alows you to do that witch Habit21."
             page2.descriptionLable.attributedText = justifyLabel(str: page2.descriptionLable.text!)
-            page2.nextPage.setTitle("Next", for: .normal)
+            page2.nextButton.setTitle("Next", for: .normal)
+            page2.nextButton.addTarget(self, action:#selector(handleRegister), for: .touchUpInside)
             return [page1, page2]
         }
     }
@@ -40,14 +40,13 @@ class PageControlViewController: UIViewController {
         pageControl.currentPage = 0
         
         view.bringSubviewToFront(pageControl)
-        view.bringSubviewToFront(nextPageButton)
         
         setupScrollView(pages: pages)
         
         self.scrollView.contentSize.height = 1.0
     }
     
-    @IBAction func nextPageButtonTapped(_ sender: Any) {
+    @objc func handleRegister() {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
         self.navigationController?.show(vc!, sender: nil)
     }

@@ -12,5 +12,5 @@ class ScrollView: UIView {
     @IBOutlet weak var habitImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLable: UILabel!
-    @IBOutlet weak var nextPage: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
 }

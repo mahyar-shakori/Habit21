@@ -9,9 +9,10 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-//protocol AddDelegate {
-//    func switchChanged(forItem item : Reminder)
-//}
+protocol AddHabitDelegate{
+    func reload()
+    func switchChanged(forItem item : Reminder)
+}
 
 class AddHabitViewController: UIViewController {
 
@@ -24,14 +25,19 @@ class AddHabitViewController: UIViewController {
     @IBOutlet weak var dateView: UIView!
     @IBOutlet weak var dateHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var dateTextField: UITextField!
-    @IBOutlet weak var reminderTableView: UITableView!
     @IBOutlet weak var reminderTableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var reminderTableView: UITableView!
     
     var delegate: HomeDelegate?
     var datePicker: UIDatePicker?
     var reminderList = [Reminder]()
     var realm : Realm?
     var notificationCenter = UNUserNotificationCenter.current()
+    let formatter = DateFormatter()
+    let reminder = Reminder()
+    let habit = Habit()
+    let calendar = Calendar.current
+    let now = Date()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +49,7 @@ class AddHabitViewController: UIViewController {
         datePicker!.preferredDatePickerStyle = UIDatePickerStyle.wheels
     
         self.saveButton.isEnabled = false
-        self.saveButton.tintColor = UIColor.lightGray
+        self.saveButton.tintColor = UIColor.init(red: 255/255, green: 204/255, blue: 203/255, alpha: 1.0)
         self.addHabitTextField.delegate = self
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -52,10 +58,7 @@ class AddHabitViewController: UIViewController {
         realm = try! Realm()
         
         loadValues()
-        
-        addHabitTextField.placeholderColor = UIColor.lightGray
-        dateTextField.placeholderColor = UIColor.black
-        
+                
         reminderSwitch.isOn = false
         self.addHeightConstraint.constant = 0
         self.dateHeightConstraint.constant = 0
@@ -64,10 +67,21 @@ class AddHabitViewController: UIViewController {
         firstSeprator.isHidden = true
         secondSeprator.isHidden = true
         dateView.isHidden = true
+        
+        addHabitTextField.placeholderColor = UIColor.lightGray
+        
+        switch traitCollection.userInterfaceStyle {
+        case .dark: dateTextField.placeholderColor = UIColor.white
+            break
+        case .light: dateTextField.placeholderColor = UIColor.black
+            break
+        default:
+            print("Something else")
+        }
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let habit = Habit()
+        
         let reminderList = List<Reminder>()
 
         habit.habitTitle = addHabitTextField.text ?? ""
@@ -87,7 +101,6 @@ class AddHabitViewController: UIViewController {
     }
     
     @IBAction func addButtonTapped(_ sender: Any) {
-
         if dateTextField.text?.isEmpty == true {
 
             let alertController = UIAlertController(title: "Please pick a date", message: "", preferredStyle: .alert)
@@ -98,12 +111,9 @@ class AddHabitViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else{
-
-            let reminder = Reminder()
             reminder.reminderTime = dateTextField.text ?? ""
             reminder.isOn = true
             reminder.id = String(reminder.incrementID())
-            
             
             self.reminderList.append(reminder)
             self.reminderTableView.reloadData()
@@ -189,41 +199,33 @@ class AddHabitViewController: UIViewController {
     }
     
     func removeNotification(identifier: String) {
-        
-//        UNUserNotificationCenter.current().getPendingNotificationRequests { (notificationRequests) in
-//            var identifiers: [String] = []
-//            for notification:UNNotificationRequest in notificationRequests {
-//                identifiers.append(notification.identifier)
-//                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
-//            }
-//        }
-        
-        
+    
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+    
+    func habitDaysCountUpdateAndNotif() {
+
+        formatter.dateFormat = "mm"
+        let next21Days = calendar.date(byAdding: .minute, value: 22, to: habit.dateCreate)
+        let diffInDays = Calendar.current.dateComponents([.minute], from: now, to: next21Days!).minute
+        habit.habitDaysCount = diffInDays!
         
-        
-        
-        
-//                UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [identifier])
-        
+        if diffInDays == 20 {
+            addNotification(identifier: UUID().uuidString, title: "\(self.habit.habitTitle) Done" , message: "You were able to finish a habit", date: now)
+        }
     }
     
     func switchChanged(forItem item: Reminder) {
-        
-        let reminder = Reminder()
         print("Item \(item.id)'s switched has changed its value to \(item.isOn)")
         removeNotification(identifier: reminder.id)
     }
         
     @objc func reminderFormattedDate(datePicker: UIDatePicker) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH:mm"
-        dateTextField.text = dateFormatter.string(from: datePicker.date)
+        formatter.dateFormat = "HH:mm"
+        dateTextField.text = formatter.string(from: datePicker.date)
     }
     
-    func notificationFormattedDate(date: Date) -> String
-        {
-            let formatter = DateFormatter()
+    func notificationFormattedDate(date: Date) -> String {
             formatter.dateFormat = "HH:mm"
             return formatter.string(from: date)
         }
@@ -240,6 +242,11 @@ class AddHabitViewController: UIViewController {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
+    }
+}
+
+extension AddHabitViewController: AddHabitDelegate {
+    func reload() {
     }
 }
 

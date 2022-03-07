@@ -9,11 +9,11 @@ import UIKit
 import RealmSwift
 import UserNotifications
 
-protocol AddDelegate {
-    func switchChanged(forItem item : Reminder)
-}
+//protocol AddDelegate {
+//    func switchChanged(forItem item : Reminder)
+//}
 
-class EditHabitViewController: UIViewController, AddDelegate {
+class EditHabitViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var addHabitTextField: UITextField!
@@ -27,6 +27,7 @@ class EditHabitViewController: UIViewController, AddDelegate {
     @IBOutlet weak var reminderTableView: UITableView!
     @IBOutlet weak var reminderTableViewHeightConstraint: NSLayoutConstraint!
     
+    var habit: Habit!
     var delegate: HomeDelegate?
     var datePicker: UIDatePicker?
     var reminderList = [Reminder]()
@@ -35,6 +36,9 @@ class EditHabitViewController: UIViewController, AddDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var reminderList = List<Reminder>()
+        addHabitTextField.text = habit.habitTitle
+        reminderList = habit.reminders
         
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .time
@@ -67,19 +71,19 @@ class EditHabitViewController: UIViewController, AddDelegate {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
-        let habit = Habit()
-        let reminderList = List<Reminder>()
-
-        habit.habitTitle = addHabitTextField.text ?? ""
-        habit.id = habit.incrementID()
-        
-        habit.reminders = reminderList
-        
-        try! realm?.write {
-            realm?.add(habit)
-        }
-        delegate?.reload()
-        self.dismiss(animated: true)
+//        let habit = Habit()
+//        let reminderList = List<Reminder>()
+//
+//        habit.habitTitle = addHabitTextField.text ?? ""
+//        habit.id = habit.incrementID()
+//
+//        habit.reminders = reminderList
+//
+//        try! realm?.write {
+//            realm?.add(habit)
+//        }
+//        delegate?.reload()
+//        self.dismiss(animated: true)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -88,30 +92,30 @@ class EditHabitViewController: UIViewController, AddDelegate {
     
     @IBAction func addButtonTapped(_ sender: Any) {
 
-        if dateTextField.text?.isEmpty == true {
-
-            let alertController = UIAlertController(title: "Please pick a date", message: "", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
-                UIAlertAction in
-                NSLog("OK Pressed")
-            }
-            alertController.addAction(okAction)
-            self.present(alertController, animated: true, completion: nil)
-        } else{
-
-            let reminder = Reminder()
-            reminder.reminderTime = dateTextField.text ?? ""
-            reminder.isOn = true
-            reminder.id = String(reminder.incrementID())
-            
-            
-            self.reminderList.append(reminder)
-            self.reminderTableView.reloadData()
-            dismissKeyboard()
-            self.dateTextField.text = nil
-            
-            addNotification(identifier: reminder.id, title: self.addHabitTextField.text ?? "Reminder", message: "You have to do it, Now!", date: self.datePicker!.date)
-        }
+//        if dateTextField.text?.isEmpty == true {
+//
+//            let alertController = UIAlertController(title: "Please pick a date", message: "", preferredStyle: .alert)
+//            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
+//                UIAlertAction in
+//                NSLog("OK Pressed")
+//            }
+//            alertController.addAction(okAction)
+//            self.present(alertController, animated: true, completion: nil)
+//        } else{
+//
+//            let reminder = Reminder()
+//            reminder.reminderTime = dateTextField.text ?? ""
+//            reminder.isOn = true
+//            reminder.id = String(reminder.incrementID())
+//
+//
+//            self.reminderList.append(reminder)
+//            self.reminderTableView.reloadData()
+//            dismissKeyboard()
+//            self.dateTextField.text = nil
+//
+//            addNotification(identifier: reminder.id, title: self.addHabitTextField.text ?? "Reminder", message: "You have to do it, Now!", date: self.datePicker!.date)
+//        }
     }
     
     @IBAction func reminderSwitchTapped(_ sender: Any) {
@@ -229,8 +233,8 @@ class EditHabitViewController: UIViewController, AddDelegate {
         }
 
     func loadValues() {
-        self.reminderList = Array(try! Realm().objects(Reminder.self))
-        self.reminderTableView.reloadData()
+//        self.reminderList = Array(try! Realm().objects(Reminder.self))
+//        self.reminderTableView.reloadData()
     }
     
     @objc func dismissKeyboard() {
@@ -274,7 +278,7 @@ extension EditHabitViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath) as! ReminderTableViewCell
-        cell.delegate = self
+//        cell.delegate = self
         cell.config(self.reminderList[indexPath.row])
         return cell
     }

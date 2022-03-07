@@ -11,6 +11,7 @@ class Habit : Object {
     @Persisted(primaryKey: true) var id: Int = 0
     @Persisted var habitTitle : String = ""
     @Persisted var dateCreate : Date = Date()
+    @Persisted var habitDaysCount : Int = 0
     
     @Persisted var reminders: List<Reminder>
     
@@ -19,3 +20,4 @@ class Habit : Object {
         return (realm.objects(Habit.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
 }
+

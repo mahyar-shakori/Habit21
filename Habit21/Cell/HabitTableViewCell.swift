@@ -9,9 +9,11 @@ import UIKit
 
 class HabitTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var habitLabel: UILabel!
+    @IBOutlet weak var habitTitleLabel: UILabel!
+    @IBOutlet weak var habitDaysCountLabel: UILabel!
     
     func config(_ habit: Habit) {
-        self.habitLabel.text = "\(habit.habitTitle)"
+        self.habitTitleLabel.text = "\(habit.habitTitle)"
+        self.habitDaysCountLabel.text = "\(habit.habitDaysCount) days left"
     }
 }
