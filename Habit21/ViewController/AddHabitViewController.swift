@@ -12,6 +12,7 @@ import UserNotifications
 protocol AddHabitDelegate{
     func reload()
     func switchChanged(forItem item : Reminder)
+//    func addNotification(identifier: String, title: String, message: String, date: Date)
 }
 
 class AddHabitViewController: UIViewController {
@@ -82,12 +83,13 @@ class AddHabitViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        let reminderList = List<Reminder>()
+//        let reminderList = List<Reminder>()
 
-        habit.habitTitle = addHabitTextField.text ?? ""
+        habit.title = addHabitTextField.text ?? ""
         habit.id = habit.incrementID()
+        habit.daysCount = habit.habitDaysCountUpdateAndNotif(createHabit: habit.dateCreate)
         
-        habit.reminders = reminderList
+        habit.reminders = List<Reminder>()
         
         try! realm?.write {
             realm?.add(habit)
@@ -102,7 +104,7 @@ class AddHabitViewController: UIViewController {
     
     @IBAction func addButtonTapped(_ sender: Any) {
         if dateTextField.text?.isEmpty == true {
-
+            
             let alertController = UIAlertController(title: "Please pick a date", message: "", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                 UIAlertAction in
@@ -111,16 +113,17 @@ class AddHabitViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else{
+            let reminder = Reminder()
             reminder.reminderTime = dateTextField.text ?? ""
             reminder.isOn = true
-            reminder.id = String(reminder.incrementID())
+            reminder.id = ""
             
             self.reminderList.append(reminder)
             self.reminderTableView.reloadData()
             dismissKeyboard()
             self.dateTextField.text = nil
             
-            addNotification(identifier: reminder.id, title: self.addHabitTextField.text ?? "Reminder", message: "You have to do it, Now!", date: self.datePicker!.date)
+            addNotification(identifier: formatter.string(from: reminder.dateCreate), title: self.addHabitTextField.text ?? "Reminder", message: "You have to do it, Now!", date: self.datePicker!.date)
         }
     }
     
@@ -183,7 +186,7 @@ class AddHabitViewController: UIViewController {
                         {
                             return
                         }
-                        
+
                         if(UIApplication.shared.canOpenURL(setttingsURL))
                         {
                             UIApplication.shared.open(setttingsURL) { (_) in}
@@ -195,29 +198,15 @@ class AddHabitViewController: UIViewController {
                 }
             }
         }
-        
     }
     
     func removeNotification(identifier: String) {
-    
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
     }
     
-    func habitDaysCountUpdateAndNotif() {
-
-        formatter.dateFormat = "mm"
-        let next21Days = calendar.date(byAdding: .minute, value: 22, to: habit.dateCreate)
-        let diffInDays = Calendar.current.dateComponents([.minute], from: now, to: next21Days!).minute
-        habit.habitDaysCount = diffInDays!
-        
-        if diffInDays == 20 {
-            addNotification(identifier: UUID().uuidString, title: "\(self.habit.habitTitle) Done" , message: "You were able to finish a habit", date: now)
-        }
-    }
-    
     func switchChanged(forItem item: Reminder) {
-        print("Item \(item.id)'s switched has changed its value to \(item.isOn)")
-        removeNotification(identifier: reminder.id)
+        formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
+        removeNotification(identifier: formatter.string(from: reminder.dateCreate))
     }
         
     @objc func reminderFormattedDate(datePicker: UIDatePicker) {
@@ -281,7 +270,7 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReminderCell", for: indexPath) as! ReminderTableViewCell
-//        cell.delegate = self
+        cell.delegate = self
         cell.config(self.reminderList[indexPath.row])
         return cell
     }
@@ -312,6 +301,8 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let editAction = UIContextualAction(style: .normal, title: "") { (action, view, completion) in
+            self.datePicker?.isHidden = false
+            self.datePicker?.becomeFirstResponder()
         }
         editAction.image = UIImage(named: "EditIcon")
         editAction.backgroundColor = UIColor(named: "EditColor")

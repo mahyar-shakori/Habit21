@@ -5,22 +5,26 @@ PODS:
   - Realm/Headers (10.20.0)
   - RealmSwift (10.20.0):
     - Realm (= 10.20.0)
+  - SwiftyTimer (2.1.0)
 
 DEPENDENCIES:
   - IQKeyboardManager
   - RealmSwift
+  - SwiftyTimer
 
 SPEC REPOS:
   trunk:
     - IQKeyboardManager
     - Realm
     - RealmSwift
+    - SwiftyTimer
 
 SPEC CHECKSUMS:
   IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
   Realm: ae32bdc1da7d19c7617e0400201a77acd4a211b9
   RealmSwift: c95eec6a712924870b2e36c4c081d63ec07e5414
+  SwiftyTimer: 02dd6cf10cbc71cbf67cec494f6e5eb782102543
 
-PODFILE CHECKSUM: ac7eecceb6e5616946fca12d3362a5d6f42e800a
+PODFILE CHECKSUM: 512b9eb9cfeb9596d7e368fb59b7e6adf83cdf62
 
 COCOAPODS: 1.11.2

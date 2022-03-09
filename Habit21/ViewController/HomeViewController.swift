@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import SwiftyTimer
 
 protocol HomeDelegate{
     func reload()
@@ -45,6 +46,7 @@ class HomeViewController: UIViewController {
         doneButton.isHidden = true
         
         loadValues()
+        timer()
         emptyView()
         
         switch traitCollection.userInterfaceStyle {
@@ -112,6 +114,13 @@ class HomeViewController: UIViewController {
         self.habitTableView.reloadData()
     }
     
+    func timer() {
+        Timer.every(10.seconds) { (timer: Timer) in
+            self.habitTableView.reloadData()
+            self.nameLabel.text = "Apple"
+        }
+    }
+    
     func emptyView(){
         self.habitTableView.reloadData()
         if self.habitList.count == 0 {
@@ -120,7 +129,6 @@ class HomeViewController: UIViewController {
             self.noFilterView.isHidden = true
         }
     }
-
 }
 
 extension HomeViewController: HomeDelegate {
@@ -221,7 +229,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let habit = self.habitList[indexPath.row]
             let deleteAction = UIContextualAction(style: .destructive , title:  "") { (contextualAction, view, actionPerformed: @escaping (Bool) -> ()) in
                 
-                let alert = UIAlertController(title: "Delete Habit", message: "Are you sure you want to delete this habit: \(habit.habitTitle)?", preferredStyle: .alert)
+                let alert = UIAlertController(title: "Delete Habit", message: "Are you sure you want to delete this habit: \(habit.title)?", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: {  (alertAction) in
                     actionPerformed(false)
                 }))
@@ -243,7 +251,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 actionPerformed(true)
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditHabit") as? EditHabitViewController
                 vc?.habit = self.habitList[indexPath.row]
-                self.navigationController?.show(vc!, sender: nil)
+                vc!.delegate = self
+                self.present(vc!, animated: true, completion: nil)
             }
             editAction.image = UIImage(named: "EditIcon")
             editAction.backgroundColor = UIColor(named: "EditColor")

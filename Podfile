@@ -8,5 +8,6 @@ target 'Habit21' do
   # Pods for Habit21
 pod 'RealmSwift'
 pod 'IQKeyboardManager'
+pod 'SwiftyTimer'
 
 end

@@ -13,7 +13,7 @@ class HabitTableViewCell: UITableViewCell {
     @IBOutlet weak var habitDaysCountLabel: UILabel!
     
     func config(_ habit: Habit) {
-        self.habitTitleLabel.text = "\(habit.habitTitle)"
-        self.habitDaysCountLabel.text = "\(habit.habitDaysCount) days left"
+        self.habitTitleLabel.text = "\(habit.title)"
+        self.habitDaysCountLabel.text = "\(habit.habitDaysCountUpdateAndNotif(createHabit: habit.dateCreate)) days left"
     }
 }

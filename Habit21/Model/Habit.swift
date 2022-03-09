@@ -9,9 +9,9 @@ import RealmSwift
 
 class Habit : Object {
     @Persisted(primaryKey: true) var id: Int = 0
-    @Persisted var habitTitle : String = ""
+    @Persisted var title : String = ""
     @Persisted var dateCreate : Date = Date()
-    @Persisted var habitDaysCount : Int = 0
+    @Persisted var daysCount : Int = 0
     
     @Persisted var reminders: List<Reminder>
     
@@ -19,5 +19,28 @@ class Habit : Object {
         let realm = try! Realm()
         return (realm.objects(Habit.self).max(ofProperty: "id") as Int? ?? 0) + 1
     }
+    
+    func habitDaysCountUpdateAndNotif(createHabit: Date) -> Int {
+        
+//        var delegate : AddHabitDelegate?
+        let formatter = DateFormatter()
+        let calendar = Calendar.current
+        let now = Date()
+        
+        formatter.dateFormat = "mm"
+        let next21Days = calendar.date(byAdding: .minute, value: 22, to: createHabit)
+        let diffInDays = Calendar.current.dateComponents([.minute], from: now, to: next21Days!).minute
+        daysCount = diffInDays!
+        
+//        if diffInDays == 20 {
+//
+//            delegate?.addNotification(identifier: UUID().uuidString, title: "\(self.title) Done" , message: "You were able to finish a habit", date: now)
+//        }
+//
+        if diffInDays! >= 0 {
+            return diffInDays!
+        }else{
+            return 0
+        }
+    }
 }
-
