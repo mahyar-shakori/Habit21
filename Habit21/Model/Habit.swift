@@ -22,7 +22,7 @@ class Habit : Object {
     
     func habitDaysCountUpdateAndNotif(createHabit: Date) -> Int {
         
-//        var delegate : AddHabitDelegate?
+        let habit = Habit()
         let formatter = DateFormatter()
         let calendar = Calendar.current
         let now = Date()
@@ -30,13 +30,22 @@ class Habit : Object {
         formatter.dateFormat = "mm"
         let next21Days = calendar.date(byAdding: .minute, value: 22, to: createHabit)
         let diffInDays = Calendar.current.dateComponents([.minute], from: now, to: next21Days!).minute
-        daysCount = diffInDays!
+        habit.daysCount = diffInDays!
         
-//        if diffInDays == 20 {
-//
-//            delegate?.addNotification(identifier: UUID().uuidString, title: "\(self.title) Done" , message: "You were able to finish a habit", date: now)
-//        }
-//
+        if diffInDays == 21 {
+            let notificationCenter = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = "\(self.title) Done"
+            content.body = "You were able to finish a habit"
+            content.sound = .default
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+            let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
+            notificationCenter.add(request) { (error) in
+                if error != nil {
+                    print ("Error = errol local notification")
+                }
+            }
+        }
         if diffInDays! >= 0 {
             return diffInDays!
         }else{

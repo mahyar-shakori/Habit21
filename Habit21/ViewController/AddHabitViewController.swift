@@ -12,7 +12,6 @@ import UserNotifications
 protocol AddHabitDelegate{
     func reload()
     func switchChanged(forItem item : Reminder)
-//    func addNotification(identifier: String, title: String, message: String, date: Date)
 }
 
 class AddHabitViewController: UIViewController {
@@ -87,7 +86,6 @@ class AddHabitViewController: UIViewController {
 
         habit.title = addHabitTextField.text ?? ""
         habit.id = habit.incrementID()
-        habit.daysCount = habit.habitDaysCountUpdateAndNotif(createHabit: habit.dateCreate)
         
         habit.reminders = List<Reminder>()
         
@@ -112,6 +110,7 @@ class AddHabitViewController: UIViewController {
             }
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
+            addNotification(identifier: UUID().uuidString, title: "Done", message: "You were able to finish a habit", date: now)
         } else{
             let reminder = Reminder()
             reminder.reminderTime = dateTextField.text ?? ""
@@ -161,7 +160,6 @@ class AddHabitViewController: UIViewController {
                     content.sound = .default
                     
                     let dateComp = Calendar.current.dateComponents([.hour, .minute], from: date)
-                    
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
                     let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
                     
