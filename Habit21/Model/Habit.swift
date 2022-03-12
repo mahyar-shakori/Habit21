@@ -32,19 +32,22 @@ class Habit : Object {
         let diffInDays = Calendar.current.dateComponents([.minute], from: now, to: next21Days!).minute
         habit.daysCount = diffInDays!
         
-        if diffInDays == 21 {
+        if diffInDays == 20 {
             let notificationCenter = UNUserNotificationCenter.current()
             let content = UNMutableNotificationContent()
             content.title = "\(self.title) Done"
             content.body = "You were able to finish a habit"
             content.sound = .default
+            
+//            var dateInfo = DateComponents()
+//
+//            dateInfo.minute = diffInDays
+//
+//
+//            let trigger = UNCalendarNotificationTrigger(dateMatching: dateInfo, repeats: false)
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
             let request = UNNotificationRequest(identifier: "reminder", content: content, trigger: trigger)
-            notificationCenter.add(request) { (error) in
-                if error != nil {
-                    print ("Error = errol local notification")
-                }
-            }
+            notificationCenter.add(request)
         }
         if diffInDays! >= 0 {
             return diffInDays!

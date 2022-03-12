@@ -115,10 +115,10 @@ class HomeViewController: UIViewController {
     }
     
     func timer() {
-        Timer.every(10.seconds) { (timer: Timer) in
+        Timer.every(5.seconds) { (timer: Timer) in
             self.habitTableView.reloadData()
             self.nameLabel.text = "Apple"
-        }
+            }
     }
     
     func emptyView(){

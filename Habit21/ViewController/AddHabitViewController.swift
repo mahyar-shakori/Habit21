@@ -160,6 +160,7 @@ class AddHabitViewController: UIViewController {
                     content.sound = .default
                     
                     let dateComp = Calendar.current.dateComponents([.hour, .minute], from: date)
+                    
                     let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: true)
                     let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
                     
