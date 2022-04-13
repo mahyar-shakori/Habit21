@@ -13,7 +13,6 @@ class ReminderTableViewCell: UITableViewCell {
     @IBOutlet weak var reminderSwitch: UISwitch?
     
     var delegate : AddHabitDelegate?
-//    var delegate : EditHabitDelegate?
     var reminder : Reminder!
     
     func config(_ reminder: Reminder) {

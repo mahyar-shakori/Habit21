@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xMn-nz-SDr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -256,9 +256,6 @@
                                                             <real key="value" value="12.5"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="IwL-pu-8rN" appends="YES" id="hH2-Ee-2NY"/>
-                                                    </connections>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -329,7 +326,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bjc-UN-5te" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="IwL-pu-8rN"/>
             </objects>
             <point key="canvasLocation" x="721.73913043478262" y="81.521739130434796"/>
         </scene>
@@ -759,8 +755,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Yi-Gl-wdW">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="739.66666666666663"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28b-rE-60t">
-                                                <rect key="frame" x="191" y="40" width="32" height="20.333333333333329"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28b-rE-60t">
+                                                <rect key="frame" x="191.66666666666666" y="40" width="31" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -800,7 +796,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JOp-LO-Wr2" userLabel="AddHabit">
                                                         <rect key="frame" x="0.0" y="1" width="414" height="40"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add a new habit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAs-Ap-RBB">
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Edit your habit" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NAs-Ap-RBB">
                                                                 <rect key="frame" x="15" y="0.0" width="399" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="SYB-1B-9XD"/>
@@ -833,27 +829,26 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XnT-Bc-mdu" userLabel="21Days">
                                                         <rect key="frame" x="0.0" y="42.000000000000014" width="414" height="40"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Days Count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LVy-Xs-tzR">
-                                                                <rect key="frame" x="15.000000000000007" y="9.6666666666666572" width="109.66666666666669" height="21"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Missed it! Start Again" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGK-hr-KhW">
+                                                                <rect key="frame" x="15" y="9.6666666666666572" width="161.66666666666666" height="21"/>
+                                                                <gestureRecognizers/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zZe-Ug-o5l">
-                                                                <rect key="frame" x="350" y="4.6666666666666572" width="51" height="31"/>
-                                                            </switch>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="5C2-AT-7s3"/>
-                                                            <constraint firstAttribute="bottom" secondItem="zZe-Ug-o5l" secondAttribute="bottom" constant="4.5" id="CZo-OQ-njv"/>
-                                                            <constraint firstAttribute="bottom" secondItem="LVy-Xs-tzR" secondAttribute="bottom" constant="9.5" id="Tl0-0P-CLr"/>
-                                                            <constraint firstItem="zZe-Ug-o5l" firstAttribute="top" secondItem="XnT-Bc-mdu" secondAttribute="top" constant="4.5" id="Z8h-AK-dhz"/>
-                                                            <constraint firstItem="zZe-Ug-o5l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LVy-Xs-tzR" secondAttribute="trailing" constant="8" symbolic="YES" id="ZSl-LG-WVb"/>
-                                                            <constraint firstItem="LVy-Xs-tzR" firstAttribute="leading" secondItem="XnT-Bc-mdu" secondAttribute="leading" constant="15" id="gNG-Y6-D1M"/>
-                                                            <constraint firstItem="LVy-Xs-tzR" firstAttribute="top" secondItem="XnT-Bc-mdu" secondAttribute="top" constant="9.5" id="l9E-Jy-ynx"/>
-                                                            <constraint firstAttribute="trailing" secondItem="zZe-Ug-o5l" secondAttribute="trailing" constant="15" id="mqB-AX-Lo7"/>
+                                                            <constraint firstAttribute="bottom" secondItem="IGK-hr-KhW" secondAttribute="bottom" constant="9.5" id="QTv-bA-Btf"/>
+                                                            <constraint firstItem="IGK-hr-KhW" firstAttribute="top" secondItem="XnT-Bc-mdu" secondAttribute="top" constant="9.5" id="a8G-JA-8AH"/>
+                                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="IGK-hr-KhW" secondAttribute="trailing" constant="20" symbolic="YES" id="nd6-CV-v65"/>
+                                                            <constraint firstItem="IGK-hr-KhW" firstAttribute="leading" secondItem="XnT-Bc-mdu" secondAttribute="leading" constant="15" id="x2R-hl-sjB"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="uiV-Nh-W4S" appends="YES" id="Ljf-na-TJu"/>
+                                                        </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jrw-C9-EAa" userLabel="BottomBorder">
                                                         <rect key="frame" x="0.0" y="82.000000000000014" width="414" height="1"/>
@@ -1104,7 +1099,7 @@
                                             <constraint firstItem="28b-rE-60t" firstAttribute="centerY" secondItem="tw8-l1-ilW" secondAttribute="centerY" id="IGO-Ab-uuK"/>
                                             <constraint firstItem="YjU-X0-K3L" firstAttribute="leading" secondItem="7Yi-Gl-wdW" secondAttribute="leading" id="Rqt-Ms-Gs9"/>
                                             <constraint firstAttribute="bottom" secondItem="YjU-X0-K3L" secondAttribute="bottom" constant="6.3300000000000001" id="Vhs-RJ-aQQ"/>
-                                            <constraint firstItem="tg5-y4-bxV" firstAttribute="top" secondItem="28b-rE-60t" secondAttribute="bottom" constant="50.999999999999986" id="ZIO-dX-szL"/>
+                                            <constraint firstItem="tg5-y4-bxV" firstAttribute="top" secondItem="28b-rE-60t" secondAttribute="bottom" constant="51" id="ZIO-dX-szL"/>
                                             <constraint firstItem="28b-rE-60t" firstAttribute="centerX" secondItem="7Yi-Gl-wdW" secondAttribute="centerX" id="lLj-0V-1bi"/>
                                             <constraint firstItem="OrL-r3-Mgb" firstAttribute="top" secondItem="tg5-y4-bxV" secondAttribute="bottom" constant="25" id="mML-Cc-sLK"/>
                                             <constraint firstAttribute="trailing" secondItem="OrL-r3-Mgb" secondAttribute="trailing" id="p4I-I4-MJ3"/>
@@ -1150,9 +1145,14 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="APX-JD-bHS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="k1W-01-Cf7">
+                <tapGestureRecognizer id="k1W-01-Cf7" userLabel="Add Reminder Tap Gesture Recognizer">
                     <connections>
                         <action selector="addButtonTapped:" destination="lOg-8k-J1I" id="S3s-fE-Bqu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="uiV-Nh-W4S" userLabel="Missed Habit Tap Gesture Recognizer">
+                    <connections>
+                        <action selector="missedHabitButtonTapped:" destination="lOg-8k-J1I" id="kxD-So-rDl"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>

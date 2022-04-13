@@ -22,13 +22,13 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dropDownButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var habitTableView: UITableView!
     
-    var delegate: AddHabitDelegate?
+//    var delegate: AddHabitDelegate?
     var habitList = [Habit]()
     var realm : Realm?
     var transparentView = UIView()
     var dropDownTableView = UITableView()
     var settingArray = ["Add New Habit","Edit Habit List","Logout"]
-    let height: CGFloat = 180
+    let dropDownTableViewHeight: CGFloat = 180
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class HomeViewController: UIViewController {
         window?.addSubview(transparentView)
         
         let screenSize = UIScreen.main.bounds.size
-        dropDownTableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: height)
+        dropDownTableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: dropDownTableViewHeight)
         window?.addSubview(dropDownTableView)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onClickTransparentView))
@@ -81,7 +81,7 @@ class HomeViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             self.transparentView.alpha = 0.5
-            self.dropDownTableView.frame = CGRect(x: 0, y: screenSize.height - self.height, width: screenSize.width, height: self.height)
+            self.dropDownTableView.frame = CGRect(x: 0, y: screenSize.height - self.dropDownTableViewHeight, width: screenSize.width, height: self.dropDownTableViewHeight)
         }, completion: nil)
     }
     
@@ -101,7 +101,7 @@ class HomeViewController: UIViewController {
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 1.0, options: .curveEaseInOut, animations: {
             self.transparentView.alpha = 0
-            self.dropDownTableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.height)
+            self.dropDownTableView.frame = CGRect(x: 0, y: screenSize.height, width: screenSize.width, height: self.dropDownTableViewHeight)
         }, completion: nil)
     }
     
@@ -115,9 +115,8 @@ class HomeViewController: UIViewController {
     }
     
     func timer() {
-        Timer.every(5.seconds) { (timer: Timer) in
+        Timer.every(60.seconds) { (timer: Timer) in
             self.habitTableView.reloadData()
-            self.nameLabel.text = "Apple"
             }
     }
     

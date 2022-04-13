@@ -14,6 +14,6 @@ class HabitTableViewCell: UITableViewCell {
     
     func config(_ habit: Habit) {
         self.habitTitleLabel.text = "\(habit.title)"
-        self.habitDaysCountLabel.text = "\(habit.habitDaysCountUpdateAndNotif(createHabit: habit.dateCreate)) days left"
+        self.habitDaysCountLabel.text = "\(habit.habitDaysCountUpdate(createDate: habit.dateCreate)) days left"
     }
 }

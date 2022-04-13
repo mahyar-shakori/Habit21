@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02805560C5ED1AFC5339729F /* Pods_Habit21.framework */; };
 		FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */; };
-		FF3F7BEA27C511C10084DF7D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3F7BE927C511C10084DF7D /* ViewController.swift */; };
+		FF3F7BEA27C511C10084DF7D /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF3F7BE927C511C10084DF7D /* test.swift */; };
 		FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */; };
 		FF69D45427940B1F00BAB352 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45327940B1F00BAB352 /* Habit.swift */; };
 		FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */; };
@@ -34,7 +34,7 @@
 		0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.debug.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.debug.xcconfig"; sourceTree = "<group>"; };
 		B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.release.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.release.xcconfig"; sourceTree = "<group>"; };
 		FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FF3F7BE927C511C10084DF7D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FF3F7BE927C511C10084DF7D /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		FF69D45327940B1F00BAB352 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
@@ -94,7 +94,7 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		FF2D7D862796C921000A74E1 /* ViewController */ = {
+		FF2D7D862796C921000A74E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */,
@@ -102,9 +102,9 @@
 				FFA00E292789E14E00F5FCFD /* HomeViewController.swift */,
 				FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */,
 				FFD1A83D27CA38FE0061F88B /* EditHabitViewController.swift */,
-				FF3F7BE927C511C10084DF7D /* ViewController.swift */,
+				FF3F7BE927C511C10084DF7D /* test.swift */,
 			);
-			path = ViewController;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		FF2D7D872796C936000A74E1 /* Cell */ = {
@@ -147,18 +147,26 @@
 		FFA00DEE2789B63D00F5FCFD /* Habit21 */ = {
 			isa = PBXGroup;
 			children = (
-				FF2D7D862796C921000A74E1 /* ViewController */,
+				FFB22F5828068CDC00599D7D /* View */,
+				FF2D7D862796C921000A74E1 /* Controller */,
 				FF2D7D872796C936000A74E1 /* Cell */,
 				FF2D7D852796C909000A74E1 /* Model */,
 				FF48981A27C2197E00A908EA /* IntrodunceScroll */,
 				FFEFBCB127C3992900CBAF1E /* utils */,
 				FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */,
-				FFA00DF52789B63D00F5FCFD /* Main.storyboard */,
 				FFA00DF82789B64000F5FCFD /* Assets.xcassets */,
-				FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */,
 				FFA00DFD2789B64000F5FCFD /* Info.plist */,
 			);
 			path = Habit21;
+			sourceTree = "<group>";
+		};
+		FFB22F5828068CDC00599D7D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FFA00DF52789B63D00F5FCFD /* Main.storyboard */,
+				FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FFEFBCB127C3992900CBAF1E /* utils */ = {
@@ -299,7 +307,7 @@
 				FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */,
 				FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */,
 				FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */,
-				FF3F7BEA27C511C10084DF7D /* ViewController.swift in Sources */,
+				FF3F7BEA27C511C10084DF7D /* test.swift in Sources */,
 				FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,7 +471,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Habit21;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test4.habit212121;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -492,7 +500,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Habit21;
+				PRODUCT_BUNDLE_IDENTIFIER = com.test4.habit212121;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
