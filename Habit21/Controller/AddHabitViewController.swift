@@ -301,11 +301,4 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
         deleteAction.image = UIImage(named: "DeleteIcon")
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
-    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let editAction = UIContextualAction(style: .normal, title: "") { (action, view, completion) in
-        }
-        editAction.image = UIImage(named: "EditIcon")
-        editAction.backgroundColor = UIColor(named: "EditColor")
-        return UISwipeActionsConfiguration(actions: [editAction])
-    }
 }

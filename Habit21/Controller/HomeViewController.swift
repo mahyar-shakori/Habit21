@@ -246,16 +246,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             }
             deleteAction.image = UIImage(named: "DeleteIcon")
             
-            let editAction = UIContextualAction(style: .normal, title: "") { (contextualAction, view, actionPerformed: (Bool) -> ()) in
-                actionPerformed(true)
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "EditHabit") as? EditHabitViewController
-                vc?.habit = self.habitList[indexPath.row]
-                vc!.delegate = self
-                self.present(vc!, animated: true, completion: nil)
-            }
-            editAction.image = UIImage(named: "EditIcon")
-            editAction.backgroundColor = UIColor(named: "EditColor")
-            return UISwipeActionsConfiguration(actions: [deleteAction, editAction])
+            return UISwipeActionsConfiguration(actions: [deleteAction])
         }
         return UISwipeActionsConfiguration()
     }
