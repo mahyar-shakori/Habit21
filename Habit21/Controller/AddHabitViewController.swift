@@ -108,7 +108,7 @@ class AddHabitViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else{
-//            let reminder = Reminder()
+            let reminder = Reminder()
             reminder.reminderTime = dateTextField.text ?? ""
             reminder.isOn = true
             reminder.id = ""
