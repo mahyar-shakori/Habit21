@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="width" secondItem="grn-dq-PTy" secondAttribute="width" multiplier="1:1" id="NCj-Hc-Ifc"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV1-Oh-toF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV1-Oh-toF">
                                 <rect key="frame" x="30" y="287.33333333333331" width="308.66666666666669" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="RB3-t7-NYt"/>
@@ -70,12 +70,14 @@
                                 <attributedString key="attributedText">
                                     <fragment content="Welcome ">
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="22" name="HelveticaNeue-Bold"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
                                     <fragment content="What should we call you?">
                                         <attributes>
+                                            <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="18" name="HelveticaNeue"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
@@ -151,6 +153,7 @@
                         <outlet property="addNameTextField" destination="MLU-jX-pwN" id="f6C-c5-int"/>
                         <outlet property="continueButton" destination="HXU-dC-C7I" id="ayz-JR-Q5J"/>
                         <outlet property="errorLabel" destination="Bnh-5M-FjU" id="lMP-BC-U3z"/>
+                        <outlet property="welcomeLabel" destination="eV1-Oh-toF" id="PlD-yz-nMB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xu3-ue-1nW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

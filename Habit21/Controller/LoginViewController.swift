@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var addNameTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,8 @@ class LoginViewController: UIViewController {
         continueButton.addCorner(corner: 12.5)
         addNameTextField.addCorner(corner: 15)
         addNameTextField.placeholderColor = UIColor.lightGray
+        
+        welcomeLabel.numberOfLines = 0
     }
 
     @IBAction func continueButtonTapped(_ sender: Any) {
