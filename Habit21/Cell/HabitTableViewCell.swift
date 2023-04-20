@@ -11,6 +11,7 @@ class HabitTableViewCell: UITableViewCell {
     
     @IBOutlet weak var habitTitleLabel: UILabel!
     @IBOutlet weak var habitDaysCountLabel: UILabel!
+    @IBOutlet weak var habitCellButton: UIButton!
     
     func config(_ habit: Habit) {
         self.habitTitleLabel.text = "\(habit.title)"

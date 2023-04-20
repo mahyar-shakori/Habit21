@@ -60,7 +60,7 @@ class PageControlViewController: UIViewController {
         scrollView.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: view.frame.height)
         scrollView.contentSize = CGSize(width: view.frame.width * CGFloat(pages.count), height: view.frame.height)
         scrollView.isPagingEnabled = true
-        
+
         for i in 0 ..< pages.count {
             pages[i].frame = CGRect(x: view.frame.width * CGFloat(i), y: 0, width: view.frame.width, height: view.frame.height)
             scrollView.addSubview(pages[i])
@@ -86,3 +86,6 @@ extension PageControlViewController: UIScrollViewDelegate {
         pageControl.currentPage = Int(pageIndex)
     }
 }
+
+
+

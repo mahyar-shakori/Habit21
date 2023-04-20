@@ -158,6 +158,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case habitTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell") as! HabitTableViewCell
             cell.config(self.habitList[indexPath.row])
+            
+            cell.habitCellButton.tag = indexPath.row
+            cell.habitCellButton.addTarget(self, action: #selector(editPageButtonTapped), for: .touchUpInside)
+            
             return cell
         case dropDownTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "dropDownCell", for: indexPath as IndexPath) as? DropDownTableViewCell
@@ -169,6 +173,13 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             print("Some things Wrong!!")
         }
         return cell
+    }
+    
+    @objc func editPageButtonTapped(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = self.storyboard!
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditHabit") as! EditHabitViewController
+        nextViewController.delegate = self
+        self.present(nextViewController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
