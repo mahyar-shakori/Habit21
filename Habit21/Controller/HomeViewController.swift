@@ -7,7 +7,7 @@
 
 import UIKit
 import RealmSwift
-import SwiftyTimer
+//import SwiftyTimer
 
 protocol HomeDelegate{
     func reload()
@@ -46,7 +46,7 @@ class HomeViewController: UIViewController {
         doneButton.isHidden = true
         
         loadValues()
-        timer()
+//        timer()
         emptyView()
         
         switch traitCollection.userInterfaceStyle {
@@ -114,11 +114,11 @@ class HomeViewController: UIViewController {
         self.habitTableView.reloadData()
     }
     
-    func timer() {
-        Timer.every(60.seconds) { (timer: Timer) in
-            self.habitTableView.reloadData()
-            }
-    }
+//    func timer() {
+//        Timer.every(60.seconds) { (timer: Timer) in
+//            self.habitTableView.reloadData()
+//            }
+//    }
     
     func emptyView(){
         self.habitTableView.reloadData()

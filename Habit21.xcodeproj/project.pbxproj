@@ -8,8 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		4A15A79729EFCF73008DDEDF /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A15A79629EFCF73008DDEDF /* EditHabitViewController.swift */; };
+		4A4A73FD29F668BA000912A8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A73FC29F668BA000912A8 /* IntroViewController.swift */; };
+		4A4A740129F668D2000912A8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A73FF29F668D2000912A8 /* Slide.swift */; };
+		4A835A4A29F8044800E13144 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A835A4929F8044800E13144 /* WelcomeViewController.swift */; };
+		4AE9344929F7E07500176EEF /* RooneySansBlkIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343D29F7E07400176EEF /* RooneySansBlkIt.OTF */; };
+		4AE9344A29F7E07500176EEF /* RooneySansMediumIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343E29F7E07400176EEF /* RooneySansMediumIt.otf */; };
+		4AE9344B29F7E07500176EEF /* RooneySansHvIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343F29F7E07400176EEF /* RooneySansHvIt.OTF */; };
+		4AE9344C29F7E07500176EEF /* RooneySansBold.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344029F7E07400176EEF /* RooneySansBold.OTF */; };
+		4AE9344D29F7E07500176EEF /* RooneySansItalic.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344129F7E07400176EEF /* RooneySansItalic.OTF */; };
+		4AE9344E29F7E07500176EEF /* RooneySansLightIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344229F7E07400176EEF /* RooneySansLightIt.OTF */; };
+		4AE9344F29F7E07500176EEF /* RooneySansBlk.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344329F7E07400176EEF /* RooneySansBlk.OTF */; };
+		4AE9345029F7E07500176EEF /* RooneySansHv.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344429F7E07400176EEF /* RooneySansHv.OTF */; };
+		4AE9345129F7E07500176EEF /* RooneySansBoldIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344529F7E07400176EEF /* RooneySansBoldIt.OTF */; };
+		4AE9345229F7E07500176EEF /* RooneySansLight.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344629F7E07400176EEF /* RooneySansLight.OTF */; };
+		4AE9345329F7E07500176EEF /* RooneySansMedium.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344729F7E07500176EEF /* RooneySansMedium.OTF */; };
+		4AE9345429F7E07500176EEF /* RooneySansRegular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344829F7E07500176EEF /* RooneySansRegular.OTF */; };
+		4AE9345829F7E4DB00176EEF /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9345729F7E4DB00176EEF /* Slide.xib */; };
 		905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02805560C5ED1AFC5339729F /* Pods_Habit21.framework */; };
-		FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */; };
+		FF18A48227BBF5DF001CCA4B /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* SetNameViewController.swift */; };
 		FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */; };
 		FF69D45427940B1F00BAB352 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45327940B1F00BAB352 /* Habit.swift */; };
 		FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */; };
@@ -21,9 +37,6 @@
 		FFA00DFC2789B64000F5FCFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */; };
 		FFA00E262789DB1F00F5FCFD /* AddHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */; };
 		FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFA00E292789E14E00F5FCFD /* HomeViewController.swift */; };
-		FFD995F127BD4E7E00038BAF /* PageControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */; };
-		FFD995F327BD4F4800038BAF /* ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD995F227BD4F4800038BAF /* ScrollView.swift */; };
-		FFD995F527BD4F5B00038BAF /* ScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFD995F427BD4F5B00038BAF /* ScrollView.xib */; };
 		FFEFBCB327C3997800CBAF1E /* CornerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */; };
 		FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */; };
 /* End PBXBuildFile section */
@@ -32,8 +45,24 @@
 		02805560C5ED1AFC5339729F /* Pods_Habit21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habit21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.debug.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.debug.xcconfig"; sourceTree = "<group>"; };
 		4A15A79629EFCF73008DDEDF /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
+		4A4A73FC29F668BA000912A8 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		4A4A73FF29F668D2000912A8 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
+		4A835A4929F8044800E13144 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4AE9343D29F7E07400176EEF /* RooneySansBlkIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansBlkIt.OTF; sourceTree = "<group>"; };
+		4AE9343E29F7E07400176EEF /* RooneySansMediumIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansMediumIt.otf; sourceTree = "<group>"; };
+		4AE9343F29F7E07400176EEF /* RooneySansHvIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansHvIt.OTF; sourceTree = "<group>"; };
+		4AE9344029F7E07400176EEF /* RooneySansBold.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansBold.OTF; sourceTree = "<group>"; };
+		4AE9344129F7E07400176EEF /* RooneySansItalic.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansItalic.OTF; sourceTree = "<group>"; };
+		4AE9344229F7E07400176EEF /* RooneySansLightIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansLightIt.OTF; sourceTree = "<group>"; };
+		4AE9344329F7E07400176EEF /* RooneySansBlk.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansBlk.OTF; sourceTree = "<group>"; };
+		4AE9344429F7E07400176EEF /* RooneySansHv.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansHv.OTF; sourceTree = "<group>"; };
+		4AE9344529F7E07400176EEF /* RooneySansBoldIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansBoldIt.OTF; sourceTree = "<group>"; };
+		4AE9344629F7E07400176EEF /* RooneySansLight.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansLight.OTF; sourceTree = "<group>"; };
+		4AE9344729F7E07500176EEF /* RooneySansMedium.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansMedium.OTF; sourceTree = "<group>"; };
+		4AE9344829F7E07500176EEF /* RooneySansRegular.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansRegular.OTF; sourceTree = "<group>"; };
+		4AE9345729F7E4DB00176EEF /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.release.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.release.xcconfig"; sourceTree = "<group>"; };
-		FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FF18A48127BBF5DF001CCA4B /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
 		FF69D45327940B1F00BAB352 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = "<group>"; };
 		FF69D45527940C0B00BAB352 /* HabitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTableViewCell.swift; sourceTree = "<group>"; };
@@ -47,9 +76,6 @@
 		FFA00DFD2789B64000F5FCFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHabitViewController.swift; sourceTree = "<group>"; };
 		FFA00E292789E14E00F5FCFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControlViewController.swift; sourceTree = "<group>"; };
-		FFD995F227BD4F4800038BAF /* ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollView.swift; sourceTree = "<group>"; };
-		FFD995F427BD4F5B00038BAF /* ScrollView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScrollView.xib; sourceTree = "<group>"; };
 		FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerExtension.swift; sourceTree = "<group>"; };
 		FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -66,6 +92,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A4A73FE29F668D2000912A8 /* Slide */ = {
+			isa = PBXGroup;
+			children = (
+				4A4A73FF29F668D2000912A8 /* Slide.swift */,
+				4AE9345729F7E4DB00176EEF /* Slide.xib */,
+			);
+			path = Slide;
+			sourceTree = "<group>";
+		};
+		4AE9343C29F7E05600176EEF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4AE9344329F7E07400176EEF /* RooneySansBlk.OTF */,
+				4AE9343D29F7E07400176EEF /* RooneySansBlkIt.OTF */,
+				4AE9344029F7E07400176EEF /* RooneySansBold.OTF */,
+				4AE9344529F7E07400176EEF /* RooneySansBoldIt.OTF */,
+				4AE9344429F7E07400176EEF /* RooneySansHv.OTF */,
+				4AE9343F29F7E07400176EEF /* RooneySansHvIt.OTF */,
+				4AE9344129F7E07400176EEF /* RooneySansItalic.OTF */,
+				4AE9344629F7E07400176EEF /* RooneySansLight.OTF */,
+				4AE9344229F7E07400176EEF /* RooneySansLightIt.OTF */,
+				4AE9344729F7E07500176EEF /* RooneySansMedium.OTF */,
+				4AE9343E29F7E07400176EEF /* RooneySansMediumIt.otf */,
+				4AE9344829F7E07500176EEF /* RooneySansRegular.OTF */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		8D3EA3E4BBD62563B3ADFB88 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +149,9 @@
 		FF2D7D862796C921000A74E1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FFD995F027BD4E7E00038BAF /* PageControlViewController.swift */,
-				FF18A48127BBF5DF001CCA4B /* LoginViewController.swift */,
+				4A4A73FC29F668BA000912A8 /* IntroViewController.swift */,
+				FF18A48127BBF5DF001CCA4B /* SetNameViewController.swift */,
+				4A835A4929F8044800E13144 /* WelcomeViewController.swift */,
 				FFA00E292789E14E00F5FCFD /* HomeViewController.swift */,
 				FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */,
 				4A15A79629EFCF73008DDEDF /* EditHabitViewController.swift */,
@@ -112,15 +167,6 @@
 				FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		FF48981A27C2197E00A908EA /* IntrodunceScroll */ = {
-			isa = PBXGroup;
-			children = (
-				FFD995F227BD4F4800038BAF /* ScrollView.swift */,
-				FFD995F427BD4F5B00038BAF /* ScrollView.xib */,
-			);
-			path = IntrodunceScroll;
 			sourceTree = "<group>";
 		};
 		FFA00DE32789B63D00F5FCFD = {
@@ -148,8 +194,8 @@
 				FF2D7D862796C921000A74E1 /* Controller */,
 				FF2D7D872796C936000A74E1 /* Cell */,
 				FF2D7D852796C909000A74E1 /* Model */,
-				FF48981A27C2197E00A908EA /* IntrodunceScroll */,
-				FFEFBCB127C3992900CBAF1E /* utils */,
+				FFEFBCB127C3992900CBAF1E /* Utils */,
+				4AE9343C29F7E05600176EEF /* Fonts */,
 				FFA00DEF2789B63D00F5FCFD /* AppDelegate.swift */,
 				FFA00DF82789B64000F5FCFD /* Assets.xcassets */,
 				FFA00DFD2789B64000F5FCFD /* Info.plist */,
@@ -162,17 +208,18 @@
 			children = (
 				FFA00DF52789B63D00F5FCFD /* Main.storyboard */,
 				FFA00DFA2789B64000F5FCFD /* LaunchScreen.storyboard */,
+				4A4A73FE29F668D2000912A8 /* Slide */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		FFEFBCB127C3992900CBAF1E /* utils */ = {
+		FFEFBCB127C3992900CBAF1E /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */,
 				FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */,
 			);
-			path = utils;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,10 +282,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AE9344929F7E07500176EEF /* RooneySansBlkIt.OTF in Resources */,
 				FFA00DFC2789B64000F5FCFD /* LaunchScreen.storyboard in Resources */,
-				FFD995F527BD4F5B00038BAF /* ScrollView.xib in Resources */,
+				4AE9344A29F7E07500176EEF /* RooneySansMediumIt.otf in Resources */,
+				4AE9345829F7E4DB00176EEF /* Slide.xib in Resources */,
+				4AE9344C29F7E07500176EEF /* RooneySansBold.OTF in Resources */,
+				4AE9344D29F7E07500176EEF /* RooneySansItalic.OTF in Resources */,
+				4AE9345129F7E07500176EEF /* RooneySansBoldIt.OTF in Resources */,
+				4AE9345329F7E07500176EEF /* RooneySansMedium.OTF in Resources */,
 				FFA00DF92789B64000F5FCFD /* Assets.xcassets in Resources */,
+				4AE9344E29F7E07500176EEF /* RooneySansLightIt.OTF in Resources */,
 				FFA00DF72789B63D00F5FCFD /* Main.storyboard in Resources */,
+				4AE9344B29F7E07500176EEF /* RooneySansHvIt.OTF in Resources */,
+				4AE9345029F7E07500176EEF /* RooneySansHv.OTF in Resources */,
+				4AE9344F29F7E07500176EEF /* RooneySansBlk.OTF in Resources */,
+				4AE9345229F7E07500176EEF /* RooneySansLight.OTF in Resources */,
+				4AE9345429F7E07500176EEF /* RooneySansRegular.OTF in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,14 +353,15 @@
 				FFA00E262789DB1F00F5FCFD /* AddHabitViewController.swift in Sources */,
 				4A15A79729EFCF73008DDEDF /* EditHabitViewController.swift in Sources */,
 				FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */,
-				FFD995F327BD4F4800038BAF /* ScrollView.swift in Sources */,
 				FFEFBCB327C3997800CBAF1E /* CornerExtension.swift in Sources */,
+				4A835A4A29F8044800E13144 /* WelcomeViewController.swift in Sources */,
 				FF81A4C0278ED6E80051D318 /* Reminder.swift in Sources */,
-				FFD995F127BD4E7E00038BAF /* PageControlViewController.swift in Sources */,
+				4A4A740129F668D2000912A8 /* Slide.swift in Sources */,
 				FF81A4BE278ED4DA0051D318 /* ReminderTableViewCell.swift in Sources */,
+				4A4A73FD29F668BA000912A8 /* IntroViewController.swift in Sources */,
 				FF69D45427940B1F00BAB352 /* Habit.swift in Sources */,
 				FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */,
-				FF18A48227BBF5DF001CCA4B /* LoginViewController.swift in Sources */,
+				FF18A48227BBF5DF001CCA4B /* SetNameViewController.swift in Sources */,
 				FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */,
 				FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */,
 				FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */,
@@ -367,6 +427,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -381,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -428,6 +489,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -436,7 +498,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -454,7 +516,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5Z9KLU67PG;
+				DEVELOPMENT_TEAM = 3Q4H9SV5Z6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Habit21/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -462,13 +524,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test4.habit212121;
+				PRODUCT_BUNDLE_IDENTIFIER = com.habitMinder.21Days;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -484,7 +546,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5Z9KLU67PG;
+				DEVELOPMENT_TEAM = 3Q4H9SV5Z6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Habit21/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -492,13 +554,13 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.test4.habit212121;
+				PRODUCT_BUNDLE_IDENTIFIER = com.habitMinder.21Days;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
