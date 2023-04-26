@@ -24,12 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationController.isNavigationBarHidden = true
 
         if UserDefaults.standard.bool(forKey: "isLogin") {
-            let rootViewController = storyboard.instantiateViewController(identifier:"Intro") as UIViewController
+            let rootViewController = storyboard.instantiateViewController(identifier:"Home") as UIViewController
             navigationController.viewControllers = [rootViewController]
             self.window?.rootViewController = navigationController
         }
         else {
-            let rootViewController = storyboard.instantiateViewController(identifier:"Intro") as UIViewController
+            let rootViewController = storyboard.instantiateViewController(identifier:"Home") as UIViewController
             navigationController.viewControllers = [rootViewController]
             self.window?.rootViewController = navigationController
         }

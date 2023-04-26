@@ -15,11 +15,9 @@ protocol HomeDelegate{
 
 class HomeViewController: UIViewController {
     
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var noFilterView: UIView!
-    @IBOutlet weak var dropDownButtonTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var habitTableView: UITableView!
     
 //    var delegate: AddHabitDelegate?
@@ -27,41 +25,35 @@ class HomeViewController: UIViewController {
     var realm : Realm?
     var transparentView = UIView()
     var dropDownTableView = UITableView()
-    var settingArray = ["Add New Habit","Edit Habit List","Logout"]
+    var settingArray = ["Add New Habit","Edit Habit List","Rename"]
     let dropDownTableViewHeight: CGFloat = 180
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        hanleView()
+    }
+    
+    func hanleView() {
+        
         self.realm = try! Realm()
-        
-        nameLabel.text = "\(UserDefaults.standard.string(forKey: "name") ?? "")"
-        
+                
         dropDownTableView.isScrollEnabled = true
         dropDownTableView.delegate = self
         dropDownTableView.dataSource = self
         dropDownTableView.register(DropDownTableViewCell.self, forCellReuseIdentifier: "dropDownCell")
         dropDownTableView.layer.cornerRadius = 11.25
         
+        dropDownButton.setTitle("", for: .normal)
         doneButton.isHidden = true
-        
+        doneButton.titleLabel?.font = UIFont(name: "RooneySans-Bold", size: 17)
+        doneButton.titleLabel?.font = doneButton.titleLabel?.font.withSize(17)
+                
         loadValues()
-//        timer()
         emptyView()
-        
-        switch traitCollection.userInterfaceStyle {
-        case .dark: doneButton.tintColor = UIColor.white
-            dropDownButton.setTitle("Menu", for: .normal)
-            dropDownButton.tintColor = UIColor.white
-            self.dropDownButtonTopConstraint.constant = 74
-            break
-        case .light: doneButton.tintColor = UIColor.black
-            dropDownButton.setImage(UIImage(named: "MenuIcon.light"), for: .normal)
-            self.dropDownButtonTopConstraint.constant = 60
-            break
-        default:
-            print("Something else")
-        }
+        handleDarkMode()
+//        DarkModeTimer()
+//        habitTableViewTimer()
     }
     
     @IBAction func onClickMenu(_ sender: Any) {
@@ -114,9 +106,16 @@ class HomeViewController: UIViewController {
         self.habitTableView.reloadData()
     }
     
-//    func timer() {
+//    func DarkModeTimer() {
+    //        Timer.every(1.seconds) { (timer: Timer) in
+    //    self.handleDarkMode()
+    //            }
+    //    }
+    
+//    func habitTableViewTimer() {
 //        Timer.every(60.seconds) { (timer: Timer) in
 //            self.habitTableView.reloadData()
+//    handleDarkMode()
 //            }
 //    }
     
@@ -126,6 +125,19 @@ class HomeViewController: UIViewController {
             self.noFilterView.isHidden = false
         } else{
             self.noFilterView.isHidden = true
+        }
+    }
+    
+    func handleDarkMode() {
+        switch traitCollection.userInterfaceStyle {
+        case .dark:
+            dropDownButton.setImage(UIImage(named: "MenuIconWhite"), for: .normal)
+            break
+        case .light:
+            dropDownButton.setImage(UIImage(named: "MenuIconBlack"), for: .normal)
+            break
+        default:
+            print("Something else")
         }
     }
 }
@@ -160,6 +172,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             cell.config(self.habitList[indexPath.row])
             
             cell.habitCellButton.tag = indexPath.row
+            cell.habitCellButton.setTitle("", for: .normal)
             cell.habitCellButton.addTarget(self, action: #selector(editPageButtonTapped), for: .touchUpInside)
             
             return cell
@@ -217,7 +230,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             case 2:
                 UserDefaults.standard.set(false, forKey: "isLogin")
-                let vc = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+                let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetName")
                 self.navigationController?.show(vc!, sender: nil)
             default:
                 print("Unable to create viewcontroller")

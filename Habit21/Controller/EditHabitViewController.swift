@@ -151,7 +151,7 @@ class EditHabitViewController: UIViewController {
             let a = HabitTableViewCell()
             a.habitDaysCountLabel.isHidden = false
         } else{
-            var a = HabitTableViewCell()
+            let a = HabitTableViewCell()
             a.habitDaysCountLabel.isHidden = true
         }
     }
