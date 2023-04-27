@@ -330,53 +330,56 @@
                                 <rect key="frame" x="0.0" y="141" width="414" height="595"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" rowHeight="75" id="hQc-oC-nbY" customClass="HabitTableViewCell" customModule="Habit21" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="414" height="75"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HabitCell" rowHeight="114" id="hQc-oC-nbY" customClass="HabitTableViewCell" customModule="Habit21" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="414" height="114"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hQc-oC-nbY" id="Hyi-Rs-zYs">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="75"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAY-yH-aEg">
-                                                    <rect key="frame" x="25" y="11" width="364" height="53"/>
+                                                    <rect key="frame" x="25" y="11" width="364" height="92"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZO-kv-Kz7">
-                                                            <rect key="frame" x="310.66666666666669" y="10" width="38.333333333333314" height="33"/>
+                                                            <rect key="frame" x="310.66666666666669" y="10" width="38.333333333333314" height="72"/>
                                                             <fontDescription key="fontDescription" name="RooneySans-Regular" family="RooneySans" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z68-gW-lL8">
-                                                            <rect key="frame" x="15" y="10" width="49" height="33"/>
+                                                            <rect key="frame" x="100" y="40" width="49" height="25"/>
                                                             <fontDescription key="fontDescription" name="RooneySans-Bold" family="RooneySans" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUj-lD-LAs">
-                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="53"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="53" id="Isn-u7-OsJ"/>
-                                                            </constraints>
+                                                            <rect key="frame" x="0.0" y="0.0" width="364" height="92"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain"/>
                                                         </button>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGI-KY-4ec" customClass="CircularProgressView" customModule="Habit21" customModuleProvider="target">
+                                                            <rect key="frame" x="8" y="20" width="61" height="55"/>
+                                                            <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                        </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstItem="LZO-kv-Kz7" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" constant="10" id="03U-SW-DxQ"/>
                                                         <constraint firstItem="uUj-lD-LAs" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" id="4yc-h0-ndf"/>
-                                                        <constraint firstAttribute="bottom" secondItem="z68-gW-lL8" secondAttribute="bottom" constant="10" id="64O-Dh-sgI"/>
+                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" constant="40" id="Ijz-XD-KJ4"/>
                                                         <constraint firstAttribute="bottom" secondItem="uUj-lD-LAs" secondAttribute="bottom" id="MUs-oG-jGu"/>
                                                         <constraint firstAttribute="trailing" secondItem="uUj-lD-LAs" secondAttribute="trailing" id="Zxf-yg-3CB"/>
-                                                        <constraint firstAttribute="height" constant="50" id="aen-nf-SC8"/>
                                                         <constraint firstAttribute="bottom" secondItem="LZO-kv-Kz7" secondAttribute="bottom" constant="10" id="bT4-ZM-cWa"/>
-                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" constant="15" id="h4c-oR-Ss3"/>
+                                                        <constraint firstAttribute="bottom" secondItem="lGI-KY-4ec" secondAttribute="bottom" constant="17" id="fGL-RQ-KSx"/>
+                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" constant="100" id="hg2-1l-dWg"/>
                                                         <constraint firstItem="uUj-lD-LAs" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" id="mZD-uw-5wd"/>
-                                                        <constraint firstItem="LZO-kv-Kz7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z68-gW-lL8" secondAttribute="trailing" constant="8" symbolic="YES" id="r3S-LZ-Kc5"/>
+                                                        <constraint firstItem="LZO-kv-Kz7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z68-gW-lL8" secondAttribute="trailing" constant="8" symbolic="YES" id="nGc-Ii-W2R"/>
                                                         <constraint firstAttribute="trailing" secondItem="LZO-kv-Kz7" secondAttribute="trailing" constant="15" id="rda-B7-Uc8"/>
-                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" constant="10" id="xvV-b2-gG9"/>
+                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="leading" secondItem="lGI-KY-4ec" secondAttribute="trailing" constant="31" id="thy-7Z-kLk"/>
+                                                        <constraint firstItem="lGI-KY-4ec" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" constant="8" id="w46-VT-1fw"/>
+                                                        <constraint firstItem="lGI-KY-4ec" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" constant="20" symbolic="YES" id="wgo-Bt-e5o"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -395,6 +398,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="habitCellButton" destination="uUj-lD-LAs" id="dvP-S3-8A0"/>
+                                            <outlet property="habitDaysCountCircular" destination="lGI-KY-4ec" id="Bhz-Wg-MSp"/>
                                             <outlet property="habitDaysCountLabel" destination="LZO-kv-Kz7" id="0v5-uJ-TFe"/>
                                             <outlet property="habitTitleLabel" destination="z68-gW-lL8" id="2dX-hN-daA"/>
                                         </connections>
@@ -1282,6 +1286,9 @@
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -27,6 +27,8 @@ class HomeViewController: UIViewController {
     var dropDownTableView = UITableView()
     var settingArray = ["Add New Habit","Edit Habit List","Rename"]
     let dropDownTableViewHeight: CGFloat = 180
+    var timerDarkMode = Timer()
+    var timerReloadTableView = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,8 +54,8 @@ class HomeViewController: UIViewController {
         loadValues()
         emptyView()
         handleDarkMode()
-//        DarkModeTimer()
-//        habitTableViewTimer()
+        darkModeTimer()
+        reloadTableViewTimer()
     }
     
     @IBAction func onClickMenu(_ sender: Any) {
@@ -106,19 +108,18 @@ class HomeViewController: UIViewController {
         self.habitTableView.reloadData()
     }
     
-//    func DarkModeTimer() {
-    //        Timer.every(1.seconds) { (timer: Timer) in
-    //    self.handleDarkMode()
-    //            }
-    //    }
+    func darkModeTimer() {
+        self.timerDarkMode = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+            self.handleDarkMode()
+        })
+        }
     
-//    func habitTableViewTimer() {
-//        Timer.every(60.seconds) { (timer: Timer) in
-//            self.habitTableView.reloadData()
-//    handleDarkMode()
-//            }
-//    }
-    
+    func reloadTableViewTimer() {
+        self.timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
+            self.habitTableView.reloadData()
+        })
+    }
+
     func emptyView(){
         self.habitTableView.reloadData()
         if self.habitList.count == 0 {
@@ -242,7 +243,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == dropDownTableView{
             return 50
         }
-        return 75
+        return 200
     }
     
     func tableView(_ tableView: UITableView,
@@ -275,3 +276,5 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration()
     }
 }
+
+//cell UI, delete UI, update func 

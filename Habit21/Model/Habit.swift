@@ -12,6 +12,7 @@ class Habit : Object {
     @Persisted var title : String = ""
     @Persisted var dateCreate : Date = Date()
     @Persisted var daysCount : Int = 0
+    dynamic var daysCountCircular = CircularProgressView()
     
     @Persisted var reminders: List<Reminder>
     

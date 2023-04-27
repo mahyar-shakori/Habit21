@@ -11,10 +11,17 @@ class HabitTableViewCell: UITableViewCell {
     
     @IBOutlet weak var habitTitleLabel: UILabel!
     @IBOutlet weak var habitDaysCountLabel: UILabel!
+    @IBOutlet weak var habitDaysCountCircular: CircularProgressView!
     @IBOutlet weak var habitCellButton: UIButton!
     
     func config(_ habit: Habit) {
         self.habitTitleLabel.text = "\(habit.title)"
         self.habitDaysCountLabel.text = "\(habit.habitDaysCountUpdate(createDate: habit.dateCreate)) days left"
+        
+        let days = Float (22 - habit.habitDaysCountUpdate(createDate: habit.dateCreate))
+                
+        habitDaysCountCircular.trackColor = UIColor.white
+        habitDaysCountCircular.progressColor = UIColor.purple
+        habitDaysCountCircular.setProgressWithAnimation(value: days/22, duration: 1)
     }
 }
