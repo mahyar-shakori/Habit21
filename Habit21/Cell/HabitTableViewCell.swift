@@ -19,9 +19,9 @@ class HabitTableViewCell: UITableViewCell {
         self.habitDaysCountLabel.text = "\(habit.habitDaysCountUpdate(createDate: habit.dateCreate)) days left"
         
         let days = Float (22 - habit.habitDaysCountUpdate(createDate: habit.dateCreate))
-                
-        habitDaysCountCircular.trackColor = UIColor.white
-        habitDaysCountCircular.progressColor = UIColor.purple
+        
+        habitDaysCountCircular.trackColor = UIColor(named: "trackColor")!
+        habitDaysCountCircular.progressColor = UIColor(named: "progressColor")!
         habitDaysCountCircular.setProgressWithAnimation(value: days/22, duration: 1)
     }
 }

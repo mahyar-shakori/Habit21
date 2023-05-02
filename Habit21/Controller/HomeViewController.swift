@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var noFilterView: UIView!
     @IBOutlet weak var habitTableView: UITableView!
     
-//    var delegate: AddHabitDelegate?
+    //    var delegate: AddHabitDelegate?
     var habitList = [Habit]()
     var realm : Realm?
     var transparentView = UIView()
@@ -39,7 +39,7 @@ class HomeViewController: UIViewController {
     func hanleView() {
         
         self.realm = try! Realm()
-                
+        
         dropDownTableView.isScrollEnabled = true
         dropDownTableView.delegate = self
         dropDownTableView.dataSource = self
@@ -50,11 +50,10 @@ class HomeViewController: UIViewController {
         doneButton.isHidden = true
         doneButton.titleLabel?.font = UIFont(name: "RooneySans-Bold", size: 17)
         doneButton.titleLabel?.font = doneButton.titleLabel?.font.withSize(17)
-                
+        
         loadValues()
         emptyView()
         handleDarkMode()
-        darkModeTimer()
         reloadTableViewTimer()
     }
     
@@ -108,18 +107,12 @@ class HomeViewController: UIViewController {
         self.habitTableView.reloadData()
     }
     
-    func darkModeTimer() {
-        self.timerDarkMode = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
-            self.handleDarkMode()
-        })
-        }
-    
     func reloadTableViewTimer() {
         self.timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
             self.habitTableView.reloadData()
         })
     }
-
+        
     func emptyView(){
         self.habitTableView.reloadData()
         if self.habitList.count == 0 {
@@ -129,16 +122,20 @@ class HomeViewController: UIViewController {
         }
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        handleDarkMode()
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        handleDarkMode()
+    }
+    
     func handleDarkMode() {
-        switch traitCollection.userInterfaceStyle {
-        case .dark:
+        
+        if self.traitCollection.userInterfaceStyle == .dark {
             dropDownButton.setImage(UIImage(named: "MenuIconWhite"), for: .normal)
-            break
-        case .light:
+        } else {
             dropDownButton.setImage(UIImage(named: "MenuIconBlack"), for: .normal)
-            break
-        default:
-            print("Something else")
         }
     }
 }
@@ -243,7 +240,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if tableView == dropDownTableView{
             return 50
         }
-        return 200
+        return 100
     }
     
     func tableView(_ tableView: UITableView,
@@ -277,4 +274,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//cell UI, delete UI, update func 
+//delete UI, angizeshi jomle, tableViewScroll, update func, all device size

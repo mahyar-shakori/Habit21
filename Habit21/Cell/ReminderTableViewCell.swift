@@ -8,7 +8,7 @@
 import UIKit
 
 class ReminderTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var reminderLabel: UILabel!
     @IBOutlet weak var reminderSwitch: UISwitch?
     
@@ -17,7 +17,7 @@ class ReminderTableViewCell: UITableViewCell {
     
     func config(_ reminder: Reminder) {
         self.reminder = reminder
-      
+        
         self.reminderLabel.text = "\(reminder.reminderTime)"
         self.reminderSwitch?.isOn = reminder.isOn ?? true
         self.reminderSwitch?.addTarget(self, action: #selector(switchChanged), for: .valueChanged)

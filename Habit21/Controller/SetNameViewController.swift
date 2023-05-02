@@ -8,7 +8,7 @@
 import UIKit
 
 class SetNameViewController: UIViewController {
-
+    
     @IBOutlet weak var welcomeImage: UIImageView!
     @IBOutlet weak var welcomeLabel: UILabel!
     @IBOutlet weak var welcomeLabelConstraint: NSLayoutConstraint!
@@ -16,7 +16,7 @@ class SetNameViewController: UIViewController {
     @IBOutlet weak var nameView: UIView!
     @IBOutlet weak var addNameTextField: UITextField!
     @IBOutlet weak var continueButton: UIButton!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +28,7 @@ class SetNameViewController: UIViewController {
         self.addNameTextField.delegate = self
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-            view.addGestureRecognizer(tap)
+        view.addGestureRecognizer(tap)
         
         addNameTextField.placeholderColor = UIColor.lightGray
         self.nameView.layer.borderWidth = 1
@@ -37,7 +37,7 @@ class SetNameViewController: UIViewController {
         self.continueButton.addCornerView(corner: 12.5)
         self.continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
     }
-
+    
     @IBAction func continueButtonTapped(_ sender: Any) {
         if (addNameTextField.text?.isEmpty == true) {
             self.errorLabel.text = "Come on! You can tell us your name :)"
@@ -45,9 +45,9 @@ class SetNameViewController: UIViewController {
             self.self.nameView.layer.borderColor = UIColor.red.cgColor
             return
         }else{
-        
-        UserDefaults.standard.set(addNameTextField.text! , forKey: "name")
-        UserDefaults.standard.set(true, forKey: "isLogin")
+            
+            UserDefaults.standard.set(addNameTextField.text! , forKey: "name")
+            UserDefaults.standard.set(true, forKey: "isLogin")
         }
         let storyBoard : UIStoryboard = self.storyboard!
         let vc = storyBoard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
@@ -58,10 +58,10 @@ class SetNameViewController: UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-            textField.resignFirstResponder()
-            return true
+        textField.resignFirstResponder()
+        return true
     }
 }
 
@@ -74,7 +74,7 @@ extension SetNameViewController: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-
+        
         welcomeImage.isHidden = false
         welcomeLabelConstraint.constant = 428
     }

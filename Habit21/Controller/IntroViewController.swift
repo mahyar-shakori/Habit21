@@ -44,9 +44,9 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     }
     
     @objc func nextButtonTapped(_ sender: Any) {
-       
+        
         skipButton.isHidden = true
-
+        
         if pageIndexFlag == 1 {
             let storyBoard : UIStoryboard = self.storyboard!
             let vc = storyBoard.instantiateViewController(withIdentifier: "SetName") as! SetNameViewController

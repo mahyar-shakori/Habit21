@@ -310,19 +310,26 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8On-Fa-FzW">
-                                <rect key="frame" x="0.0" y="316.66666666666674" width="414" height="419.33333333333326"/>
+                                <rect key="frame" x="0.0" y="433.33333333333326" width="414" height="302.66666666666674"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="EmptyView" translatesAutoresizingMaskIntoConstraints="NO" id="3SE-99-H27">
+                                        <rect key="frame" x="70" y="-189.99999999999997" width="274" height="180"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No habit is added yet!  Click the menu button to add a habit." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T1e-Kx-b9D">
-                                        <rect key="frame" x="46" y="55.666666666666629" width="322" height="48"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="62" y="0.0" width="290.33333333333331" height="42.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="RooneySans-Bold" family="RooneySans" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                         <size key="shadowOffset" width="0.0" height="0.0"/>
                                     </label>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="T1e-Kx-b9D" firstAttribute="top" secondItem="8On-Fa-FzW" secondAttribute="top" constant="55.666666666666629" id="J4s-la-Zeg"/>
+                                    <constraint firstItem="T1e-Kx-b9D" firstAttribute="top" secondItem="3SE-99-H27" secondAttribute="bottom" constant="10" id="5pX-Pg-wLo"/>
+                                    <constraint firstItem="3SE-99-H27" firstAttribute="top" secondItem="8On-Fa-FzW" secondAttribute="top" constant="-190" id="713-Vp-5i8"/>
+                                    <constraint firstItem="3SE-99-H27" firstAttribute="centerX" secondItem="8On-Fa-FzW" secondAttribute="centerX" id="8HD-eL-vTt"/>
+                                    <constraint firstItem="T1e-Kx-b9D" firstAttribute="top" secondItem="8On-Fa-FzW" secondAttribute="top" id="J4s-la-Zeg"/>
                                     <constraint firstItem="T1e-Kx-b9D" firstAttribute="centerX" secondItem="8On-Fa-FzW" secondAttribute="centerX" id="UJH-Ej-iNw"/>
+                                    <constraint firstItem="3SE-99-H27" firstAttribute="leading" secondItem="8On-Fa-FzW" secondAttribute="leading" constant="70" id="YdR-4e-6aa"/>
                                     <constraint firstItem="T1e-Kx-b9D" firstAttribute="centerY" secondItem="8On-Fa-FzW" secondAttribute="centerY" constant="-130" id="wgO-FG-O4P"/>
                                 </constraints>
                             </view>
@@ -340,14 +347,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hAY-yH-aEg">
                                                     <rect key="frame" x="25" y="11" width="364" height="92"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZO-kv-Kz7">
-                                                            <rect key="frame" x="310.66666666666669" y="10" width="38.333333333333314" height="72"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="21 Days left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZO-kv-Kz7">
+                                                            <rect key="frame" x="270.33333333333331" y="36" width="78.666666666666686" height="20"/>
                                                             <fontDescription key="fontDescription" name="RooneySans-Regular" family="RooneySans" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z68-gW-lL8">
-                                                            <rect key="frame" x="100" y="40" width="49" height="25"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z68-gW-lL8">
+                                                            <rect key="frame" x="78" y="33.666666666666664" width="49.333333333333343" height="25"/>
                                                             <fontDescription key="fontDescription" name="RooneySans-Bold" family="RooneySans" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -359,27 +366,29 @@
                                                             <buttonConfiguration key="configuration" style="plain"/>
                                                         </button>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lGI-KY-4ec" customClass="CircularProgressView" customModule="Habit21" customModuleProvider="target">
-                                                            <rect key="frame" x="8" y="20" width="61" height="55"/>
+                                                            <rect key="frame" x="20" y="27" width="38" height="38"/>
                                                             <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="38" id="9jb-T9-bb1"/>
+                                                                <constraint firstAttribute="width" constant="38" id="qim-2M-g8I"/>
+                                                            </constraints>
                                                         </view>
                                                     </subviews>
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstItem="LZO-kv-Kz7" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" constant="10" id="03U-SW-DxQ"/>
                                                         <constraint firstItem="uUj-lD-LAs" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" id="4yc-h0-ndf"/>
-                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" constant="40" id="Ijz-XD-KJ4"/>
                                                         <constraint firstAttribute="bottom" secondItem="uUj-lD-LAs" secondAttribute="bottom" id="MUs-oG-jGu"/>
+                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="centerY" secondItem="hAY-yH-aEg" secondAttribute="centerY" id="PIG-R9-kNe"/>
                                                         <constraint firstAttribute="trailing" secondItem="uUj-lD-LAs" secondAttribute="trailing" id="Zxf-yg-3CB"/>
-                                                        <constraint firstAttribute="bottom" secondItem="LZO-kv-Kz7" secondAttribute="bottom" constant="10" id="bT4-ZM-cWa"/>
-                                                        <constraint firstAttribute="bottom" secondItem="lGI-KY-4ec" secondAttribute="bottom" constant="17" id="fGL-RQ-KSx"/>
-                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" constant="100" id="hg2-1l-dWg"/>
+                                                        <constraint firstItem="LZO-kv-Kz7" firstAttribute="centerY" secondItem="z68-gW-lL8" secondAttribute="centerY" id="bYZ-aH-cUN"/>
+                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="leading" secondItem="lGI-KY-4ec" secondAttribute="trailing" constant="20" id="ceo-cR-RiK"/>
                                                         <constraint firstItem="uUj-lD-LAs" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" id="mZD-uw-5wd"/>
                                                         <constraint firstItem="LZO-kv-Kz7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="z68-gW-lL8" secondAttribute="trailing" constant="8" symbolic="YES" id="nGc-Ii-W2R"/>
+                                                        <constraint firstItem="lGI-KY-4ec" firstAttribute="centerY" secondItem="z68-gW-lL8" secondAttribute="centerY" id="nNZ-nA-i9m"/>
                                                         <constraint firstAttribute="trailing" secondItem="LZO-kv-Kz7" secondAttribute="trailing" constant="15" id="rda-B7-Uc8"/>
-                                                        <constraint firstItem="z68-gW-lL8" firstAttribute="leading" secondItem="lGI-KY-4ec" secondAttribute="trailing" constant="31" id="thy-7Z-kLk"/>
-                                                        <constraint firstItem="lGI-KY-4ec" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" constant="8" id="w46-VT-1fw"/>
-                                                        <constraint firstItem="lGI-KY-4ec" firstAttribute="top" secondItem="hAY-yH-aEg" secondAttribute="top" constant="20" symbolic="YES" id="wgo-Bt-e5o"/>
+                                                        <constraint firstItem="lGI-KY-4ec" firstAttribute="centerY" secondItem="hAY-yH-aEg" secondAttribute="centerY" id="uf2-yN-HAJ"/>
+                                                        <constraint firstItem="lGI-KY-4ec" firstAttribute="leading" secondItem="hAY-yH-aEg" secondAttribute="leading" constant="20" id="w46-VT-1fw"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -1268,6 +1277,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="EmptyView" width="800" height="800"/>
         <image name="LogoImage" width="512" height="512"/>
         <image name="MenuIconBlack" width="24" height="24"/>
         <image name="UserIcon" width="512" height="512"/>
