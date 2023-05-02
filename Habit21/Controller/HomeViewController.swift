@@ -243,6 +243,21 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return 100
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if tableView == habitTableView{
+            
+            cell.alpha = 0
+            let transform = CATransform3DTranslate(CATransform3DIdentity, -5, 20, 0)
+            cell.layer.transform = transform
+            
+            UIView.animate(withDuration: 1) {
+                cell.alpha = 1
+                cell.layer.transform = CATransform3DIdentity
+            }
+        }
+    }
+    
     func tableView(_ tableView: UITableView,
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {

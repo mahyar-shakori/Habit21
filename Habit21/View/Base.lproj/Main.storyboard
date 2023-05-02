@@ -60,6 +60,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7Z4-mC-cM5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="CkK-Ug-xwg" firstAttribute="centerY" secondItem="wiv-Or-fEo" secondAttribute="centerY" id="HFh-JJ-cOW"/>
                             <constraint firstItem="wiv-Or-fEo" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8DS-T5-OYD" secondAttribute="trailing" constant="8" symbolic="YES" id="Hvf-ZA-iIv"/>
