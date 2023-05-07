@@ -11,6 +11,7 @@
 		4A4A73FD29F668BA000912A8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A73FC29F668BA000912A8 /* IntroViewController.swift */; };
 		4A4A740129F668D2000912A8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A73FF29F668D2000912A8 /* Slide.swift */; };
 		4A835A4A29F8044800E13144 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A835A4929F8044800E13144 /* WelcomeViewController.swift */; };
+		4ACBED302A07BE4900255740 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBED2F2A07BE4900255740 /* TableViewExtension.swift */; };
 		4AE9344929F7E07500176EEF /* RooneySansBlkIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343D29F7E07400176EEF /* RooneySansBlkIt.OTF */; };
 		4AE9344A29F7E07500176EEF /* RooneySansMediumIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343E29F7E07400176EEF /* RooneySansMediumIt.otf */; };
 		4AE9344B29F7E07500176EEF /* RooneySansHvIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343F29F7E07400176EEF /* RooneySansHvIt.OTF */; };
@@ -49,6 +50,7 @@
 		4A4A73FC29F668BA000912A8 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		4A4A73FF29F668D2000912A8 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		4A835A4929F8044800E13144 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		4ACBED2F2A07BE4900255740 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
 		4AE9343D29F7E07400176EEF /* RooneySansBlkIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansBlkIt.OTF; sourceTree = "<group>"; };
 		4AE9343E29F7E07400176EEF /* RooneySansMediumIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansMediumIt.otf; sourceTree = "<group>"; };
 		4AE9343F29F7E07400176EEF /* RooneySansHvIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansHvIt.OTF; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 			children = (
 				FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */,
 				FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */,
+				4ACBED2F2A07BE4900255740 /* TableViewExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				4A4A73FD29F668BA000912A8 /* IntroViewController.swift in Sources */,
 				FF69D45427940B1F00BAB352 /* Habit.swift in Sources */,
 				4AEF448229FA4FFC00A0C110 /* CircularProgressView.swift in Sources */,
+				4ACBED302A07BE4900255740 /* TableViewExtension.swift in Sources */,
 				FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */,
 				FF18A48227BBF5DF001CCA4B /* SetNameViewController.swift in Sources */,
 				FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */,

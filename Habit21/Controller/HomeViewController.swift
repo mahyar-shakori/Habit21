@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var noFilterView: UIView!
     @IBOutlet weak var habitTableView: UITableView!
-    
+        
     var habitList = [Habit]()
     var realm : Realm?
     var transparentView = UIView()
@@ -27,11 +27,19 @@ class HomeViewController: UIViewController {
     let dropDownTableViewHeight: CGFloat = 180
     var timerDarkMode = Timer()
     var timerReloadTableView = Timer()
+    let myRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         hanleView()
+    }
+    
+    @objc private func didPullToRefresh () {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+            self.habitTableView.reloadWithAnimation()
+            self.myRefreshControl.endRefreshing()
+        }
     }
     
     func hanleView() {
@@ -48,6 +56,8 @@ class HomeViewController: UIViewController {
         doneButton.isHidden = true
         doneButton.titleLabel?.font = UIFont(name: "RooneySans-Bold", size: 17)
         doneButton.titleLabel?.font = doneButton.titleLabel?.font.withSize(17)
+        myRefreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        habitTableView.refreshControl = myRefreshControl
         
         loadValues()
         emptyView()
@@ -102,15 +112,15 @@ class HomeViewController: UIViewController {
     
     func loadValues() {
         self.habitList = Array(try! Realm().objects(Habit.self))
-        self.habitTableView.reloadData()
+        self.habitTableView.reloadWithAnimation()
     }
     
     func reloadTableViewTimer() {
-        self.timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
+        self.timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
             self.habitTableView.reloadData()
         })
     }
-        
+    
     func emptyView(){
         self.habitTableView.reloadData()
         if self.habitList.count == 0 {
@@ -184,13 +194,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    @objc func editPageButtonTapped(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = self.storyboard!
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditHabit") as! EditHabitViewController
-        nextViewController.delegate = self
-        self.present(nextViewController, animated: true, completion: nil)
-    }
-    
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         if tableView == habitTableView{
             let moveObjTemp = habitList[sourceIndexPath.item]
@@ -207,6 +210,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 let storyBoard : UIStoryboard = self.storyboard!
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "AddHabit") as! AddHabitViewController
                 nextViewController.delegate = self
+                nextViewController.modalPresentationStyle = .fullScreen
                 self.present(nextViewController, animated: true, completion: nil)
             case 1:
                 if habitList.isEmpty == true && habitTableView.isEditing == false {
@@ -234,26 +238,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    @objc func editPageButtonTapped(_ sender: UIButton) {
+        let storyBoard : UIStoryboard = self.storyboard!
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditHabit") as! EditHabitViewController
+        nextViewController.delegate = self
+        self.present(nextViewController, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
         if tableView == dropDownTableView{
             return 50
         }
         return 100
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        if tableView == habitTableView{
-            
-            cell.alpha = 0
-            let transform = CATransform3DTranslate(CATransform3DIdentity, -5, 20, 0)
-            cell.layer.transform = transform
-            
-            UIView.animate(withDuration: 1) {
-                cell.alpha = 1
-                cell.layer.transform = CATransform3DIdentity
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView,
@@ -287,4 +283,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//delete UI, angizeshi jomle, tableViewScroll, update func, all device size. curser textfield ha, notif, edit, missHabit
+//delete UI, angizeshi jomle, tableViewScroll, update func, all device size. curser textfield ha, notif, edit, missHabit. finish habit, notif add to save. delete all notif fixed

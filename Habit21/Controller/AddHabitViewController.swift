@@ -99,6 +99,10 @@ class AddHabitViewController: UIViewController {
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
+        notificationCenter.removeAllPendingNotificationRequests()
+        notificationCenter.removeAllDeliveredNotifications()
+        reminderList.removeAll()
+        reminderTableView.reloadData()
         self.dismiss(animated: true)
     }
     
@@ -126,7 +130,7 @@ class AddHabitViewController: UIViewController {
             self.dateTextField.text = nil
             
             formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
-            notification(identifier: formatter.string(from: reminder.dateCreate), title: self.habitTitleTextField.text ?? "Reminder", message: "You have to do it, Now!", date: self.datePicker!.date)
+            notification(identifier: formatter.string(from: reminder.dateCreate), title: "Reminder", message: "You're trying to improve your lifestyle!, don't forget \(self.habitTitleTextField.text ?? "").", date: self.datePicker!.date)
             
             print("\(formatter.string(from: reminder.dateCreate))")
         }
@@ -149,6 +153,10 @@ class AddHabitViewController: UIViewController {
             firstSeprator.isHidden = true
             secondSeprator.isHidden = true
             dateView.isHidden = true
+            notificationCenter.removeAllPendingNotificationRequests()
+            notificationCenter.removeAllDeliveredNotifications()
+            reminderList.removeAll()
+            reminderTableView.reloadData()
         }
     }
     
