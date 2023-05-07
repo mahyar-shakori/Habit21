@@ -813,6 +813,9 @@
                                     <fontDescription key="titleFontDescription" name="RooneySans-Regular" family="RooneySans" pointSize="16"/>
                                     <color key="baseForegroundColor" red="0.90980392160000001" green="0.1960784314" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButtonTapped:" destination="6s2-Eb-va8" eventType="touchUpInside" id="TcC-M0-O5z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzf-FB-ndG">
                                 <rect key="frame" x="345.66666666666669" y="53.666666666666657" width="58.333333333333314" height="34"/>
@@ -820,6 +823,9 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Save">
                                     <fontDescription key="titleFontDescription" name="RooneySans-Bold" family="RooneySans" pointSize="16"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="6s2-Eb-va8" eventType="touchUpInside" id="j07-s5-g5U"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joy-Zh-YCd" userLabel="FirstPart">
                                 <rect key="frame" x="0.0" y="147.66666666666666" width="414" height="40"/>
@@ -905,6 +911,7 @@
                                     <action selector="continueButton:" destination="LZl-Tr-leF" eventType="touchUpInside" id="Mr8-HW-Ht4"/>
                                     <action selector="continueButtonTapped:" destination="LZl-Tr-leF" eventType="touchUpInside" id="Cly-2z-ft3"/>
                                     <action selector="continueButtonTapped:" destination="7Sl-N3-zh5" eventType="touchUpInside" id="Rmm-TP-wqk"/>
+                                    <action selector="missHabitButtonTapped:" destination="6s2-Eb-va8" eventType="touchUpInside" id="Pcy-17-dep"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -928,13 +935,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6s0-PW-4MJ"/>
+                    <connections>
+                        <outlet property="editHabitTextField" destination="PaQ-QY-gSH" id="nHN-in-uey"/>
+                        <outlet property="saveButton" destination="Tzf-FB-ndG" id="jKk-md-ArZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H9Y-5w-ffy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="pbi-Ml-Gy5">
-                    <connections>
-                        <action selector="addButtonTapped:" destination="6s2-Eb-va8" id="918-GY-0FS"/>
-                    </connections>
-                </tapGestureRecognizer>
+                <tapGestureRecognizer id="pbi-Ml-Gy5"/>
             </objects>
             <point key="canvasLocation" x="721.73913043478262" y="808.69565217391312"/>
         </scene>

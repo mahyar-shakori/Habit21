@@ -24,12 +24,11 @@ class SetNameViewController: UIViewController {
     }
     
     func handleView() {
-        
-        addNameTextField.delegate = self
-        
+                
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
+        addNameTextField.delegate = self
         addNameTextField.placeholderColor = UIColor.lightGray
         nameView.layer.borderWidth = 1
         nameView.layer.borderColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0).cgColor

@@ -283,4 +283,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//delete UI, angizeshi jomle, tableViewScroll, update func, all device size. curser textfield ha, notif, edit, missHabit. finish habit, notif add to save. delete all notif fixed
+//delete UI, angizeshi jomle, tableViewScroll, update func, all device size, curser textfield ha, darkmode, all check, tamizi code, notif add to save
+
+// id: Miss it Button, delete all notif(cancel and switch off), notif edit, finish habit

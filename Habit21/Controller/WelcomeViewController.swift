@@ -21,7 +21,6 @@ class WelcomeViewController: UIViewController {
     func handleView() {
         
         nameLabel.text = "Welcome, \(UserDefaults.standard.string(forKey: "name") ?? "")"
-        
         indicator.startAnimating()
         
         delayWithSeconds(1.5) {
