@@ -7,7 +7,6 @@
 
 import UIKit
 import RealmSwift
-//import SwiftyTimer
 
 protocol HomeDelegate{
     func reload()
@@ -20,7 +19,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var noFilterView: UIView!
     @IBOutlet weak var habitTableView: UITableView!
     
-    //    var delegate: AddHabitDelegate?
     var habitList = [Habit]()
     var realm : Realm?
     var transparentView = UIView()
@@ -38,7 +36,7 @@ class HomeViewController: UIViewController {
     
     func hanleView() {
         
-        self.realm = try! Realm()
+        realm = try! Realm()
         
         dropDownTableView.isScrollEnabled = true
         dropDownTableView.delegate = self
@@ -108,7 +106,7 @@ class HomeViewController: UIViewController {
     }
     
     func reloadTableViewTimer() {
-        self.timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
+        self.timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { _ in
             self.habitTableView.reloadData()
         })
     }
@@ -289,4 +287,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//delete UI, angizeshi jomle, tableViewScroll, update func, all device size
+//delete UI, angizeshi jomle, tableViewScroll, update func, all device size. curser textfield ha, notif, edit, missHabit

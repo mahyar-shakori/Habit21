@@ -25,17 +25,17 @@ class SetNameViewController: UIViewController {
     
     func handleView() {
         
-        self.addNameTextField.delegate = self
+        addNameTextField.delegate = self
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         
         addNameTextField.placeholderColor = UIColor.lightGray
-        self.nameView.layer.borderWidth = 1
-        self.nameView.layer.borderColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0).cgColor
-        self.nameView.addCornerView(corner: 25)
-        self.continueButton.addCornerView(corner: 12.5)
-        self.continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
+        nameView.layer.borderWidth = 1
+        nameView.layer.borderColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0).cgColor
+        nameView.addCornerView(corner: 25)
+        continueButton.addCornerView(corner: 12.5)
+        continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {

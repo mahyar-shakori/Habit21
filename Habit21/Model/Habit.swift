@@ -27,10 +27,10 @@ class Habit : Object {
         let calendar = Calendar.current
         let now = Date()
         
-        let next21Days = calendar.date(byAdding: .day, value: 22, to: createDate)
-        let diffInDays = Calendar.current.dateComponents([.day], from: now, to: next21Days!).day
+        let next21Days = calendar.date(byAdding: .second, value: 22, to: createDate)
+        let diffInDays = Calendar.current.dateComponents([.second], from: now, to: next21Days!).second
         habit.daysCount = diffInDays!
-        
+    
         if diffInDays! >= 0 {
             return diffInDays!
         }else{

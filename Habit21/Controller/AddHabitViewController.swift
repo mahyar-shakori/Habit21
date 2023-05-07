@@ -17,14 +17,15 @@ protocol AddHabitDelegate{
 class AddHabitViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var addHabitTextField: UITextField!
+    @IBOutlet weak var habitTitleTextField: UITextField!
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var firstSeprator: UIView!
+    @IBOutlet weak var addButton: UILabel!
     @IBOutlet weak var addHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var secondSeprator: UIView!
     @IBOutlet weak var dateView: UIView!
-    @IBOutlet weak var dateHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var dateTextField: UITextField!
+    @IBOutlet weak var dateHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var reminderTableViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var reminderTableView: UITableView!
     
@@ -41,16 +42,17 @@ class AddHabitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
                 
+        hanleView()
+    }
+    
+    func hanleView() {
+        
         datePicker = UIDatePicker()
         datePicker?.datePickerMode = .time
         datePicker?.addTarget(self, action: #selector(AddHabitViewController.reminderFormattedDate(datePicker:)), for: .valueChanged)
         dateTextField.inputView = datePicker
         datePicker!.preferredDatePickerStyle = UIDatePickerStyle.wheels
     
-        self.saveButton.isEnabled = false
-        self.saveButton.tintColor = UIColor.init(red: 255/255, green: 204/255, blue: 203/255, alpha: 1.0)
-        self.addHabitTextField.delegate = self
-        
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
             view.addGestureRecognizer(tap)
         
@@ -58,16 +60,19 @@ class AddHabitViewController: UIViewController {
         
         loadValues()
                 
+        saveButton.isEnabled = false
+        saveButton.tintColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
+        habitTitleTextField.delegate = self
         reminderSwitch.isOn = false
-        self.addHeightConstraint.constant = 0
-        self.dateHeightConstraint.constant = 0
-        self.reminderTableViewHeightConstraint.constant = 450
-        self.reminderTableView.isHidden = true
+        addButton.textColor = UIColor.label.withAlphaComponent(0.3)
+        addHeightConstraint.constant = 0
+        dateHeightConstraint.constant = 0
+        reminderTableViewHeightConstraint.constant = 450
+        reminderTableView.isHidden = true
         firstSeprator.isHidden = true
         secondSeprator.isHidden = true
         dateView.isHidden = true
-        
-        addHabitTextField.placeholderColor = UIColor.lightGray
+        habitTitleTextField.placeholderColor = UIColor.lightGray
         
         switch traitCollection.userInterfaceStyle {
         case .dark: dateTextField.placeholderColor = UIColor.white
@@ -81,7 +86,7 @@ class AddHabitViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
-        habit.title = addHabitTextField.text ?? ""
+        habit.title = habitTitleTextField.text ?? ""
         habit.id = habit.incrementID()
 
         habit.reminders = List<Reminder>()
@@ -100,7 +105,7 @@ class AddHabitViewController: UIViewController {
     @IBAction func addButtonTapped(_ sender: Any) {
         if dateTextField.text?.isEmpty == true {
             
-            let alertController = UIAlertController(title: "Please pick a date", message: "", preferredStyle: .alert)
+            let alertController = UIAlertController(title: "First, Please pick a date", message: "", preferredStyle: .alert)
             let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) {
                 UIAlertAction in
                 NSLog("OK Pressed")
@@ -108,6 +113,8 @@ class AddHabitViewController: UIViewController {
             alertController.addAction(okAction)
             self.present(alertController, animated: true, completion: nil)
         } else{
+            addButton.textColor = UIColor.label.withAlphaComponent(0.3)
+            
             let reminder = Reminder()
             reminder.reminderTime = dateTextField.text ?? ""
             reminder.isOn = true
@@ -119,7 +126,7 @@ class AddHabitViewController: UIViewController {
             self.dateTextField.text = nil
             
             formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
-            notification(identifier: formatter.string(from: reminder.dateCreate), title: self.addHabitTextField.text ?? "Reminder", message: "You have to do it, Now!", date: self.datePicker!.date)
+            notification(identifier: formatter.string(from: reminder.dateCreate), title: self.habitTitleTextField.text ?? "Reminder", message: "You have to do it, Now!", date: self.datePicker!.date)
             
             print("\(formatter.string(from: reminder.dateCreate))")
         }
@@ -205,7 +212,7 @@ class AddHabitViewController: UIViewController {
     func switchChanged(forItem item: Reminder) {
         formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
         if item.isOn == true{
-            notification(identifier: formatter.string(from: reminder.dateCreate), title: self.addHabitTextField.text ?? "Reminder", message: "You have to do it, Now!", date: (self.formatter.date(from: reminder.reminderTime) ?? now))
+            notification(identifier: formatter.string(from: reminder.dateCreate), title: self.habitTitleTextField.text ?? "Reminder", message: "You have to do it, Now!", date: (self.formatter.date(from: reminder.reminderTime) ?? now))
             print("\(String(describing: self.formatter.date(from: reminder.reminderTime)))")
         } else {
             removeNotification(identifier: formatter.string(from: item.dateCreate))
@@ -217,6 +224,7 @@ class AddHabitViewController: UIViewController {
     @objc func reminderFormattedDate(datePicker: UIDatePicker) {
         formatter.dateFormat = "HH:mm"
         dateTextField.text = formatter.string(from: datePicker.date)
+        addButton.textColor = UIColor.label.withAlphaComponent(1.0)
     }
     
     func notificationFormattedDate(date: Date) -> String {
@@ -252,14 +260,14 @@ extension AddHabitViewController: UITextFieldDelegate {
            let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
             
-            if textField == self.addHabitTextField {
+            if textField == self.habitTitleTextField {
                 if updatedText.isEmpty {
                     self.saveButton.isEnabled = false
-                    self.saveButton.tintColor = UIColor.init(red: 255/255, green: 204/255, blue: 203/255, alpha: 1.0)
+                    self.saveButton.tintColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
                 }
                 else {
                     self.saveButton.isEnabled = true
-                    self.saveButton.tintColor = UIColor.systemRed
+                    self.saveButton.tintColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0)
                 }
             }
         }

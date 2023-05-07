@@ -28,19 +28,18 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func handleView() {
+        
         slides = createSlides()
         setupSlideScrollView(slides: slides)
         
-        //        pageControl.addTarget(self, action: #selector(pageControlDidChange(_:)), for:  .valueChanged)
         nextButton.addCornerView(corner: 20)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
+        scrollView.contentSize.height = 200
         
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
         view.bringSubviewToFront(pageControl)
-        
-        self.scrollView.contentSize.height = 200
     }
     
     @objc func nextButtonTapped(_ sender: Any) {
@@ -64,13 +63,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         vc.modalPresentationStyle = .fullScreen
         self.navigationController?.show(vc, sender: nil)
     }
-    
-    //    @objc private func pageControlDidChange(_ sender: UIPageControl){
-    //
-    //        let current = sender.currentPage
-    //        scrollView.setContentOffset(CGPoint(x: CGFloat(current) * view.frame.size.width, y: 0), animated: true)
-    //    }
-    
+
     func createSlides() -> [Slide] {
         
         let slide1:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
