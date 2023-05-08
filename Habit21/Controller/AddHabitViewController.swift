@@ -103,10 +103,11 @@ class AddHabitViewController: UIViewController {
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        notificationCenter.removeAllPendingNotificationRequests()
-        notificationCenter.removeAllDeliveredNotifications()
-        reminderList.removeAll()
-        reminderTableView.reloadData()
+        
+     
+//        formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
+        removeNotification(identifier: reminder.id)
+
         self.dismiss(animated: true)
     }
     
@@ -123,7 +124,6 @@ class AddHabitViewController: UIViewController {
         } else{
             addReminderButton.tintColor = UIColor.label.withAlphaComponent(0.3)
             
-            let reminder = Reminder()
             reminder.reminderTime = dateTextField.text ?? ""
             reminder.isOn = true
             reminder.id = ""

@@ -176,9 +176,9 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell") as! HabitTableViewCell
             cell.config(habitList[indexPath.row])
             
-            cell.habitCellButton.tag = indexPath.row
-            cell.habitCellButton.setTitle("", for: .normal)
-            cell.habitCellButton.addTarget(self, action: #selector(editPageButtonTapped), for: .touchUpInside)
+            cell.habitEditButton.tag = indexPath.row
+            cell.habitEditButton.setTitle("", for: .normal)
+            cell.habitEditButton.addTarget(self, action: #selector(editPageButtonTapped), for: .touchUpInside)
             
             return cell
         case dropDownTableView:
@@ -241,6 +241,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let storyBoard : UIStoryboard = self.storyboard!
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditHabit") as! EditHabitViewController
         nextViewController.delegate = self
+        nextViewController.modalPresentationStyle = .fullScreen
         self.present(nextViewController, animated: true, completion: nil)
     }
     
@@ -282,6 +283,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//delete UI, angizeshi jomle, tableViewScroll, update func, all device size, curser textfield ha, darkmode, all check, tamizi code, notif add to save
+//delete UI, angizeshi jomle, tableViewScroll, update func, all device size, curser textfield ha, darkmode, all check, tamizi code
 
 // id: delete all notif(cancel and switch off), notif edit, finish habitt, edit habit

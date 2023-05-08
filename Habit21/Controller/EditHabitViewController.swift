@@ -8,11 +8,6 @@
 import UIKit
 import RealmSwift
 
-protocol EditHabitDelegate{
-    func reload()
-    func switchChanged(forItem item : Reminder)
-}
-
 class EditHabitViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!

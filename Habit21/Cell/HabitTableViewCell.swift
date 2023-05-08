@@ -12,7 +12,7 @@ class HabitTableViewCell: UITableViewCell {
     @IBOutlet weak var habitTitleLabel: UILabel!
     @IBOutlet weak var habitDaysCountLabel: UILabel!
     @IBOutlet weak var habitDaysCountCircular: CircularProgressView!
-    @IBOutlet weak var habitCellButton: UIButton!
+    @IBOutlet weak var habitEditButton: UIButton!
     
     var dissmissButtonFlag = true
     let now = Date()

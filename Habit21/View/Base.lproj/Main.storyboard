@@ -112,7 +112,7 @@
                                         <rect key="frame" x="10" y="13.000000000000057" width="19" height="24"/>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MLU-jX-pwN">
-                                        <rect key="frame" x="39" y="0.0" width="315" height="50"/>
+                                        <rect key="frame" x="39" y="0.0" width="305" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="SR9-VJ-31t"/>
                                         </constraints>
@@ -129,7 +129,7 @@
                                     <constraint firstItem="x2u-ig-ngU" firstAttribute="top" secondItem="v0n-ki-hbw" secondAttribute="top" constant="13" id="9NR-dW-x35"/>
                                     <constraint firstAttribute="bottom" secondItem="MLU-jX-pwN" secondAttribute="bottom" id="AT9-m8-ZWd"/>
                                     <constraint firstItem="x2u-ig-ngU" firstAttribute="leading" secondItem="v0n-ki-hbw" secondAttribute="leading" constant="10" id="bVU-VZ-FZT"/>
-                                    <constraint firstAttribute="trailing" secondItem="MLU-jX-pwN" secondAttribute="trailing" id="dPA-wf-vYx"/>
+                                    <constraint firstAttribute="trailing" secondItem="MLU-jX-pwN" secondAttribute="trailing" constant="10" id="dPA-wf-vYx"/>
                                     <constraint firstItem="MLU-jX-pwN" firstAttribute="top" secondItem="v0n-ki-hbw" secondAttribute="top" id="g97-XM-skh"/>
                                     <constraint firstItem="MLU-jX-pwN" firstAttribute="leading" secondItem="v0n-ki-hbw" secondAttribute="leading" constant="39" id="iO5-kd-r3E"/>
                                     <constraint firstItem="MLU-jX-pwN" firstAttribute="leading" secondItem="x2u-ig-ngU" secondAttribute="trailing" constant="10" id="lee-YB-3gV"/>
@@ -403,9 +403,9 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="habitCellButton" destination="uUj-lD-LAs" id="dvP-S3-8A0"/>
                                             <outlet property="habitDaysCountCircular" destination="lGI-KY-4ec" id="Bhz-Wg-MSp"/>
                                             <outlet property="habitDaysCountLabel" destination="LZO-kv-Kz7" id="0v5-uJ-TFe"/>
+                                            <outlet property="habitEditButton" destination="uUj-lD-LAs" id="S7V-pv-8jN"/>
                                             <outlet property="habitTitleLabel" destination="z68-gW-lL8" id="2dX-hN-daA"/>
                                         </connections>
                                     </tableViewCell>
@@ -466,7 +466,7 @@
                                         <rect key="frame" x="0.0" y="1" width="414" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Habit title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IkQ-5V-leY">
-                                                <rect key="frame" x="15" y="0.0" width="399" height="50"/>
+                                                <rect key="frame" x="15" y="0.0" width="384" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="YPJ-kG-TBJ"/>
                                                 </constraints>
@@ -476,7 +476,7 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="IkQ-5V-leY" secondAttribute="trailing" id="9tZ-dd-Voh"/>
+                                            <constraint firstAttribute="trailing" secondItem="IkQ-5V-leY" secondAttribute="trailing" constant="15" id="9tZ-dd-Voh"/>
                                             <constraint firstItem="IkQ-5V-leY" firstAttribute="leading" secondItem="Gxh-DW-Sp4" secondAttribute="leading" constant="15" id="aEu-HY-EMd"/>
                                             <constraint firstItem="IkQ-5V-leY" firstAttribute="top" secondItem="Gxh-DW-Sp4" secondAttribute="top" id="df4-6I-GKo"/>
                                             <constraint firstAttribute="bottom" secondItem="IkQ-5V-leY" secondAttribute="bottom" id="mcE-SC-8nk"/>
@@ -726,7 +726,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="bMw-5p-Cn1" eventType="touchUpInside" id="UEP-Af-F1S"/>
+                                    <action selector="saveButtonTapped:" destination="bMw-5p-Cn1" eventType="touchUpInside" id="Amw-Vq-rH9"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3y-9p-7NT">
@@ -736,7 +736,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="saveButtonTapped:" destination="bMw-5p-Cn1" eventType="touchUpInside" id="lmA-BH-ouo"/>
+                                    <action selector="cancelButtonTapped:" destination="bMw-5p-Cn1" eventType="touchUpInside" id="9xr-6o-R39"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -798,29 +798,28 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aF0-08-8ND">
-                                <rect key="frame" x="10" y="53.666666666666657" width="71.333333333333329" height="34"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Cancel">
-                                    <fontDescription key="titleFontDescription" name="RooneySans-Regular" family="RooneySans" pointSize="16"/>
-                                    <color key="baseForegroundColor" red="0.90980392160000001" green="0.1960784314" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </buttonConfiguration>
+                                <rect key="frame" x="20" y="54.666666666666657" width="48" height="32"/>
+                                <fontDescription key="fontDescription" name="RooneySans-Regular" family="RooneySans" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Cancel">
+                                    <color key="titleColor" red="0.90980392160000001" green="0.1960784314" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="cancelButtonTapped:" destination="6s2-Eb-va8" eventType="touchUpInside" id="TcC-M0-O5z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tzf-FB-ndG">
-                                <rect key="frame" x="345.66666666666669" y="53.666666666666657" width="58.333333333333314" height="34"/>
+                                <rect key="frame" x="359" y="54.666666666666657" width="35" height="32"/>
+                                <fontDescription key="fontDescription" name="RooneySans-Bold" family="RooneySans" pointSize="16"/>
                                 <color key="tintColor" red="0.90980392160000001" green="0.1960784314" blue="0.37254901959999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Save">
-                                    <fontDescription key="titleFontDescription" name="RooneySans-Bold" family="RooneySans" pointSize="16"/>
-                                </buttonConfiguration>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="6s2-Eb-va8" eventType="touchUpInside" id="j07-s5-g5U"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Joy-Zh-YCd" userLabel="FirstPart">
-                                <rect key="frame" x="0.0" y="147.66666666666666" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="146.66666666666666" width="414" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z1T-zQ-KXL" userLabel="TopBorder">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
@@ -833,7 +832,7 @@
                                         <rect key="frame" x="0.0" y="1" width="414" height="50"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Habit title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PaQ-QY-gSH">
-                                                <rect key="frame" x="15" y="0.0" width="399" height="50"/>
+                                                <rect key="frame" x="15" y="0.0" width="384" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="VJQ-YI-Zhp"/>
                                                 </constraints>
@@ -845,7 +844,7 @@
                                         <constraints>
                                             <constraint firstItem="PaQ-QY-gSH" firstAttribute="top" secondItem="5nh-kM-apH" secondAttribute="top" id="3Gs-TQ-fgw"/>
                                             <constraint firstItem="PaQ-QY-gSH" firstAttribute="leading" secondItem="5nh-kM-apH" secondAttribute="leading" constant="15" id="Zyj-eN-o9p"/>
-                                            <constraint firstAttribute="trailing" secondItem="PaQ-QY-gSH" secondAttribute="trailing" id="qby-87-Xoy"/>
+                                            <constraint firstAttribute="trailing" secondItem="PaQ-QY-gSH" secondAttribute="trailing" constant="15" id="qby-87-Xoy"/>
                                             <constraint firstAttribute="bottom" secondItem="PaQ-QY-gSH" secondAttribute="bottom" id="vZV-4p-cpZ"/>
                                         </constraints>
                                     </view>
@@ -916,9 +915,9 @@
                             <constraint firstItem="oCw-qH-cDB" firstAttribute="trailing" secondItem="Joy-Zh-YCd" secondAttribute="trailing" id="A4C-bo-tsq"/>
                             <constraint firstItem="3Ex-pR-cDc" firstAttribute="leading" secondItem="oCw-qH-cDB" secondAttribute="leading" constant="50" id="F2Z-Sd-a0N"/>
                             <constraint firstItem="Tzf-FB-ndG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="sNC-1q-LAA" secondAttribute="trailing" constant="8" symbolic="YES" id="HZd-Bi-i17"/>
-                            <constraint firstAttribute="trailing" secondItem="Tzf-FB-ndG" secondAttribute="trailing" constant="10" id="PTZ-Ji-dO5"/>
+                            <constraint firstAttribute="trailing" secondItem="Tzf-FB-ndG" secondAttribute="trailing" constant="20" id="PTZ-Ji-dO5"/>
                             <constraint firstItem="sNC-1q-LAA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aF0-08-8ND" secondAttribute="trailing" constant="8" symbolic="YES" id="bbR-FN-uY8"/>
-                            <constraint firstItem="aF0-08-8ND" firstAttribute="leading" secondItem="oCw-qH-cDB" secondAttribute="leading" constant="10" id="eAL-0b-YZZ"/>
+                            <constraint firstItem="aF0-08-8ND" firstAttribute="leading" secondItem="oCw-qH-cDB" secondAttribute="leading" constant="20" id="eAL-0b-YZZ"/>
                             <constraint firstItem="Joy-Zh-YCd" firstAttribute="leading" secondItem="Iap-b1-YvY" secondAttribute="leading" id="eV6-Pn-ZDk"/>
                             <constraint firstItem="sNC-1q-LAA" firstAttribute="centerY" secondItem="Tzf-FB-ndG" secondAttribute="centerY" id="kfa-e2-Aa1"/>
                             <constraint firstItem="sNC-1q-LAA" firstAttribute="top" secondItem="oCw-qH-cDB" secondAttribute="top" constant="40" id="plW-I9-khO"/>
