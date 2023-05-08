@@ -10,13 +10,13 @@ import UIKit
 
 extension UIView {
     func addCornerView(corner: CGFloat) {
-        self.layer.cornerRadius = corner
+        layer.cornerRadius = corner
     }
 }
 
 extension UITextField {
     func addCorner(corner: CGFloat) {
-        self.layer.cornerRadius = corner
-        self.layer.masksToBounds = true
+        layer.cornerRadius = corner
+        layer.masksToBounds = true
     }
 }

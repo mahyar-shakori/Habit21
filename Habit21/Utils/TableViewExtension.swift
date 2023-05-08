@@ -11,9 +11,9 @@ import UIKit
 extension UITableView {
 
     func reloadWithAnimation() {
-        self.reloadData()
-        let tableViewHeight = self.bounds.size.height
-        let cells = self.visibleCells
+        reloadData()
+        let tableViewHeight = bounds.size.height
+        let cells = visibleCells
         var delayCounter = 0
         for cell in cells {
             cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)

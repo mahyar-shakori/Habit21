@@ -18,13 +18,13 @@ class ReminderTableViewCell: UITableViewCell {
     func config(_ reminder: Reminder) {
         self.reminder = reminder
         
-        self.reminderLabel.text = "\(reminder.reminderTime)"
-        self.reminderSwitch?.isOn = reminder.isOn ?? true
-        self.reminderSwitch?.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
+        reminderLabel.text = "\(reminder.reminderTime)"
+        reminderSwitch?.isOn = reminder.isOn ?? true
+        reminderSwitch?.addTarget(self, action: #selector(switchChanged), for: .valueChanged)
     }
     
     @objc func switchChanged() {
-        self.reminder.isOn = reminderSwitch?.isOn
-        self.delegate?.switchChanged(forItem: self.reminder)
+        reminder.isOn = reminderSwitch?.isOn
+        delegate?.switchChanged(forItem: reminder)
     }
 }

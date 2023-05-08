@@ -10,7 +10,7 @@ import UIKit
 class DropDownTableViewCell: UITableViewCell {
     
     lazy var backView: UIView = {
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: self.frame.width, height: 50))
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 50))
         return view
     }()
     
@@ -21,7 +21,7 @@ class DropDownTableViewCell: UITableViewCell {
     }()
     
     lazy var lbl: UILabel = {
-        let lbl = UILabel(frame: CGRect(x: 60, y: 10, width: self.frame.width - 80, height: 30))
+        let lbl = UILabel(frame: CGRect(x: 60, y: 10, width: frame.width - 80, height: 30))
         return lbl
     }()
     

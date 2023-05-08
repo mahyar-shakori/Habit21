@@ -35,29 +35,21 @@ class HomeViewController: UIViewController {
         hanleView()
     }
     
-    @objc private func didPullToRefresh () {
-        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
-            self.habitTableView.reloadWithAnimation()
-            self.myRefreshControl.endRefreshing()
-        }
-    }
-    
     func hanleView() {
-        
-        realm = try! Realm()
-        
+                
         dropDownTableView.isScrollEnabled = true
         dropDownTableView.delegate = self
         dropDownTableView.dataSource = self
         dropDownTableView.register(DropDownTableViewCell.self, forCellReuseIdentifier: "dropDownCell")
         dropDownTableView.layer.cornerRadius = 11.25
-        
         dropDownButton.setTitle("", for: .normal)
         doneButton.isHidden = true
         doneButton.titleLabel?.font = UIFont(name: "RooneySans-Bold", size: 17)
         doneButton.titleLabel?.font = doneButton.titleLabel?.font.withSize(17)
         myRefreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         habitTableView.refreshControl = myRefreshControl
+        
+        realm = try! Realm()
         
         loadValues()
         emptyView()
@@ -68,7 +60,7 @@ class HomeViewController: UIViewController {
     @IBAction func onClickMenu(_ sender: Any) {
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
         transparentView.backgroundColor = UIColor.black.withAlphaComponent(0.9)
-        transparentView.frame = self.view.frame
+        transparentView.frame = view.frame
         window?.addSubview(transparentView)
         
         let screenSize = UIScreen.main.bounds.size
@@ -87,7 +79,7 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        self.habitTableView.isEditing = !self.habitTableView.isEditing
+        habitTableView.isEditing = !habitTableView.isEditing
         if habitList.isEmpty == false && habitTableView.isEditing == true {
             doneButton.isHidden = false
             dropDownButton.isHidden = true
@@ -106,27 +98,34 @@ class HomeViewController: UIViewController {
         }, completion: nil)
     }
     
+    @objc private func didPullToRefresh () {
+        Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false) { (timer) in
+            self.habitTableView.reloadWithAnimation()
+            self.myRefreshControl.endRefreshing()
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
     func loadValues() {
-        self.habitList = Array(try! Realm().objects(Habit.self))
-        self.habitTableView.reloadWithAnimation()
+        habitList = Array(try! Realm().objects(Habit.self))
+        habitTableView.reloadWithAnimation()
     }
     
     func reloadTableViewTimer() {
-        self.timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
+        timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
             self.habitTableView.reloadData()
         })
     }
     
     func emptyView(){
-        self.habitTableView.reloadData()
-        if self.habitList.count == 0 {
-            self.noFilterView.isHidden = false
+        habitTableView.reloadData()
+        if habitList.count == 0 {
+            noFilterView.isHidden = false
         } else{
-            self.noFilterView.isHidden = true
+            noFilterView.isHidden = true
         }
     }
     
@@ -140,7 +139,7 @@ class HomeViewController: UIViewController {
     
     func handleDarkMode() {
         
-        if self.traitCollection.userInterfaceStyle == .dark {
+        if traitCollection.userInterfaceStyle == .dark {
             dropDownButton.setImage(UIImage(named: "MenuIconWhite"), for: .normal)
         } else {
             dropDownButton.setImage(UIImage(named: "MenuIconBlack"), for: .normal)
@@ -175,7 +174,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         switch tableView {
         case habitTableView:
             let cell = tableView.dequeueReusableCell(withIdentifier: "HabitCell") as! HabitTableViewCell
-            cell.config(self.habitList[indexPath.row])
+            cell.config(habitList[indexPath.row])
             
             cell.habitCellButton.tag = indexPath.row
             cell.habitCellButton.setTitle("", for: .normal)
@@ -224,7 +223,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     alertController.addAction(okAction)
                     self.present(alertController, animated: true, completion: nil)
                 } else{
-                    self.habitTableView.isEditing = !self.habitTableView.isEditing
+                    habitTableView.isEditing = !habitTableView.isEditing
                     dropDownButton.isHidden = true
                     doneButton.isHidden = false
                 }
@@ -256,7 +255,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                    trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
     {
         if tableView == habitTableView{
-            let habit = self.habitList[indexPath.row]
+            let habit = habitList[indexPath.row]
             let deleteAction = UIContextualAction(style: .destructive , title:  "") { (contextualAction, view, actionPerformed: @escaping (Bool) -> ()) in
                 
                 let alert = UIAlertController(title: "Delete Habit", message: "Are you sure you want to delete this habit: \(habit.title)?", preferredStyle: .alert)
@@ -285,4 +284,4 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 //delete UI, angizeshi jomle, tableViewScroll, update func, all device size, curser textfield ha, darkmode, all check, tamizi code, notif add to save
 
-// id: Miss it Button, delete all notif(cancel and switch off), notif edit, finish habitt
+// id: delete all notif(cancel and switch off), notif edit, finish habitt, edit habit

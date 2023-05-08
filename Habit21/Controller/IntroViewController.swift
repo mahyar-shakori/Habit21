@@ -29,13 +29,13 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     
     func handleView() {
         
-        slides = createSlides()
-        setupSlideScrollView(slides: slides)
-        
         nextButton.addCornerView(corner: 20)
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
         scrollView.contentSize.height = 200
+        
+        slides = createSlides()
+        setupSlideScrollView(slides: slides)
         
         pageControl.numberOfPages = slides.count
         pageControl.currentPage = 0
@@ -52,7 +52,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
             vc.modalPresentationStyle = .fullScreen
             self.navigationController?.show(vc, sender: nil)
         } else {
-            scrollView.contentOffset.x +=  self.view.bounds.width
+            scrollView.contentOffset.x +=  view.bounds.width
         }
     }
     

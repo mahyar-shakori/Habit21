@@ -14,9 +14,17 @@ class HabitTableViewCell: UITableViewCell {
     @IBOutlet weak var habitDaysCountCircular: CircularProgressView!
     @IBOutlet weak var habitCellButton: UIButton!
     
+    var dissmissButtonFlag = true
+    let now = Date()
+    
     func config(_ habit: Habit) {
-        self.habitTitleLabel.text = "\(habit.title)"
-        self.habitDaysCountLabel.text = "\(habit.habitDaysCountUpdate(createDate: habit.dateCreate)) days left"
+        habitTitleLabel.text = "\(habit.title)"
+        if dissmissButtonFlag == false {
+            habitDaysCountLabel.text = "\(habit.habitDaysCountUpdate(createDate: now)) days left"
+        } else {
+            habitDaysCountLabel.text = "\(habit.habitDaysCountUpdate(createDate: habit.dateCreate)) days left"
+        }
+        
         
         let days = Float (22 - habit.habitDaysCountUpdate(createDate: habit.dateCreate))
         

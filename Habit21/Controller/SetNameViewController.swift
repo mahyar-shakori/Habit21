@@ -24,9 +24,6 @@ class SetNameViewController: UIViewController {
     }
     
     func handleView() {
-                
-        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
-        view.addGestureRecognizer(tap)
         
         addNameTextField.delegate = self
         addNameTextField.placeholderColor = UIColor.lightGray
@@ -35,13 +32,16 @@ class SetNameViewController: UIViewController {
         nameView.addCornerView(corner: 25)
         continueButton.addCornerView(corner: 12.5)
         continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
+                
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
     @IBAction func continueButtonTapped(_ sender: Any) {
         if (addNameTextField.text?.isEmpty == true) {
-            self.errorLabel.text = "Come on! You can tell us your name :)"
-            self.nameView.layer.borderWidth = 2
-            self.self.nameView.layer.borderColor = UIColor.red.cgColor
+            errorLabel.text = "Come on! You can tell us your name :)"
+            nameView.layer.borderWidth = 2
+            nameView.layer.borderColor = UIColor.red.cgColor
             return
         }else{
             
@@ -84,15 +84,15 @@ extension SetNameViewController: UITextFieldDelegate {
            let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
             
-            if textField == self.addNameTextField {
+            if textField == addNameTextField {
                 if updatedText.isEmpty {
-                    self.continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
+                    continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
                 }
                 else {
-                    self.continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0)
-                    self.errorLabel.text = ""
-                    self.nameView.layer.borderWidth = 1
-                    self.self.nameView.layer.borderColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0).cgColor
+                    continueButton.backgroundColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0)
+                    errorLabel.text = ""
+                    nameView.layer.borderWidth = 1
+                    nameView.layer.borderColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0).cgColor
                 }
             }
         }

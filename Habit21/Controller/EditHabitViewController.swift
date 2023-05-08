@@ -16,6 +16,7 @@ protocol EditHabitDelegate{
 class EditHabitViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var continueButton: UIButton!
     @IBOutlet weak var editHabitTextField: UITextField!
     
     var delegate: HomeDelegate?
@@ -29,9 +30,8 @@ class EditHabitViewController: UIViewController {
     }
     
     func hanleView() {
-        self.saveButton.isEnabled = false
-        saveButton.tintColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
-        self.editHabitTextField.delegate = self
+        
+        continueButton.addCornerView(corner: 12.5)
         editHabitTextField.placeholderColor = UIColor.lightGray
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
@@ -59,14 +59,15 @@ class EditHabitViewController: UIViewController {
     }
     
     @IBAction func missHabitButtonTapped(_ sender: Any) {
-        
+        let habit = HabitTableViewCell()
+        habit.dissmissButtonFlag = false
     }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
 
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    @objc func textFieldShouldReturn(_ textField: UITextField) -> Bool {
             textField.resignFirstResponder()
             return true
     }
@@ -76,26 +77,3 @@ class EditHabitViewController: UIViewController {
 //    func reload() {
 //    }
 //}
-
-extension EditHabitViewController: UITextFieldDelegate {
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
-        if let text = textField.text,
-           let textRange = Range(range, in: text) {
-            let updatedText = text.replacingCharacters(in: textRange, with: string)
-            
-            if textField == self.editHabitTextField {
-                if updatedText.isEmpty {
-                    self.saveButton.isEnabled = false
-                    self.saveButton.tintColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 0.5)
-                }
-                else {
-                    self.saveButton.isEnabled = true
-                    self.saveButton.tintColor = UIColor.init(red: 232/255, green: 50/255, blue: 95/255, alpha: 1.0)
-                }
-            }
-        }
-        return true
-    }
-}
