@@ -309,6 +309,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//delete UI, tableViewScroll, update func, all device size, all check code
+//all device size, all check code, dark mode
 
-// id: delete all notif(cancel and switch off), notif edit, finish habitt, edit habit
+//delete UI, tableViewScroll, update func
+
+// id: delete all notif(cancel and switch off), notif edit, finish habit notif, edit habit
