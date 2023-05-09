@@ -1,9 +1,8 @@
 //
 //  CircularProgressView.swift
-//  CircularProgressView-Tutorial
+//  Habit21
 //
-//  Created by Aman Aggarwal on 20/05/18.
-//  Copyright © 2018 Aman Aggarwal. All rights reserved.
+//  Created by Mahyar on 4/19/23.
 //
 
 import UIKit

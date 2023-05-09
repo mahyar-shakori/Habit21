@@ -17,7 +17,6 @@ protocol AddHabitDelegate{
 class AddHabitViewController: UIViewController {
 
     @IBOutlet weak var saveButton: UIButton!
-    @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var habitTitleTextField: UITextField!
     @IBOutlet weak var reminderSwitch: UISwitch!
     @IBOutlet weak var firstSeprator: UIView!
@@ -26,6 +25,7 @@ class AddHabitViewController: UIViewController {
     @IBOutlet weak var addHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var secondSeprator: UIView!
     @IBOutlet weak var dateView: UIView!
+    @IBOutlet weak var dateTextFieldLabel: UILabel!
     @IBOutlet weak var dateTextField: UITextField!
     @IBOutlet weak var dateHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var reminderTableViewHeightConstraint: NSLayoutConstraint!
@@ -123,6 +123,7 @@ class AddHabitViewController: UIViewController {
             self.present(alertController, animated: true, completion: nil)
         } else{
             addReminderButton.tintColor = UIColor.label.withAlphaComponent(0.3)
+            dateTextFieldLabel.isHidden = false
             
             reminder.reminderTime = dateTextField.text ?? ""
             reminder.isOn = true
@@ -238,6 +239,7 @@ class AddHabitViewController: UIViewController {
     @objc func reminderFormattedDate(datePicker: UIDatePicker) {
         formatter.dateFormat = "HH:mm"
         dateTextField.text = formatter.string(from: datePicker.date)
+        dateTextFieldLabel.isHidden = true
         addReminderButton.tintColor = UIColor.label.withAlphaComponent(1.0)
     }
     
@@ -335,7 +337,7 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
             }))
             self.present(alert, animated: true)
         }
-        deleteAction.image = UIImage(named: "DeleteIcon")
+        deleteAction.image = UIImage(systemName: "trash")
         return UISwipeActionsConfiguration(actions: [deleteAction])
     }
 }

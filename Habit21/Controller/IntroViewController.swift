@@ -30,9 +30,10 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     func handleView() {
         
         nextButton.addCornerView(corner: 20)
+        scrollView.contentSize.height = 200
+        
         nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
         skipButton.addTarget(self, action: #selector(skipButtonTapped), for: .touchUpInside)
-        scrollView.contentSize.height = 200
         
         slides = createSlides()
         setupSlideScrollView(slides: slides)
@@ -70,13 +71,13 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         slide1.imageView.image = UIImage(named: "HealtyHabit")
         slide1.titleLabel.text = "Introduce Healty Habits"
         slide1.descriptionLabel.text = "It is estimated that it takes 21 days for people to form a new habit. Introduce a healthy habit in your life with the 21 days app."
-        slide1.descriptionLabel.attributedText = justifyLabel(str: slide1.descriptionLabel.text!)
+        slide1.descriptionLabel.attributedText = slide1.descriptionLabel.justifyLabel(str: (slide1.descriptionLabel.text!))
         
         let slide2:Slide = Bundle.main.loadNibNamed("Slide", owner: self, options: nil)?.first as! Slide
         slide2.imageView.image = UIImage(named: "BadHabit")
         slide2.titleLabel.text = "Throw Away Bad Habits"
         slide2.descriptionLabel.text = "Don't forget to take care of your body. You can change a bad habit by replacing it with a good habit, you can do it with this 21 Days app."
-        slide2.descriptionLabel.attributedText = justifyLabel(str: slide2.descriptionLabel.text!)
+        slide2.descriptionLabel.attributedText = slide2.descriptionLabel.justifyLabel(str: (slide2.descriptionLabel.text!))
         
         return [slide1, slide2]
     }
@@ -149,18 +150,5 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         let alpha: CGFloat = (toAlpha - fromAlpha) * percentage + fromAlpha
         
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
-    }
-    
-    func justifyLabel(str: String) -> NSAttributedString
-    {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.alignment = NSTextAlignment.justified
-        paragraphStyle.lineSpacing = 3
-        let attributedString = NSAttributedString(string: str,
-                                                  attributes: [
-                                                    NSAttributedString.Key.paragraphStyle: paragraphStyle,
-                                                    NSAttributedString.Key.baselineOffset: NSNumber(value: 0)
-                                                  ])
-        return attributedString
     }
 }

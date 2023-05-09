@@ -22,6 +22,7 @@ class DropDownTableViewCell: UITableViewCell {
     
     lazy var lbl: UILabel = {
         let lbl = UILabel(frame: CGRect(x: 60, y: 10, width: frame.width - 80, height: 30))
+        lbl.font = UIFont(name:"RooneySans-Regular", size: 17)
         return lbl
     }()
     

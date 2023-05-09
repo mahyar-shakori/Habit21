@@ -12,6 +12,7 @@
 		4A4A740129F668D2000912A8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A73FF29F668D2000912A8 /* Slide.swift */; };
 		4A835A4A29F8044800E13144 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A835A4929F8044800E13144 /* WelcomeViewController.swift */; };
 		4ACBED302A07BE4900255740 /* TableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ACBED2F2A07BE4900255740 /* TableViewExtension.swift */; };
+		4AE5C0FD2A09202C0006A225 /* QuotesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE5C0FC2A09202C0006A225 /* QuotesResponse.swift */; };
 		4AE9344929F7E07500176EEF /* RooneySansBlkIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343D29F7E07400176EEF /* RooneySansBlkIt.OTF */; };
 		4AE9344A29F7E07500176EEF /* RooneySansMediumIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343E29F7E07400176EEF /* RooneySansMediumIt.otf */; };
 		4AE9344B29F7E07500176EEF /* RooneySansHvIt.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9343F29F7E07400176EEF /* RooneySansHvIt.OTF */; };
@@ -26,6 +27,7 @@
 		4AE9345429F7E07500176EEF /* RooneySansRegular.OTF in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9344829F7E07500176EEF /* RooneySansRegular.OTF */; };
 		4AE9345829F7E4DB00176EEF /* Slide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4AE9345729F7E4DB00176EEF /* Slide.xib */; };
 		4AEF448229FA4FFC00A0C110 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AEF448129FA4FFC00A0C110 /* CircularProgressView.swift */; };
+		4AF483772A0A3F3900DF5BEA /* JustifyExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF483762A0A3F3900DF5BEA /* JustifyExtension.swift */; };
 		905706C960B143599307698A /* Pods_Habit21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02805560C5ED1AFC5339729F /* Pods_Habit21.framework */; };
 		FF18A48227BBF5DF001CCA4B /* SetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF18A48127BBF5DF001CCA4B /* SetNameViewController.swift */; };
 		FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */; };
@@ -51,6 +53,7 @@
 		4A4A73FF29F668D2000912A8 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		4A835A4929F8044800E13144 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		4ACBED2F2A07BE4900255740 /* TableViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewExtension.swift; sourceTree = "<group>"; };
+		4AE5C0FC2A09202C0006A225 /* QuotesResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuotesResponse.swift; sourceTree = "<group>"; };
 		4AE9343D29F7E07400176EEF /* RooneySansBlkIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansBlkIt.OTF; sourceTree = "<group>"; };
 		4AE9343E29F7E07400176EEF /* RooneySansMediumIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansMediumIt.otf; sourceTree = "<group>"; };
 		4AE9343F29F7E07400176EEF /* RooneySansHvIt.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansHvIt.OTF; sourceTree = "<group>"; };
@@ -65,6 +68,7 @@
 		4AE9344829F7E07500176EEF /* RooneySansRegular.OTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = RooneySansRegular.OTF; sourceTree = "<group>"; };
 		4AE9345729F7E4DB00176EEF /* Slide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Slide.xib; sourceTree = "<group>"; };
 		4AEF448129FA4FFC00A0C110 /* CircularProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		4AF483762A0A3F3900DF5BEA /* JustifyExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JustifyExtension.swift; sourceTree = "<group>"; };
 		B69AF628FCEDAF5DC736E759 /* Pods-Habit21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.release.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.release.xcconfig"; sourceTree = "<group>"; };
 		FF18A48127BBF5DF001CCA4B /* SetNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetNameViewController.swift; sourceTree = "<group>"; };
 		FF48981B27C21A0F00A908EA /* DropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,6 +150,7 @@
 			children = (
 				FF69D45327940B1F00BAB352 /* Habit.swift */,
 				FF81A4BF278ED6E80051D318 /* Reminder.swift */,
+				4AE5C0FC2A09202C0006A225 /* QuotesResponse.swift */,
 				4AEF448129FA4FFC00A0C110 /* CircularProgressView.swift */,
 			);
 			path = Model;
@@ -224,6 +229,7 @@
 				FFEFBCB227C3997800CBAF1E /* CornerExtension.swift */,
 				FFEFBCB427C39EC400CBAF1E /* PlaceholderExtension.swift */,
 				4ACBED2F2A07BE4900255740 /* TableViewExtension.swift */,
+				4AF483762A0A3F3900DF5BEA /* JustifyExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -367,11 +373,13 @@
 				4A4A73FD29F668BA000912A8 /* IntroViewController.swift in Sources */,
 				FF69D45427940B1F00BAB352 /* Habit.swift in Sources */,
 				4AEF448229FA4FFC00A0C110 /* CircularProgressView.swift in Sources */,
+				4AE5C0FD2A09202C0006A225 /* QuotesResponse.swift in Sources */,
 				4ACBED302A07BE4900255740 /* TableViewExtension.swift in Sources */,
 				FFA00DF02789B63D00F5FCFD /* AppDelegate.swift in Sources */,
 				FF18A48227BBF5DF001CCA4B /* SetNameViewController.swift in Sources */,
 				FFEFBCB527C39EC400CBAF1E /* PlaceholderExtension.swift in Sources */,
 				FF69D45627940C0B00BAB352 /* HabitTableViewCell.swift in Sources */,
+				4AF483772A0A3F3900DF5BEA /* JustifyExtension.swift in Sources */,
 				FFA00E2A2789E14E00F5FCFD /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

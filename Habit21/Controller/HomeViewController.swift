@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import AVFoundation
 
 protocol HomeDelegate{
     func reload()
@@ -17,6 +18,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var dropDownButton: UIButton!
     @IBOutlet weak var doneButton: UIButton!
     @IBOutlet weak var noFilterView: UIView!
+    @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var habitTableView: UITableView!
         
     var habitList = [Habit]()
@@ -28,6 +30,8 @@ class HomeViewController: UIViewController {
     var timerDarkMode = Timer()
     var timerReloadTableView = Timer()
     let myRefreshControl = UIRefreshControl()
+    var delegate: QuoteDelegate?
+    var quote = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,10 +46,14 @@ class HomeViewController: UIViewController {
         dropDownTableView.dataSource = self
         dropDownTableView.register(DropDownTableViewCell.self, forCellReuseIdentifier: "dropDownCell")
         dropDownTableView.layer.cornerRadius = 11.25
+        
         dropDownButton.setTitle("", for: .normal)
         doneButton.isHidden = true
         doneButton.titleLabel?.font = UIFont(name: "RooneySans-Bold", size: 17)
         doneButton.titleLabel?.font = doneButton.titleLabel?.font.withSize(17)
+        quote = (delegate?.setQuoteText())!
+//        quoteLabel.attributedText = quoteLabel.justifyLabel(str: (quoteLabel.text!))
+        
         myRefreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         habitTableView.refreshControl = myRefreshControl
         
@@ -55,6 +63,9 @@ class HomeViewController: UIViewController {
         emptyView()
         handleDarkMode()
         reloadTableViewTimer()
+        delayWithSeconds(0.1) {
+            self.typeAnimation()
+        }
     }
     
     @IBAction func onClickMenu(_ sender: Any) {
@@ -109,6 +120,15 @@ class HomeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    func typeAnimation() {
+        quoteLabel.text = ""
+        for i in quote {
+            AudioServicesPlaySystemSound(1306)
+            quoteLabel.text! += "\(i)"
+            RunLoop.current.run(until: Date()+0.05)
+        }
+    }
+    
     func loadValues() {
         habitList = Array(try! Realm().objects(Habit.self))
         habitTableView.reloadWithAnimation()
@@ -126,6 +146,12 @@ class HomeViewController: UIViewController {
             noFilterView.isHidden = false
         } else{
             noFilterView.isHidden = true
+        }
+    }
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
         }
     }
     
@@ -275,7 +301,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 }))
                 self.present(alert, animated: true)
             }
-            deleteAction.image = UIImage(named: "DeleteIcon")
+            deleteAction.image = UIImage(systemName: "trash")
             
             return UISwipeActionsConfiguration(actions: [deleteAction])
         }
@@ -283,6 +309,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-//delete UI, angizeshi jomle, tableViewScroll, update func, all device size, curser textfield ha, darkmode, all check, tamizi code
+//delete UI, tableViewScroll, update func, all device size, all check code
 
 // id: delete all notif(cancel and switch off), notif edit, finish habitt, edit habit
