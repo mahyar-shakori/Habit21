@@ -43,8 +43,9 @@ class EditHabitViewController: UIViewController {
         habit.reminders = List<Reminder>()
         
         try! realm?.write {
-            realm?.add(habit)
+            habit.title = editHabitTextField.text ?? ""
         }
+        print (habit.title)
         delegate?.reload()
         self.dismiss(animated: true)
     }

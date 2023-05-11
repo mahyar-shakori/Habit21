@@ -49,9 +49,9 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
         
         if pageIndexFlag == 1 {
             let storyBoard : UIStoryboard = self.storyboard!
-            let vc = storyBoard.instantiateViewController(withIdentifier: "SetName") as! SetNameViewController
-            vc.modalPresentationStyle = .fullScreen
-            self.navigationController?.show(vc, sender: nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SetName") as! SetNameViewController
+            nextViewController.modalPresentationStyle = .fullScreen
+            self.navigationController?.show(nextViewController, sender: nil)
         } else {
             scrollView.contentOffset.x +=  view.bounds.width
         }
@@ -60,9 +60,9 @@ class IntroViewController: UIViewController, UIScrollViewDelegate {
     @objc func skipButtonTapped(_ sender: Any) {
         
         let storyBoard : UIStoryboard = self.storyboard!
-        let vc = storyBoard.instantiateViewController(withIdentifier: "SetName") as! SetNameViewController
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.show(vc, sender: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "SetName") as! SetNameViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.show(nextViewController, sender: nil)
     }
 
     func createSlides() -> [Slide] {

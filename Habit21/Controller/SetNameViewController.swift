@@ -49,9 +49,9 @@ class SetNameViewController: UIViewController {
             UserDefaults.standard.set(true, forKey: "isLogin")
         }
         let storyBoard : UIStoryboard = self.storyboard!
-        let vc = storyBoard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
-        vc.modalPresentationStyle = .fullScreen
-        self.navigationController?.show(vc, sender: nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Welcome") as! WelcomeViewController
+        nextViewController.modalPresentationStyle = .fullScreen
+        self.navigationController?.show(nextViewController, sender: nil)
     }
     
     @objc func dismissKeyboard() {

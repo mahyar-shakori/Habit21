@@ -56,19 +56,19 @@ class WelcomeViewController: UIViewController {
                 self.quoteResponse = json?[0].quote ?? ""
                 
                 let storyBoard : UIStoryboard = self.storyboard!
-                let vc = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                vc.delegate = self
-                vc.modalPresentationStyle = .fullScreen
-                self.navigationController?.show(vc, sender: nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+                nextViewController.delegate = self
+                nextViewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.show(nextViewController, sender: nil)
                 self.indicator.stopAnimating()
                 
             case .failure(_) :
                 self.quoteResponse = "Due to your internet problem, we couldn't display today's quote."
                 let storyBoard : UIStoryboard = self.storyboard!
-                let vc = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                vc.delegate = self
-                vc.modalPresentationStyle = .fullScreen
-                self.navigationController?.show(vc, sender: nil)
+                let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+                nextViewController.delegate = self
+                nextViewController.modalPresentationStyle = .fullScreen
+                self.navigationController?.show(nextViewController, sender: nil)
                 self.indicator.stopAnimating()
                 print("Json Error")
                 
