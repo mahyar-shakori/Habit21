@@ -8,6 +8,7 @@
 import UIKit
 import RealmSwift
 import AVFoundation
+import Alamofire
 
 protocol HomeDelegate{
     func reload()
@@ -20,13 +21,14 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var noFilterView: UIView!
     @IBOutlet weak var quoteLabel: UILabel!
     @IBOutlet weak var habitTableView: UITableView!
-        
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
+    
     var habitList = [Habit]()
     var realm : Realm?
     var transparentView = UIView()
     var dropDownTableView = UITableView()
-    var settingArray = ["Add New Habit","Edit Habit List","Rename"]
-    let dropDownTableViewHeight: CGFloat = 180
+    var settingArray = ["Add New Habit","Edit Habit List","Customize app","TH","DAS","Rename"]
+    var dropDownTableViewHeight: CGFloat = 240
     var timerDarkMode = Timer()
     var timerReloadTableView = Timer()
     let myRefreshControl = UIRefreshControl()
@@ -52,7 +54,7 @@ class HomeViewController: UIViewController {
         doneButton.titleLabel?.font = UIFont(name: "RooneySans-Bold", size: 17)
         doneButton.titleLabel?.font = doneButton.titleLabel?.font.withSize(17)
         quote = (delegate?.setQuoteText())!
-//        quoteLabel.attributedText = quoteLabel.justifyLabel(str: (quoteLabel.text!))
+        indicator.isHidden = true
         
         myRefreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
         habitTableView.refreshControl = myRefreshControl
@@ -155,6 +157,45 @@ class HomeViewController: UIViewController {
         }
     }
     
+    func fetchData() {
+        
+        indicator.isHidden = false
+        self.indicator.startAnimating()
+        
+        let url = "https://api.api-ninjas.com/v1/quotes?category=success&limit=1"
+        
+        let headers: HTTPHeaders = [
+            "X-Api-Key": "lap3sU0ASOTqp+yNhwqAIA==1vMwgAQ5Rv1r0rkJ"
+        ]
+        
+        AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).response { response in
+            
+            switch response.result {
+                
+            case .success(let data) :
+                guard data != nil else {
+                    return
+                }
+                                
+                let json = try? JSONDecoder.init().decode([QuotesResponse].self, from: data!)
+                
+                self.indicator.isHidden = true
+                self.indicator.stopAnimating()
+                self.quote = json?[0].quote ?? ""
+                self.typeAnimation()
+                self.quoteLabel.text = self.quote
+              
+            case .failure(_) :
+                self.quote = "Due to your internet problem, we couldn't display today's quote."
+                self.indicator.isHidden = true
+                self.indicator.stopAnimating()
+                print("Json Error")
+                
+                break
+            }
+        }
+    }
+    
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         handleDarkMode()
     }
@@ -162,7 +203,7 @@ class HomeViewController: UIViewController {
     override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
         handleDarkMode()
     }
-    
+        
     func handleDarkMode() {
         
         if traitCollection.userInterfaceStyle == .dark {
@@ -254,6 +295,23 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     doneButton.isHidden = false
                 }
             case 2:
+                dropDownTableViewHeight = 360
+                
+            case 3:
+                AppDelegate.asd.toggle()
+                if AppDelegate.asd == false {
+                    quoteLabel.text = ""
+                } else {
+                    if delegate?.setQuoteText() == "" {
+                        if quote == "" {
+                            fetchData()
+                        }
+                        quoteLabel.text = quote
+                    } else {
+                        quoteLabel.text = delegate?.setQuoteText()
+                    }
+                }
+            case 4:
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetName")
                 self.navigationController?.show(vc!, sender: nil)
@@ -311,6 +369,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 
 //all device size, all check code, dark mode
 
-//delete UI, tableViewScroll, update func, off quate
+//delete UI, tableViewScroll, update func, quate animate speed, alerts text
 
 // id: delete all notif(cancel and switch off), notif edit, finish habit notif, edit habit

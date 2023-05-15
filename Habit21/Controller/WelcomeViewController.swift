@@ -23,13 +23,27 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         handleView()
-        fetchData()
     }
     
     func handleView() {
         
         nameLabel.text = "Welcome, \(UserDefaults.standard.string(forKey: "name") ?? "")"
-        indicator.startAnimating()
+        self.indicator.startAnimating()
+        
+        AppDelegate.asd = true
+        if AppDelegate.asd == true {
+            fetchData()
+        } else {
+            
+            self.delayWithSeconds(1) {
+                let storyBoard : UIStoryboard = self.storyboard!
+                               let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
+                               nextViewController.delegate = self
+                               nextViewController.modalPresentationStyle = .fullScreen
+                               self.navigationController?.show(nextViewController, sender: nil)
+                               self.indicator.stopAnimating()
+            }
+        }
     }
     
     func fetchData() {
@@ -74,6 +88,12 @@ class WelcomeViewController: UIViewController {
                 
                 break
             }
+        }
+    }
+    
+    func delayWithSeconds(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
         }
     }
 }
