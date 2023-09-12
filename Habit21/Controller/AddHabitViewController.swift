@@ -104,8 +104,6 @@ class AddHabitViewController: UIViewController {
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         
-     
-//        formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
         removeNotification(identifier: reminder.id)
 
         self.dismiss(animated: true)
@@ -125,6 +123,7 @@ class AddHabitViewController: UIViewController {
             addReminderButton.tintColor = UIColor.label.withAlphaComponent(0.3)
             dateTextFieldLabel.isHidden = false
             
+            let reminder = Reminder()
             reminder.reminderTime = dateTextField.text ?? ""
             reminder.isOn = true
             reminder.id = ""
@@ -136,7 +135,6 @@ class AddHabitViewController: UIViewController {
             
             formatter.dateFormat = "E, dd MMM yyyy HH:mm:ss"
             notification(identifier: formatter.string(from: reminder.dateCreate), title: "Reminder", message: "You're trying to improve your lifestyle!, don't forget \(habitTitleTextField.text ?? "").", date: datePicker!.date)
-            
             print("\(formatter.string(from: reminder.dateCreate))")
         }
     }
@@ -222,6 +220,11 @@ class AddHabitViewController: UIViewController {
     
     func removeNotification(identifier: String) {
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+    
+    func deleteNotif(forItem item: Reminder) {
+        print (formatter.string(from: item.dateCreate))
+        removeNotification(identifier: formatter.string(from: item.dateCreate))
     }
     
     func switchChanged(forItem item: Reminder) {
@@ -332,6 +335,8 @@ extension AddHabitViewController: UITableViewDelegate, UITableViewDataSource {
             alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: {(alertAction) in
                 self.reminderList.remove(at: indexPath.row)
                 self.reminderTableView.deleteRows(at: [indexPath], with: .fade)
+                
+                self.deleteNotif(forItem: reminder)
                 
                 actionPerformed(true)
             }))

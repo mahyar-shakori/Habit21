@@ -3,7 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -685,13 +685,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nxe-pF-uBv">
-                                                    <rect key="frame" x="35" y="15" width="344" height="58"/>
+                                                    <rect key="frame" x="20" y="5" width="374" height="68"/>
                                                     <subviews>
                                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lja-Le-OW0">
-                                                            <rect key="frame" x="280" y="13.666666666666668" width="51" height="31.000000000000004"/>
+                                                            <rect key="frame" x="310" y="18.666666666666671" width="51" height="31"/>
                                                         </switch>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sBI-3q-DSx">
-                                                            <rect key="frame" x="15.000000000000004" y="5" width="49.333333333333343" height="48"/>
+                                                            <rect key="frame" x="15.000000000000004" y="5" width="49.333333333333343" height="58"/>
                                                             <fontDescription key="fontDescription" name="RooneySans-Bold" family="RooneySans" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -716,10 +716,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Nxe-pF-uBv" secondAttribute="trailing" constant="15" id="K4P-s1-da2"/>
-                                                <constraint firstItem="Nxe-pF-uBv" firstAttribute="top" secondItem="ozC-0E-SKI" secondAttribute="top" constant="15" id="hBg-2W-1kA"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Nxe-pF-uBv" secondAttribute="trailing" id="K4P-s1-da2"/>
+                                                <constraint firstItem="Nxe-pF-uBv" firstAttribute="top" secondItem="ozC-0E-SKI" secondAttribute="top" constant="5" id="hBg-2W-1kA"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Nxe-pF-uBv" secondAttribute="bottom" id="qJT-Nq-iYb"/>
-                                                <constraint firstItem="Nxe-pF-uBv" firstAttribute="leading" secondItem="ozC-0E-SKI" secondAttribute="leadingMargin" constant="15" id="xOx-h7-nNt"/>
+                                                <constraint firstItem="Nxe-pF-uBv" firstAttribute="leading" secondItem="ozC-0E-SKI" secondAttribute="leadingMargin" id="xOx-h7-nNt"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -922,7 +922,6 @@
                                 <connections>
                                     <action selector="continueButton:" destination="LZl-Tr-leF" eventType="touchUpInside" id="Mr8-HW-Ht4"/>
                                     <action selector="continueButtonTapped:" destination="LZl-Tr-leF" eventType="touchUpInside" id="Cly-2z-ft3"/>
-                                    <action selector="continueButtonTapped:" destination="7Sl-N3-zh5" eventType="touchUpInside" id="Rmm-TP-wqk"/>
                                     <action selector="missHabitButtonTapped:" destination="6s2-Eb-va8" eventType="touchUpInside" id="Pcy-17-dep"/>
                                 </connections>
                             </button>

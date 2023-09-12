@@ -24,36 +24,37 @@ class WelcomeViewController: UIViewController {
         
         handleView()
     }
-    
+
     func handleView() {
         
         nameLabel.text = "Welcome, \(UserDefaults.standard.string(forKey: "name") ?? "")"
         self.indicator.startAnimating()
         
-        AppDelegate.asd = true
-        if AppDelegate.asd == true {
-            fetchData()
-        } else {
-            
-            self.delayWithSeconds(1) {
-                let storyBoard : UIStoryboard = self.storyboard!
-                               let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
-                               nextViewController.delegate = self
-                               nextViewController.modalPresentationStyle = .fullScreen
-                               self.navigationController?.show(nextViewController, sender: nil)
-                               self.indicator.stopAnimating()
-            }
+        UIView.animate(withDuration: 1.5, delay: 0, options: .curveLinear, animations: {
+            self.moveRight(view: self.nameLabel)
+        }) { (_) in
+            //            self.moveLeft(view: self.nameLabel)
         }
+        
+        fetchData()
+    }
+    
+    func moveRight(view: UILabel) {
+        view.center.x += 200
+    }
+    
+    func moveLeft(view: UIView) {
+        view.center.x -= 200
     }
     
     func fetchData() {
-                
+        
         let url = "https://api.api-ninjas.com/v1/quotes?category=success&limit=1"
         
         let headers: HTTPHeaders = [
             "X-Api-Key": "lap3sU0ASOTqp+yNhwqAIA==1vMwgAQ5Rv1r0rkJ"
         ]
-
+        
         AF.request(url, method: .get, encoding: JSONEncoding.default, headers: headers).response { response in
             
             switch response.result {
@@ -77,7 +78,7 @@ class WelcomeViewController: UIViewController {
                 self.indicator.stopAnimating()
                 
             case .failure(_) :
-                self.quoteResponse = "Due to your internet problem, we couldn't display today's quote."
+                self.quoteResponse = "Your network connection was lost, we couldn't display today's quote."
                 let storyBoard : UIStoryboard = self.storyboard!
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "Home") as! HomeViewController
                 nextViewController.delegate = self

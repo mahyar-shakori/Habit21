@@ -27,13 +27,14 @@ class HomeViewController: UIViewController {
     var realm : Realm?
     var transparentView = UIView()
     var dropDownTableView = UITableView()
-    var settingArray = ["Add New Habit","Edit Habit List","Customize app","TH","DAS","Rename"]
+    var settingArray = ["Add New Habit","Edit Habit List","Quote Off-On","Rename"]
     var dropDownTableViewHeight: CGFloat = 240
     var timerDarkMode = Timer()
     var timerReloadTableView = Timer()
     let myRefreshControl = UIRefreshControl()
     var delegate: QuoteDelegate?
     var quote = ""
+    var quoteFlag = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +50,9 @@ class HomeViewController: UIViewController {
         dropDownTableView.register(DropDownTableViewCell.self, forCellReuseIdentifier: "dropDownCell")
         dropDownTableView.layer.cornerRadius = 11.25
         
+        if quoteFlag == true {
+            dropDownButton.isHidden = true
+        }
         dropDownButton.setTitle("", for: .normal)
         doneButton.isHidden = true
         doneButton.titleLabel?.font = UIFont(name: "RooneySans-Bold", size: 17)
@@ -129,6 +133,7 @@ class HomeViewController: UIViewController {
             quoteLabel.text! += "\(i)"
             RunLoop.current.run(until: Date()+0.05)
         }
+        self.dropDownButton.isHidden = false
     }
     
     func loadValues() {
@@ -138,7 +143,8 @@ class HomeViewController: UIViewController {
     
     func reloadTableViewTimer() {
         timerReloadTableView = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { _ in
-            self.habitTableView.reloadData()
+            
+                self.habitTableView.reloadData()
         })
     }
     
@@ -295,11 +301,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     doneButton.isHidden = false
                 }
             case 2:
-                dropDownTableViewHeight = 360
-                
-            case 3:
-                AppDelegate.asd.toggle()
-                if AppDelegate.asd == false {
+                quoteFlag.toggle()
+                if quoteFlag == false {
                     quoteLabel.text = ""
                 } else {
                     if delegate?.setQuoteText() == "" {
@@ -311,7 +314,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                         quoteLabel.text = delegate?.setQuoteText()
                     }
                 }
-            case 4:
+            case 3:
                 UserDefaults.standard.set(false, forKey: "isLogin")
                 let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetName")
                 self.navigationController?.show(vc!, sender: nil)
@@ -322,11 +325,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func editPageButtonTapped(_ sender: UIButton) {
-        let storyBoard : UIStoryboard = self.storyboard!
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditHabit") as! EditHabitViewController
-        nextViewController.delegate = self
-        nextViewController.modalPresentationStyle = .fullScreen
-        self.present(nextViewController, animated: true, completion: nil)
+//        let storyBoard : UIStoryboard = self.storyboard!
+//        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "EditHabit") as! EditHabitViewController
+//        nextViewController.delegate = self
+//        nextViewController.modalPresentationStyle = .fullScreen
+//        self.present(nextViewController, animated: true, completion: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
@@ -366,9 +369,3 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         return UISwipeActionsConfiguration()
     }
 }
-
-//all device size, all check code, dark mode
-
-//delete UI, tableViewScroll, update func, quate animate speed, alerts text
-
-// id: delete all notif(cancel and switch off), notif edit, finish habit notif, edit habit

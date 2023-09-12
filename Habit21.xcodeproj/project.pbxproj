@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4A15A79729EFCF73008DDEDF /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A15A79629EFCF73008DDEDF /* EditHabitViewController.swift */; };
 		4A4A73FD29F668BA000912A8 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A73FC29F668BA000912A8 /* IntroViewController.swift */; };
 		4A4A740129F668D2000912A8 /* Slide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A4A73FF29F668D2000912A8 /* Slide.swift */; };
 		4A835A4A29F8044800E13144 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A835A4929F8044800E13144 /* WelcomeViewController.swift */; };
@@ -48,7 +47,6 @@
 /* Begin PBXFileReference section */
 		02805560C5ED1AFC5339729F /* Pods_Habit21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Habit21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0478EC3CBEB0B2C8AFE759C9 /* Pods-Habit21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habit21.debug.xcconfig"; path = "Target Support Files/Pods-Habit21/Pods-Habit21.debug.xcconfig"; sourceTree = "<group>"; };
-		4A15A79629EFCF73008DDEDF /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		4A4A73FC29F668BA000912A8 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		4A4A73FF29F668D2000912A8 /* Slide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Slide.swift; sourceTree = "<group>"; };
 		4A835A4929F8044800E13144 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				4A835A4929F8044800E13144 /* WelcomeViewController.swift */,
 				FFA00E292789E14E00F5FCFD /* HomeViewController.swift */,
 				FFA00E252789DB1F00F5FCFD /* AddHabitViewController.swift */,
-				4A15A79629EFCF73008DDEDF /* EditHabitViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -363,7 +360,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFA00E262789DB1F00F5FCFD /* AddHabitViewController.swift in Sources */,
-				4A15A79729EFCF73008DDEDF /* EditHabitViewController.swift in Sources */,
 				FF48981C27C21A0F00A908EA /* DropDownTableViewCell.swift in Sources */,
 				FFEFBCB327C3997800CBAF1E /* CornerExtension.swift in Sources */,
 				4A835A4A29F8044800E13144 /* WelcomeViewController.swift in Sources */,
